@@ -4,6 +4,16 @@ console.log("I tipi primitivi");
 
 /**
  *
+ * typeof
+ *
+ */
+
+var x = "sono una stringa";
+typeof x; // ritorna il tipo di variabile (numeber, string, ecc..)
+
+
+/**
+ *
  * STRINGHE
  *
  */
@@ -46,6 +56,30 @@ let sostituiscoTutteLeOPresenti = stringaSingoliApici.replaceAll("o", "_");
 let nuovaStringa = templateLiteral.slice(4, 8); // nuovaStringa = ciao
 
 
+/**
+ *
+ * Recuperare l'ultimo carattere  di una stringa 
+ *
+ */
+
+// valore dinamico 
+//let nomeDinamico = prompt("Chi sei?");
+let nomeDinamico = "Giangino";
+
+// dichiaro la mia variabile
+let ultimoCarattere;
+
+// numero totale dei caratteri all'interno della stringa
+let lunghezzaNomeDinamico = nomeDinamico.length;
+
+// le posizioni dei caratteri partono sempore da 0 -> quindi per avere
+// l'ultimo devo sottrarre 1 alla lunghezza totale
+let posizioneUltimoCarattere = lunghezzaNomeDinamico - 1;
+
+// prendo lo specifico carattere passando la posizione
+ultimoCarattere = nomeDinamico.charAt(posizioneUltimoCarattere);
+
+
 
 
 
@@ -63,6 +97,15 @@ let interoPositivo = 123;
 let numeroDecimale = 0.52;
 let numeroDaCostruttore = new Number(123);
 
+
+// Castare ad intero
+let numeroComeStringa = '10';
+console.log(numeroComeStringa + 10); // -> 1010
+
+// trasformo un tipo "string" in un tipo "number"
+let numeroComeStringaCastatoAdIntero = Number(numeroComeStringa);
+let altraPossibilitaDiCasting = +numeroComeStringa;
+
 /**
  *
  * Alcuni metodo propri dei numeri
@@ -79,6 +122,7 @@ isNaN("asd"); // true
 // parseInt/parseFloat - ritorna il numero presente nella stringa
 parseInt("10"); // 10
 parseInt("asd 10"); // NaN
+
 
 
 

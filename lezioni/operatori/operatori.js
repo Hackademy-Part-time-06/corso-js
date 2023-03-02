@@ -57,12 +57,3 @@ x || y; // && -> "or"
 (5 > 2) && (3 != 4)  // true
 true || (4 >= 6)     // true
 !(5==5)              // false
-
-
-/**
- *
- * typeof
- *
- */
-
-typeof x; // ritorna il tipo di variabile (numeber, string, ecc..)
