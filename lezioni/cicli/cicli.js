@@ -33,6 +33,13 @@ for (let i = 0; i < 10; i++) {
   }
 }
 
+// esempio
+let frase = "Batman ";
+for (let i = 0; i < 8; i++) {
+    frase = frase + "na ";
+    frase += "NA ";
+}
+console.log(frase)
 
 
 /**

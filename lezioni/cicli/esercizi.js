@@ -112,43 +112,80 @@ Riscrivi il programma dell’esercizio 12 in questo modo:
 
 console.group("Esercizio offuscamento numero di telefono");
 
-let phone = prompt("Phone number");
-let allowedChars = "+ 0123456789"
-let isPhoneValid = false;
+// variabile del numero di telefono
+let numeroDiTelefono;
 
-while(!isPhoneValid) {
-  let validity = true;
+// variabile che mi serve come condizione per il while!
+// parto dal presupposto che l'utente inserisca un numero sbagliato
+let numeroDiTelefonoValido = false;
 
-  for (let i = 0; i < phone.length; i++) {
-      if (!allowedChars.includes(phone.charAt(i))) {
-        validity = false;
-      }
-  }
+// inzializzo una stringa con i vari caratteri ammessi
+let caratteriConsentiti = "0123456789 +";
 
 
-  if (validity) {
-    isPhoneValid = true;
-  }
-  else {
-    phone = prompt("Incorrect Number! Insert again! Phone number");
-  }
+console.log("pre while");
+
+// se il numero è sbagliato lo chiedo all'utente - uso la negazione per avere un true (false + false = true) 
+while (!numeroDiTelefonoValido) {
+    
+    // chiedo il numero di telefono
+    numeroDiTelefono = prompt("Inserisci numero di telefono");
+
+    // variabile di supporto per fare il check se son presenti o meno dei caratteri NON CONSENTITI
+    let caratteriNonConsentitiPresenti = false;
+    
+    // ciclo su tutti i caratteri del numero di telefono
+    for (let i = 0; i < numeroDiTelefono.length; i++) {
+
+        // prendo il singolo carattere
+        let carattereSingolo = numeroDiTelefono.charAt(i);
+    
+        // se il carattere non è tra i consentiti vuol dire che è un carattere proibito - negazione
+        if (!caratteriConsentiti.includes(carattereSingolo)) {
+
+            // è vero che ci son dei caratteri proibiti
+            caratteriNonConsentitiPresenti = true;    
+        }
+    }
+
+    // se son presenti dei caratteri proibiti -> true
+    if (caratteriNonConsentitiPresenti) {
+
+        // il numero di telefono non è valido
+        numeroDiTelefonoValido = false;
+
+        // comunico l'errore all'utente
+        alert("Hai inserito dei caratteri non validi! Riprova")
+    }
+    else {
+        // caso in cui NON ci sono caratteri proibito -> quindi la stringa è valida!
+        // interrompo il while visto che "numeroDiTelefonoValido" è la variabile usata per 
+        // la condizione del while 
+        numeroDiTelefonoValido = true;
+    }
+    
+    console.log("Numero di telefono valido:", !caratteriNonConsentitiPresenti);
 }
 
-let last3Characters = phone.slice(-3);
-let phoneObfuscated = "";
 
-for (let i = 0; i < phone.length - 3; i ++) {
-  if (phone.charAt(i) === " ") {
-    phoneObfuscated += " ";
-  }
-  else {
-    phoneObfuscated += "*";
-  }
+let parteDiNumeroVisibile = numeroDiTelefono.slice(-3);
+let numeroCaratteriDaSostituire = numeroDiTelefono.length - 3;
+let numeriOffuscati = "";
+
+for (let i = 0; i < numeroCaratteriDaSostituire; i++) {
+    let carattereSingolo = numeroDiTelefono.charAt(i);
+
+    if (carattereSingolo === " ") {
+        numeriOffuscati += " ";
+    }
+    else {
+        numeriOffuscati += "*";
+    }
 }
 
-phoneObfuscated += last3Characters;
+numeriOffuscati = numeriOffuscati + parteDiNumeroVisibile;
 
-console.log("Numero di telefono offuscato:", phoneObfuscated)
+alert("Numero inserito = " + numeriOffuscati);
 
 console.groupEnd()
 
