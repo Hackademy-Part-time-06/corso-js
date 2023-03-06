@@ -37,7 +37,8 @@ console.groupEnd();
 
 console.group("Esercizio validazione password");
 
-let password = prompt("Password");
+let password = "asd123as";
+//let password = prompt("Password");
 let numeri = "0123456789";
 let caratteriSpeciali = "!_-";
 let validitaLunghezza = true;
@@ -85,6 +86,71 @@ else {
     
 console.groupEnd();
 
+
+
+
+
+
+/**
+
+Riscrivi il programma dell’esercizio 12 in questo modo:
+
+- fai inserire manualmente un numero di telefono all’utente tramite un prompt
+- controlla che nel numero siano presenti solo numeri ed eventualmente spazi ed il simbolo + 
+
+
+            es: +39 340 00 00 123
+
+
+- se l’utente inserisce lettere non consentite mostragli un alert di errore e fagli reinserire il numero di telefono (l’operazione deve andare avanti finchè l’utente non inserisce un numero di telefono corretto)
+- offusca tutte le cifre, sostituendole con l'asterisco * (tranne gli spazi), e lascia visibili solo le ultime 3.
+
+
+            es: *** *** ** ** 123
+
+ */
+
+console.group("Esercizio offuscamento numero di telefono");
+
+let phone = prompt("Phone number");
+let allowedChars = "+ 0123456789"
+let isPhoneValid = false;
+
+while(!isPhoneValid) {
+  let validity = true;
+
+  for (let i = 0; i < phone.length; i++) {
+      if (!allowedChars.includes(phone.charAt(i))) {
+        validity = false;
+      }
+  }
+
+
+  if (validity) {
+    isPhoneValid = true;
+  }
+  else {
+    phone = prompt("Incorrect Number! Insert again! Phone number");
+  }
+}
+
+let last3Characters = phone.slice(-3);
+let phoneObfuscated = "";
+
+for (let i = 0; i < phone.length - 3; i ++) {
+  if (phone.charAt(i) === " ") {
+    phoneObfuscated += " ";
+  }
+  else {
+    phoneObfuscated += "*";
+  }
+}
+
+phoneObfuscated += last3Characters;
+
+console.log("Numero di telefono offuscato:", phoneObfuscated)
+
+console.groupEnd()
 
 
 
