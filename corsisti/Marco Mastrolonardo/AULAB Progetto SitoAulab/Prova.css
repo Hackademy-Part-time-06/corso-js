@@ -1,0 +1,179 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h4{
+    font-family: 'Montserrat', sans-serif;
+  color: gray;
+}
+
+.flex {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.main-flex {
+    width: 45%;
+}
+
+.aside-flex {
+    width: 25%;
+    padding-top: 75px;
+    padding-bottom: 0px;
+}
+
+.article {
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 3px;
+}
+
+.facebook {
+    height: 90px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url(https://scontent.xx.fbcdn.net/v/t1.6435-9/82336786_1145763778927174_4061310754291187712_n.png?stp=dst-png_s526x296&_nc_cat=105&ccb=1-7&_nc_sid=dd9801&_nc_ohc=WSorKhGvz0kAX-KTSHn&_nc_ht=scontent.xx&edm=ADwmN6EEAAAA&oh=00_AfBZHZ1_nXtMG-WaSYkQei1rDDKCaiBJctp-JGLWKllrsQ&oe=64004F1D);
+    text-align: left;
+}
+.aulab, .mipiace {
+    width: fit-content;
+    align-self: flex-start;
+}
+.text-right {
+    text-align: right;
+}
+a:hover {
+    color: rgb(180, 96, 0);
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.header {
+    position: fixed; 
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 1015px){
+    .header {
+        flex-flow: column wrap;
+        justify-content: flex-start;
+    }
+}
+
+.logo {
+    width: 50%;
+}
+
+.navbar {
+    background-color: rgba(154, 154, 154, 0.6);
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar button {
+ padding: 1px;
+ margin: 5px;
+ border: 2px solid yellow;
+ border-radius: 5px;
+}
+
+.navbar li ul {
+    display: none;
+}
+
+.navbar li{
+    display: inline-block;
+}
+
+@media only screen and (max-width: 1015px) {
+    .navbar ul li {
+        display: block;
+        width: fit-content;
+    }
+}
+
+.navbar a:hover {
+    background: yellow;
+}
+
+.navbar li:hover ul{
+    display:block;
+    position: absolute;
+    border: solid black 1px;
+    z-index: 1;
+    border-radius: 10px;
+    text-align: center;
+    width: 175px;
+    padding: 5px;
+    background: rgb(145,118,191);
+    background: linear-gradient(90deg, rgba(145,118,191,1) 0%, rgba(222,125,195,1) 30%, rgba(232,148,91,1) 90%);
+}
+@media only screen and (max-width: 1015px) {
+    .navbar li:hover ul {
+        position: absolute;
+        left: 40px;
+    }
+}
+
+.navbar ul ul li {
+    border: solid black 1px;
+    border-radius: 8px;
+    padding: 3px;
+    margin: 2px;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);    
+}
+
+.flex-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-flow: column wrap;
+    width: 730px;
+    height: 411px;
+    margin-top: 50px;
+    background-image: url(https://aulab.it/img/blog-cta-background.jpg);
+    
+}
+.sono {
+color: yellow;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+.molto {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+.figo {
+    margin-top: 30px;
+    width: 300px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+    
+.figo:hover {
+background-color: yellow;
+transition-property: all;
+transition-duration: 1.5s;
+}
+

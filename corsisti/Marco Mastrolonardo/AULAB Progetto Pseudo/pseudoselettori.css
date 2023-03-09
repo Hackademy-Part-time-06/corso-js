@@ -1,0 +1,39 @@
+a:hover {
+text-decoration: none;
+}
+
+div.BoxModel {
+    padding: 10px;
+    width: 20%;
+    border: 2px solid black;
+  
+    margin: 10px;
+    
+}
+div:hver {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    transition-property: all;
+    transition-duration: 1s;
+    width: 150px;
+}
+div:acive {
+    background-color: blue;
+}
+input:focus {
+    border-style: solid;
+    border-width: 2px;
+    background-color: red
+}
+.flex {
+    display: flex;
+    flex-direction: row;
+    background-color: green;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.flex-item {
+    background-color: brown;
+    flex-direction: column; width: 25%;
+}
