@@ -1,0 +1,95 @@
+@media only screen and (max-width: 650px) {
+    body {
+        background-color: olive;
+        color: rgb(255, 255, 255);
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    body {
+        background-color: rgb(68, 68, 68);
+        color: red;
+    }
+}
+.flex-c {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+.flex-i1 {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+}
+
+.flex-i2 {
+    background-color: black;
+    height: 100px;
+    width: 100px;
+}
+.flex-i3 {
+    background-color: blueviolet;
+    height: 100px;
+    width: 100px;
+}
+
+.position {
+    position: relative;
+    top: 100px;
+    left:100px;
+    background-color: brown;
+    height: 100px;
+    width: 100px;
+}
+.z-index-1 {
+    position: fixed;
+    height: 100px;
+    width: 100px;
+    background-color: aquamarine;
+}
+.z-index-2 {
+    position: relative;
+    z-index: 2;
+    height: 100px;
+    width: 100px;
+    background-color: blueviolet;
+}
+.transform-rotate {
+    height: 100px;
+    width: 100px;
+    background-color: yellow;
+    transform: rotate(45deg);
+}
+.transform-translate {
+    height: 100px;
+    width: 100px;
+    background-color: coral;
+    transform: translate(50px);
+}
+.transform-skew {
+    height: 100px;
+    width: 100px;
+    background-color: blueviolet;
+    transform: skew(45deg);
+}
+.transform-animation {
+    background-color: chartreuse;
+    height: 100px;
+    width: 100px;
+    animation-name: fly;
+    animation-duration: 3s;
+    Animation-iteration-count: infinite; 
+    Animation-direction: alternate; 
+} 
+@keyframes fly{
+    0% {
+}
+20% {
+    transform: translate(300px, 400px) rotate(45deg);
+    background-color: red;
+}
+100% {
+    transform: translate(-200px, -300px) rotate(360deg);
+    background-color: orange;
+}
+}
