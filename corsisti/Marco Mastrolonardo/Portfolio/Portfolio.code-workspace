@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../OneDrive/Desktop/file"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Portfolio"
+	}
+}
