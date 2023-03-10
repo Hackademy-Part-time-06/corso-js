@@ -1,1 +1,0 @@
-console.log(nome + " " + cognome + " " + età)
