@@ -356,3 +356,285 @@ for(let j = 0; j <= 10; j++){
 }
 */
 
+/*
+Esercizio 30
+Scrivi un programma che per il seguente testo conti quante occorrenze ci sono per ogni vocale e quante vocali ci sono in tutto:
+
+let testo= `Il passaggio standard del Lorem Ipsum, utilizzato sin dal sedicesimo secolo
+“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+La sezione 1.10.32 del "de Finibus Bonorum et Malorum", scritto da Cicerone nel 45 AC
+“Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+Traduzione del 1914 di H. Rackham
+"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+La sezione 1.10.33 del "de Finibus Bonorum et Malorum", scritto da Cicerone nel 45 AC
+"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+Traduzione del 1914 di H. Rackham
+"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.”`
+
+let vocaleA = "aA";          
+for (let i = 0; i < testo.length; i++) {             
+    let lettera = testo.charAt(i);             
+    if (vocaleA.includes(lettera)) {                 
+        console.log(lettera);             
+    } 
+    
+}
+let vocaleE= `eE`
+for (let i = 0; i < testo.length; i++) {             
+    let lettera = testo.charAt(i);             
+    if (vocaleE.includes(lettera)) {                 
+        console.log(lettera);             
+    } 
+    
+}
+let vocaleI= `Ii`
+for (let i = 0; i < testo.length; i++) {             
+    let lettera = testo.charAt(i);             
+    if (vocaleI.includes(lettera)) {                 
+        console.log(lettera);             
+    }         
+    
+}
+let vocaleO= `Oo`
+for (let i = 0; i < testo.length; i++) {             
+    let lettera = testo.charAt(i);             
+    if (vocaleO.includes(lettera)) {                 
+        console.log(lettera);             
+    }         
+}
+let vocaleU= `Uu`
+for (let i = 0; i < testo.length; i++) {             
+    let lettera = testo.charAt(i);             
+    if (vocaleU.includes(lettera)) {                 
+        console.log(lettera);             
+    }         
+}
+//ripeti questo per ogni vocale
+let vocali = "aAeEiIoOuU";
+
+for (let i = 0; i < testo.length; i++) {
+    let lettera = testo.charAt(i);
+    if (vocali.includes(lettera)) {
+        console.log(vocali);
+    }
+}
+*/
+/*
+Scrivi una funzione che prenda in input due argomenti e restituisca TRUE se i due argomenti sono IDENTICI, FALSE altrimenti.
+Esempi:
+Input: n = 2, m = 3
+Output: FALSE
+Input: n = 2, m = '2'
+Output: FALSE
+Input: n = 2, m = 2
+Output: TRUE
+
+let n1="2"
+let n2= 2
+let risultato = false
+
+function uguali( n1 , n2, risultato) {
+    
+    if (n1 === n2 ) {
+        risultato= true
+        //console.log(`sono uguali`); 
+    }else{
+        risultato= false
+    }
+    console.log(risultato);
+    return risultato
+}
+uguali();
+*/
+/*
+Esercizio 32
+Scrivi una funzione che prenda in input una stringa e la restituisca capovolta
+
+
+function inverti(){
+    let original = `hello`
+    let separa= original.split(``)
+    let inverti = separa.reverse()
+    let unisci = inverti.join()
+    return unisci
+}
+let inverti2 =inverti()
+console.log(inverti2);
+
+
+*/
+/*
+Esercizio 33
+
+Scrivi una funzione che si occupi di generare un numero randomico da 1 a N e lo restituisca
+
+function numeroRandom() {
+    let random = Math.floor(Math.random()* 50)
+    return random
+}
+let random =numeroRandom()
+console.log(random);
+*/
+
+/*
+Esercizio 34
+
+Simula una partita a dadi:
+Scrivi una funzione che si occupi di lanciare i dadi (usa la funzione creata nell’esercizio precedente) un numero di volte che verrà definito tramite parametro passato in input.
+Una volta lanciati i dadi controlla chi ha vinto (vince chi lancia il numero più alto).
+
+
+function partita() {
+    let N = 3;
+    let giocatore1 = 0;
+    let giocatore2 = 0;
+    
+    for(var i=0; i<N; i++){
+        //alert(tiri + ' tiro per il giocatore1');
+        let punti1 = Math.floor(Math.random()*(6 - 1 + 1) + 1);
+        giocatore1 += punti1;
+        //alert("giocatore1 hai fatto: " + punti1);
+        //alert(tiri + ' tiro per il giocatore2');
+        let punti2 = Math.floor(Math.random()*(6 - 1 + 1) + 1);
+        giocatore2 += punti2;
+        //alert("giocatore2 hai fatto: " + punti2);
+    }
+    if(giocatore1 == giocatore2){
+        let risposta = "La partita termina in parita' entrambi hanno totalizzato: " + giocatore1 + " punti";
+        alert(risposta)
+    }
+    else if(giocatore1 < giocatore2){
+        let risposta = "Il giocatore2 vince! punti: " + giocatore2 + " punti \n Il giocatore1 ha totalizzato: " + giocatore1 + " punti";
+        alert(risposta)
+    }
+    else{
+        let risposta = "Il giocatore1 vince! punti: " + giocatore1 + " punti \n Il giocatore2 ha totalizzato: " + giocatore2 + " punti";
+        alert(risposta)
+    }
+}
+partita()
+
+*/
+
+
+/*
+Esercizio 35
+
+Calcola il voto del giocatore a fantacalcio
+scrivi una funzione che prende in input i seguenti parametri numerici:
+
+- baseVoto
+- golFatti
+- assistEffettuati
+- autogol
+- ammonizione
+- espulsione
+
+calcola il voto finale di un giocatore tenendo conto delle seguenti regole:
+
+- + 3 punti: per ogni gol fatto 
+- + 1 punto: per ogni assist effettuato
+- - 2 punti: per ogni autogol fatto
+- - 1 punto: per ogni ammonizione
+- - 2 punti: per ogni espulsione
+
+esempio:
+
+Gino Van Der Gini: 
+- baseVoto: 8
+- golFatti: 2
+- assistEffettuati: 1
+- autogol: 0
+- ammonizione: 1
+- espulsione: 0
+
+- Risultato: 14
+
+function partita() {
+    let Voto = 0
+    let baseVoto = 3
+    let golFatti = 3
+    let assistEffettuati = 1
+    let autogol = 0
+    let ammonizione = 1
+    let espulsione = 1
+    
+    for(i=0; i < golFatti; i++){
+        let punteggioGol = 3 
+        Voto += punteggioGol
+    }
+    for(i=0; i < assistEffettuati; i++){
+        let punteggioAssist = 1 
+        Voto += punteggioAssist
+    }
+    for(i=0; i < autogol; i++){
+        let punteggioAutogol = 0
+        Voto += punteggioAutogol
+    }
+    for(i=0; i < ammonizione; i++){
+        let punteggioAmmonizione = 1
+        Voto -= punteggioAmmonizione
+    }
+    for(i=0; i < espulsione; i++){
+        let punteggioEspulsione = 1 
+        Voto -= punteggioEspulsione
+    }
+    let totale = Voto + baseVoto
+    console.log(`voto iniziale:`, baseVoto);
+    console.log(`gol:` , golFatti);
+    console.log(`assist:`, assistEffettuati);
+    console.log(`autogol:`, autogol);
+    console.log(`ammonizioni:`, ammonizione);
+    console.log(`espulsione:`, espulsione);
+    console.log(`Totale:`, totale);
+}
+partita()
+*/
+
+
+
+
+/*
+Esercizio 36 - BONUS
+
+Creiamo la nostra console stilosa!!! (per me è abbastanza brutta )
+(hint: https://www.codingem.com/javascript-console-colors/)
+Scrivi un programma chiamato “myLog” che ci permetta di loggare dei messaggi di testo con uno stile dinamico in base alla categoria specificata.
+Le categorie disponibili dovranno essere le seguenti con le relative caratteristiche:
+- titolo: 
+        background-color: blue; 
+        font-size: 30px; 
+        color: white
+- sottotitolo:
+        font-size: 20px;
+        color: blue;
+- highlight:
+        background-color: orange;
+-  disastro:
+        background-color: red; 
+        font-size: 50px; 
+        color: white
+
+
+
+*/
+
+
+function titolo(stringaDaFormattare) {
+    console.log(`%c ${stringaDaFormattare}`,"background-color: blue; font-size: 30px; color: white");
+ }
+ function sottotitolo(stringaDaFormattare) {
+     console.log(`%c ${stringaDaFormattare}`,"font-size: 20px; color: blue");
+  }
+  function highlight(stringaDaFormattare) {
+     console.log(`%c ${stringaDaFormattare}`,"background-color: orange; ");
+  }
+  function disastro(stringaDaFormattare) {
+     console.log(`%c ${stringaDaFormattare}`,"background-color: red;  font-size: 50px; color: white");
+  }
+   
+ function stampaUnaStringa(stringa, funzionePerFormattareLaStringa) {
+     let risultato = funzionePerFormattareLaStringa(stringa); 
+   }
+   stampaUnaStringa("ciao", titolo);
+ 
