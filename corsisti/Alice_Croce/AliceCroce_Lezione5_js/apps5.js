@@ -14,7 +14,7 @@ console.log (comparatore(2,2));*/
 
 // Esercizio 32
 
-/*function reverseString(stringa) { // PARAMETRO NOMINALE
+function reverseString(stringa) { // PARAMETRO NOMINALE
    let nuovaStringa ="";
    
    for (var i = stringa.length - 1; i >= 0; i--) {
@@ -23,7 +23,7 @@ console.log (comparatore(2,2));*/
    return nuovaStringa;
 }
 
-console.log (reverseString ("33 trentini entrarono a Trento")); //PARAMETRO FORMALE  */
+console.log (reverseString ("33 trentini entrarono a Trento")); //PARAMETRO FORMALE  
 
 // Esercizio 33
 

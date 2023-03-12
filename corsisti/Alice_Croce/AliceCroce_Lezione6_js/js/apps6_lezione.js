@@ -1,88 +1,6 @@
-//"" = '' = `` // sono uguali
-//apici normali solo per una parole (cose semplici),apici singoli per cose più generiche o per differenziare. il backtick ti permette di inserire l'impossibile.
+//Esercizio 37-------------------------------------------------------------
 
-//(`bla bla ${ciccio}`) // se voglio una soluzione dentro la stringa uso il dollaro ciccio.
-
-/*+= //punteggio = punteggio + ciccettemolli
-
-for //crea un ciclo che inizia e finisce secondo le condizioni all'interno dell'argomento.
-
-while // il while va avanti sino a quando non diventa true o false, potenzialmente può andare avanti per moltissimi, INDEFINITI cicli (mentre quelli del for sono definiti).
-
-//ESERCIZIO CON IL WHILE
-/*
-console.group("Esercizio partita a D&D");
-
-let facceDado = 5;
-let giocatore1numMigliore = 0;
-let giocatore2numMigliore = 0;
-
-let lanciTotali = 5;
-let vincitore;
-
-for (let i = 0; i < lanciTotali; i++) {
-    let num1 = Math.floor(Math.random() * facceDado) + 1;
-    let num2 = Math.floor(Math.random() * facceDado) + 1;
-    
-    //console.log("lancio", i+1, "risultato giocatore 1: ", num1, ", risultato giocatore 2: ", num2);
-    
-    console.log(`Lancio ${i + 1} - risultato giocatore 1: ${num1}, risultato giocatore 2: ${num2}`);
-    
-    if (num1 > giocatore1numMigliore) {
-        giocatore1numMigliore = num1;
-    }
-    
-    if (num2 > giocatore2numMigliore) {
-        giocatore2numMigliore = num2;
-    }
-}
-
-console.log(`Risultato migliore giocatore 1: ${giocatore1numMigliore}, risultato migliore giocatore 2: ${giocatore2numMigliore}`);
-
-
-if (giocatore1numMigliore === giocatore2numMigliore) {
-    
-    let rilancia = true;
-    //Il while si ferma quando è FALSE, CONTINUERà SINO A QUANDO NON SARà FALSE;
-    while (rilancia) { //in genere i while vanno all'interno di altre condizione ed anch'essi sono dentro altre condizioni
-        console.log('Risultato pari! Si rilancia');
-        
-        let num1 = Math.floor(Math.random() * facceDado) + 1;
-        let num2 = Math.floor(Math.random() * facceDado) + 1;
-        
-        console.log(`Nuovo lancio - risultato giocatore 1: ${num1}, risultato giocatore 2: ${num2}`);
-        
-        if (num1 !== num2) { //condizione della parità
-            //se il num1 è diverso num2 tu rilancia
-            if (num1 > num2) {
-                vincitore = 1;
-            }
-            else {
-                vincitore = 2;
-            }
-            // serve ad interrompere il ciclo: FALSE.
-            //alla fine del WHILE devi mettere una condizione che dia SEMPRE FALSE, altrimenti prosegue all'infinito e si impalla.
-            rilancia = false;
-        }
-    }
-}
-else {
-    if (giocatore1numMigliore > giocatore2numMigliore) {
-        vincitore = 1;
-    }
-    else {
-        vincitore = 2;
-    }
-}
-
-console.log("Il vincitore è il giocatore numero:", vincitore);
-
-
-console.groupEnd();*/
-
-//Esercizio 37
-
-/*Scrivi un programma che dato un array di 10 numeri interi ordinati in modo casuale li riordini in modo decrescente.
+/*Scrivi un programma che dato un array di 10 numeri interi ordinati in modo casuale li riordini in modo decrescente
 
 Esempio:
 Input: array = [3, 7, -2, 5, 8, 1, 2, 5, 6, -4]
@@ -101,7 +19,7 @@ console.log(listaNumeri.sort());
 
 console.groupEnd()*/
 
-//Esercizio 38
+//Esercizio 38-------------------------------------------------------------
 
 /*Scrivi un programma che dati:
 
@@ -118,32 +36,42 @@ Esempio:
 Input: a= [3, 7, 2, 5, 8], b= [9, 3, 1, 4, 7], operazione = "addizione"
 Output: c = [12, 10, 3, 9, 15]*/
 
-/*let a = [3, 7, 2, 5, 8];
+/*console.group("Esercizio 38");
+
+let a = [3, 7, 2, 5, 8];
 let b = [9, 3, 1, 4, 7];
 
 let sum = [];
+let div = [];
+let mlt = [];
+let sub = [];
 
-switch// inserisci i diversi case
-for (i = 0; i < a.length; i++) {
+//=> come fare questo esercizio con lo switch? ============================== ?? ============??
+for (i = 0; i < a.length; i++) { //addizione
     sum.push(a[i] + b[i]);
 }
 
-for (i = 0; i < a.length; i++) {
-    sum.push(a[i] / b[i]);
+for (i = 0; i < a.length; i++) { //divisione
+    div.push(a[i] / b[i]);
 }
 
-for (i = 0; i < a.length; i++) {
-    sum.push(a[i] * b[i]);
+for (i = 0; i < a.length; i++) { //moltiplicazione
+    mlt.push(a[i] * b[i]);
 }
 
-for (i = 0; i < a.length; i++) {
-    sum.push(a[i] - b[i]);
+for (i = 0; i < a.length; i++) { //sottrazione
+    sub.push(a[i] - b[i]);
 }
 
-console.log(sum);*/
+console.log(sum);
+console.log(div);
+console.log(mlt);
+console.log(sub);
+
+console.groupEnd();*/
 
 
-//Esercizio 40
+//Esercizio 39-------------------------------------------------------------
 
 /*Scrivi un programma che dato un array di numeri, calcoli la media dei valori e restituisca in output la media e tutti i valori minori della media.
 
@@ -151,7 +79,8 @@ Esempio:
 Input: a = [3, 5, 10, 2, 8]
 Output: media = 5.6, valori minori = [3, 5, 2]*/
 
-/*console.group("Esercizio 40");
+/*console.group("Esercizio 39");
+
 let a = [3, 5, 10, 2, 8];
 let somma = 0;
 
@@ -164,12 +93,47 @@ console.log(media);
 
 for (let i = 0; i < a.length; i++) {
     if (a[i] < media);
-    console.log(a[i] + " "); //fai spiegare da Nicola perchè a[i]
-    //a[i] vuol dire che se i è uguale a zero, cioè il primo numero allora ogni numero della stringa a deve essere inferiore al valore della media (nell'if, questo perchè cerchiamo i valori inferiori alla media. 
-    //Nle console.log noi stampiamo che quella serie di valori derivanti da a, inferiori alla media (condizione determinata nell'if), vengono sommati a ?? ecco, non capisco le vigolette
+    console.log(a[i] + " "); 
+    //=> a[i] vuol dire che partendo da [i] che è uguale a zero dato che il primo numero di un array è zero e passando ad ogni numero dell'array a, ci assicuriamo che OGNI numero dell'array a sia inferiore alla media (perchè noi cerchiamo quei numeri).
+    //=> Nel console.log io chiedo di stampare a partire dal primo numero dell'array ossia i=0, anche i successivi (sempre inferiori alla media), quindi scrivo + " ", in questo spazio vanno i numeri successivi.
 }
 
 console.groupEnd();*/
+
+//console.group("Esercizio 39- altrnativa")------------oppure-----------------oppure-------------oppure----------
+
+/*let arr = [];
+let somma = 0;
+
+function numeroRandomico(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+}
+//=> Qui inserisco i<5 perchè avendo generato un numero randomico, devo dirgli io quanti imporne
+for ( i = 0; i < 5; i++ ) {
+    arr.push(numeroRandomico(1, 10))
+}
+//=> Qui inserisco i< arr.length perchè bisogna incrementare (i++), ogni singolo elemento (y) dell'arr (array) per la lunghezza (length), uso questa terminologia perchè posso anche non sapere quanto è lungo l'array di riferimento
+for ( y = 0; y < arr.length; y++ ) {
+    somma += arr[y]
+}
+
+console.log(`La somma tra 5 numeri è: ${somma}`);
+
+let media = somma / arr.length
+
+console.log(`La media tra quei 5 numeri è: ${media}`);
+
+let arrvaloriInfMedia = [];
+
+for ( i = 0; i < arr.length; i++ ) {
+    if (arr[i] < media) {
+        arrvaloriInfMedia.push(arr[i])
+    }
+}
+//=> Nel backtick posso inserire sia un testo, sia un valore che sarebbe quello che voglio stampare, sia il metodo.sort che me li ordina in modo crescente
+console.log(`I valori inferori al valore medio sono: ${arrvaloriInfMedia.sort()}`);
+
+console.groupEnd()*/
 
 
 //Esercizio 40
@@ -177,7 +141,7 @@ console.groupEnd();*/
 /*Creare una funzione che prende due argomenti e restituisce tutti i numeri divisibili per il divisore dato. Il primo argomento è una array e il secondo è il divisore.-
 ([1, 2, 3, 4, 5, 6], 2) --> [2, 4, 6]*/
 
-/*function restituzioneNumeri(arr, divisore) {
+function restituzioneNumeri(arr, divisore) {
     for (i = 0; i < arr.length; i++) {
         if (arr[i] % divisore === 0) { //arr.i è il singolo numero che stiamo visionando, % è una divisione che torna il resto (modulo), tornerà o 0 ossia è divisibile, oppure 1 ossia che non è divisibile, divisore sarebbe il secondo valore che andiamo a scrivere quando richiamiamo la funzione, praticamente ogni numero verrà controllato dal divisore per via del ciclo for, === controlla la veridicità dell'operazione, 0 è il risultato che noi imponiamo, in quando il modulo può tornare o 0 oppure 1.
             console.log(`Il numero ${arr[i]} è divisibile `)
@@ -246,11 +210,11 @@ console.group("Esercizio 43")
 double([1, 2, 3]) --> [2, 4, 6]*/
 
 function raddoppia(arr) {
-    let risultato=""; // è vuoto e non zero, dato che il ciclo (se=0) parte da qui, cicla anche lo zero, invece se non lo metti, lui parte dal primo, " " queste invece rappresentano un vuoto, se invece non metti nulla, ovviamente cicla undefined.
-    for (i = 0; i < arr.length; i++){
+    let risultato = ""; // è vuoto e non zero, dato che il ciclo (se=0) parte da qui, cicla anche lo zero, invece se non lo metti, lui parte dal primo, " " queste invece rappresentano un vuoto, se invece non metti nulla, ovviamente cicla undefined.
+    for (i = 0; i < arr.length; i++) {
         risultato += [arr[i] * 2];
     }
-console.log(risultato)
+    console.log(risultato)
 }
 
 raddoppia([1, 2, 3, 15, 22, 88, 4]);
@@ -273,12 +237,3 @@ calculatePoints(["1:1","2:2","3:3","4:4","2:2","3:3","4:4","3:3","4:4","4:4"]) -
 calculatePoints(["0:1","0:2","0:3","0:4","1:2","1:3","1:4","2:3","2:4","3:4"]) ---> 0
 calculatePoints(["1:0","2:0","3:0","4:0","2:1","1:3","1:4","2:3","2:4","3:4"]) ---> 15*/
 
-console.group("Esercizio 44")
-
-
-
-
-
-
-
-console.groupEnd();
