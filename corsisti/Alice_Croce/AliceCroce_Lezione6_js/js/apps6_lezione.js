@@ -143,7 +143,7 @@ for (i = 0; i < a.length; i++) {
 console.log(sum);*/
 
 
-//Esercizio 40
+//Esercizio 39
 
 /*Scrivi un programma che dato un array di numeri, calcoli la media dei valori e restituisca in output la media e tutti i valori minori della media.
 
@@ -170,6 +170,42 @@ for (let i = 0; i < a.length; i++) {
 }
 
 console.groupEnd();*/
+
+console.group("Eserc_39")
+    //Eserc_39
+
+/*let c = []
+let sommaPerMedia = 0
+
+function numeroACaso(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+}
+
+for ( i = 0; i < 5; i++ ) {
+    c.push(numeroACaso(1, 10))
+}
+
+for ( y = 0; y < c.length; y++ ) {
+    sommaPerMedia += c[y]
+}
+
+console.log(La somma tra 5 numeri è: ${sommaPerMedia})
+
+let media = sommaPerMedia / c.length
+
+console.log(La media tra quei 5 numeri è: ${media})
+
+let arrayPerValoriInferioriMedia = []
+
+for ( y = 0; y < c.length; y++ ) {
+    if (c[y] < media) {
+        arrayPerValoriInferioriMedia.push(c[y])
+    }
+}
+
+console.log(I valori inferori al valore medio sono: ${arrayPerValoriInferioriMedia.sort()})
+
+console.groupEnd()*/
 
 
 //Esercizio 40
@@ -275,7 +311,13 @@ calculatePoints(["1:0","2:0","3:0","4:0","2:1","1:3","1:4","2:3","2:4","3:4"]) -
 
 console.group("Esercizio 44")
 
+function soccer(x,y){
+    let points=0;
 
+    for (i = 0; i < x.length; i++){
+        
+    }
+}
 
 
 
