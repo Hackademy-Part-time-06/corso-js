@@ -27,7 +27,6 @@ else if (voto = 30) {
 
 console.log (valutazione)
 */
-
 //esercizio 18
 /*
 x=2
@@ -148,72 +147,71 @@ while (punteggioG===punteggioN){
             alert (`Vince Paolo con ${punteggioPaolo} punti.`)
         }
     }
-  */  
-    // esercizio 23
-    /*
-    let numeroScelto= prompt("inserisci il tuo numero")
-    numeroPari= "02468"
-    numeroDispari= "13579"
-    ultimaCifra= numeroScelto.charAt(numeroScelto.length-1)
-    if(numeroPari.includes(ultimaCifra)){
-        console.log("Il tuo numero è pari")
+*/  
+// esercizio 23
+/*
+let numeroScelto= prompt("inserisci il tuo numero")
+numeroPari= "02468"
+numeroDispari= "13579"
+ultimaCifra= numeroScelto.charAt(numeroScelto.length-1)
+if(numeroPari.includes(ultimaCifra)){
+    console.log("Il tuo numero è pari")
     }
-    else if (numeroDispari.includes(ultimaCifra)){
-        console.log("Il tuo numero è dispari")
+else if (numeroDispari.includes(ultimaCifra)){
+    console.log("Il tuo numero è dispari")
     }
-    */
-    
-    // esercizio 24
-    /*
-    mese=prompt("Inserisci il mese")
-    meseMinuscolo= mese.toLowerCase()
-    switch (meseMinuscolo){
-        case "gennaio":
-        console.log ("Ha 31 giorni.")
-        break;
-        case "febbraio":
-        console.log ("Ha 28 giorni.")
-        break;
-        case "marzo":
-        console.log ("Ha 31 giorni.")
-        break;
-        case "aprile":
-        console.log ("Ha 30 giorni.")
-        break;
-        case "maggio":
-        console.log ("Ha 31 giorni.")
-        break;
-        case "giugno":
-        console.log ("Ha 30 giorni.")
-        break;
-        case "luglio":
-        console.log ("Ha 31 giorni.")
-        break;
-        case "agosto":
-        console.log ("Ha 31 giorni.")
-        break;
-        case "settembre":
-        console.log ("Ha 30 giorni.")
-        break;
-        case "ottobre":
-        console.log ("Ha 31 giorni.")
-        break;
-        case "novembre":
-        console.log ("Ha 30 giorni.")
-        break;
-        case "dicembre":
-        console.log ("Ha 31 giorni.")
-        break;
-        default:
-        console.log("Il mese non è scritto correttamente")
-        break;
-    }
-    */
-    //esercizio 25
-    /*
-    film=prompt("Inserisci la tipologia di film preferito")
-    filmMinuscolo= film.toLowerCase()
-    switch(filmMinuscolo){
+*/  
+// esercizio 24
+/*
+mese=prompt("Inserisci il mese")
+meseMinuscolo= mese.toLowerCase()
+switch (meseMinuscolo){
+    case "gennaio":
+    console.log ("Ha 31 giorni.")
+    break;
+    case "febbraio":
+    console.log ("Ha 28 giorni.")
+    break;
+    case "marzo":
+    console.log ("Ha 31 giorni.")
+    break;
+    case "aprile":
+    console.log ("Ha 30 giorni.")
+    break;
+    case "maggio":
+    console.log ("Ha 31 giorni.")
+    break;
+    case "giugno":
+    console.log ("Ha 30 giorni.")
+    break;
+    case "luglio":
+    console.log ("Ha 31 giorni.")
+    break;
+    case "agosto":
+    console.log ("Ha 31 giorni.")
+    break;
+    case "settembre":
+    console.log ("Ha 30 giorni.")
+    break;
+    case "ottobre":
+    console.log ("Ha 31 giorni.")
+    break;
+    case "novembre":
+    console.log ("Ha 30 giorni.")
+    break;
+    case "dicembre":
+    console.log ("Ha 31 giorni.")
+    break;
+    default:
+    console.log("Il mese non è scritto correttamente")
+    break;
+}
+*/
+//esercizio 25
+/*
+film=prompt("Inserisci la tipologia di film preferito")
+filmMinuscolo= film.toLowerCase()
+switch(filmMinuscolo){
     case("fantasy"):
     console.log ("Film consigliato:Shrek")
     break;
@@ -227,17 +225,17 @@ while (punteggioG===punteggioN){
     console.log ("Film consigliato:Cado dalle nubi")
     break;
     }
-    */
-    //esercizio 26
+*/
+//esercizio 26
 /*
-    let age=+prompt("Inserisci la tua età")
-    let patente
-    let assicurazione
-    let puntiPatente= Math.floor(Math.random()*(20 - 1 - 1)+1)
-    if(age>=18&&age<95){
-        console.log("Patente Ok")
-        patente=prompt("Hai la patente?")
-       if(patente==="si"){
+let age=+prompt("Inserisci la tua età")
+let patente
+let assicurazione
+let puntiPatente= Math.floor(Math.random()*(20 - 1 - 1)+1)
+if(age>=18&&age<95){
+    console.log("Patente Ok")
+    patente=prompt("Hai la patente?")
+    if(patente==="si"){
         console.log("Patente Ok")
         assicurazione=prompt("L'assicurazione è in regola?")
         if(assicurazione=="si"){
@@ -251,14 +249,13 @@ while (punteggioG===punteggioN){
         else{
             alert("Senza assicurazione? Male!")
         }
-       }
-       else{
-        alert("Non va affatto bene")
-       }
     }
-    else (alert("Non hai l'età corretta per guidare"))
+    else{
+        alert("Non va affatto bene")
+    }
+}
+else (alert("Non hai l'età corretta per guidare"))
 */
-
 //esercizio 27
 /*
 num1= +prompt("Inserisci il primo numero")
@@ -266,26 +263,25 @@ num2= +prompt("Inserisci il secondo numero")
 segno= prompt("Metti il simbolo dell'operazione")
 switch(segno){
     case "+":
-        console.log(num1+num2)
-        break;
+    console.log(num1+num2)
+    break;
     case "-":
-        console.log(num1-num2)
-        break;
+    console.log(num1-num2)
+    break;
     case "*":
-        console.log(num1*num2)
-        break;
+    console.log(num1*num2)
+    break;
     case "/":
-        console.log(num1/num2)
-        break;    
-}
+    console.log(num1/num2)
+    break;    
+    }
 */
-
 // esercizio 28
 /*
 let numeroPari
 for(i=1;i<=50;i++){
-numeroPari = (i+i)
-console.log(numeroPari)}
+    numeroPari = (i+i)
+    console.log(numeroPari)}
 */
 // esercizio 29
 /*
@@ -293,11 +289,11 @@ let x=0
 let y=0
 let risultato
 for (x=0;x<11;x++){
-    for (y=0;y<11;y++){
-        risultato += " " + x*y + " ";
-    }
-    risultato += '\n'
-}
+            for (y=0;y<11;y++){
+                risultato += " " + x*y + " ";
+            }
+            risultato += '\n'
+        }
 console.log (risultato )
 */
 // esercizio 30
@@ -305,7 +301,7 @@ console.log (risultato )
 let vocali= "aeiouAEIOU"
 let a= "aA"
 let e= "eE"
-let stocazzo= "iI"
+let letteraI= "iI"
 let o= "oO"
 let u= "uU"
 let testo=`Il passaggio standard del Lorem Ipsum, utilizzato sin dal sedicesimo secolo
@@ -317,66 +313,61 @@ Traduzione del 1914 di H. Rackham
 La sezione 1.10.33 del "de Finibus Bonorum et Malorum", scritto da Cicerone nel 45 AC
 "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
 Traduzione del 1914 di H. Rackham
-"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.” for(i=0;i<testo.length;i++)`
-{
+"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.”`
+for(i=0;i<testo.length;i++){
     numeroSillabe=testo.charAt(i)
     if(a.includes(numeroSillabe)){
         console.log(a)
+        }
     }
-}
 for(i=0;i<testo.length;i++){
     numeroSillabe=testo.charAt(i)
     if(e.includes(numeroSillabe)){
         console.log(e)
+        }
     }
-}
 for(i=0;i<testo.length;i++){
     numeroSillabe=testo.charAt(i)
     if(stocazzo.includes(numeroSillabe)){
         console.log(stocazzo)
+        }
     }
-}
 for(i=0;i<testo.length;i++){
     numeroSillabe=testo.charAt(i)
     if(o.includes(numeroSillabe)){
         console.log(o)
+        }
     }
-}
 for(i=0;i<testo.length;i++){
     numeroSillabe=testo.charAt(i)
     if(u.includes(numeroSillabe)){
         console.log(u)
+        }
     }
-}
 for(i=0;i<testo.length;i++){
     numeroSillabe=testo.charAt(i)
     if(vocali.includes(numeroSillabe)){
         console.log(vocali)
+        }
     }
-}
 */
-
 // esercizio 31
-
 /*
 function stoCazzo(n,m){
     let ciaomondo
     if (n===m){
         ciaomondo=true
         console.log(ciaomondo)
-    }
+        }
     else{
         ciaomondo=false
         console.log(ciaomondo)
-    }
+        }
     return ciaomondo
-}
-stoCazzo(1,2)
-
-stoCazzo(1,"1")
-
-stoCazzo(2,2)
-
+    }
+stoCazzo(1,2)      
+stoCazzo(1,"1")        
+stoCazzo(2,2)        
 */
 //esercizio 32
 /*
@@ -385,41 +376,194 @@ function alContrario(parola) {
     let parolaAlContrario= parolaSeparata.reverse();
     let parolaUnita= parolaAlContrario.join("")
     console.log (parolaUnita)
-}
+    }
 alContrario("ciao")
 alContrario("bello schifo")
-
+        
 function reverseString(str) {
     parolainversa = str.split("").reverse().join("");
     return parolainversa
-}
+    }
 reverseString("hello");
-
 */
-
 //esercizio 33
-/*
-
-let numeroFacceDelDado= prompt("Inserisci il numero delle facce del dado")
-function numeroRandom(){
-    numeroCasuale=Math.floor(Math.random()*(numeroFacceDelDado-1+1)+1);
+/*        
+function numeroRandom(n){
+    numeroCasuale=Math.floor(Math.random()*(n-1+1)+1);
     console.log (numeroCasuale)
-}
+    }
 numeroRandom()
 numeroRandom()
 */
-
 //esercizio 34
+/*
 let numeroTiri=prompt("Quanti tiri per ogni giocatore?")
 let nome = ""
+let puntiTotali = 0
 function numeroRandom(nome){
     for( i=0;i<numeroTiri;i++){
-    numeroCasuale=Math.floor(Math.random()*(20-1+1)+1);
-    console.log (`${nome} ha fatto: ${numeroCasuale}`)
+        numeroCasuale=Math.floor(Math.random()*(20-1+1)+1);
+        console.log (`${nome} ha fatto: ${numeroCasuale}`)
+        puntiTotali += numeroCasuale
+        }
+    console.log (puntiTotali)
     }
-    return numeroCasuale
+*/
+        
+// esercizio 35
+/*
+function calciatore(nome,baseVoto=0,golFatti=0,assistEffettuati=0,autogol=0,ammonizione=0,espulsione=0){
+    risultato= baseVoto + (golFatti*3) + assistEffettuati - (autogol*2) - ammonizione - (espulsione*2)
+    console.log(`${nome}: \nbaseVoto=${baseVoto} \ngolFatti=${golFatti} \nassistEffettuati=${assistEffettuati} \nautogol= ${autogol} \nammonizione= ${ammonizione} \nespulsione= ${espulsione} \n \nrisultato= ${risultato}`)
+    }
+calciatore("Tizio",10,2,3,1,3,0)
+*/
+// esercizio 36 
+/*        
+function titolo (stringaDaFormattare){
+    console.log(`%c${stringaDaFormattare}`,`background-color: blue; font-size: 30px; color: white`)
+    }
+function sottotitolo (stringaDaFormattare){
+    console.log(`%c${stringaDaFormattare}`,`font-size: 20px; color: blue;`)
+    }
+function evidenziatore (stringaDaFormattare){
+    console.log(`%c${stringaDaFormattare}`,`background-color: orange;`)
+    }
+function disastro (stringaDaFormattare){
+        console.log(`%c${stringaDaFormattare}`,` background-color: red; font-size: 50px; color: white`)
+    }
+function myLog(buonoCosi,stringaDaFormattare2){
+        ciaoMondo= stringaDaFormattare2 (buonoCosi)
+    }
+myLog("Questo è un TITOLO", titolo);
+myLog("Questo è un SOTTOTITOLO", sottotitolo);
+myLog("Questo è un test evidenziato", evidenziatore);
+myLog("Questo è un DISTASTROOOOOOOOOOOO", disastro);
+*/
+// esercizio 37
+/*
+let listaNumeri = [61, 32, 3, 94, 35, -6, 7, -28, 39, 10];
+function ordineDecrescente(a, b) {
+    return b - a
+    };
+function ordineCrescente(a,b){
+    return a-b
+    };
+console.log(listaNumeri.sort(ordineDecrescente));
+console.log(listaNumeri.sort(ordineCrescente));
+*/        
+// esercizio 38
+/*      
+c=[]
+function terzoArray(a,b,operation){
+    switch (operation){
+        case "addizione":
+            let addizione=[]
+            for(i=0;i<a.length;i++){
+                addizione.push((a[i])+(b[i]))                        
+                }
+            console.log(addizione)
+            break;
+        case "sottrazione":
+            let sottrazione=[]  
+            for(i=0;i<a.length;i++){
+                sottrazione.push((a[i])-(b[i]))                        
+                }
+            console.log(sottrazione)
+            break;
+        case "moltiplicazione":
+            let moltiplicazione=[]
+            for(i=0;i<a.length;i++){
+                moltiplicazione.push((a[i])*(b[i]))                        
+                }
+            console.log(moltiplicazione)
+            break;
+        case "divisione":
+            let divisione=[]
+            for(i=0;i<a.length;i++){
+                divisione.push((a[i])/(b[i]))                            
+                    }
+            console.log(divisione)
+            break;
+    }
+}
+terzoArray([2,7,4],[3,2,9],"divisione")
+terzoArray([2,7,4],[3,2,9],"moltiplicazione")
+terzoArray([2,7,4],[3,8,9],"addizione")
+terzoArray([2,7,4],[3,2,9],"sottrazione")
+*/
+        
+
+// esercizio 39
+
+let numeroSottoLaMedia=[]
+function ottimizzareMedia (numero){
+    let numeroCompleto = 0 
+    for(i=0;i<numero.length;i++){
+        numeroCompleto+=numero[i]
+        media=numeroCompleto/numero.length
+    } 
+    for(i=0;i<numero.length;i++){
+        if(numero[i]<media){
+            numeroSottoLaMedia.push(numero[i])
+            }
+    }
+                
+    console.log(media + "\nI numeri sotto la media sono: " + numeroSottoLaMedia)
+}           
+ottimizzareMedia([4,3,6,2,-5,10])
+        
+// esercizio 40
+/*
+function divisione (list,divisore){
+    for(i=0;i<list.length;i++){
+        if (list[i]%divisore==0)
+        console.log(list[i])
+    }
+}
+divisione([2,5,8,9,10],2)
+*/
+// esercizio 41
+/*
+function ricerca(list,valoreDaCercare){
+    console.log(list.includes(valoreDaCercare))
+}
+ricerca([2,3,4,5,6,7],"2")
+ricerca(['what', 'a', 'great', 'kata'], 'what')
+*/
+//esercizio 42
+/*
+function sommaPositiva(numero){
+    let somma= 0
+    for(i=0;i<numero.length;i++){
+        if (numero[i]>0){
+            somma+=numero[i]
+            
+        }
+    }
+    console.log(somma)
+}
+sommaPositiva([2,3,-4,-5,6])
+*/
+//esercizio 43
+/*
+function raddoppiare(numeri){
+    let nuovoArray =[]
+    for(i=0;i<numeri.length;i++){
+        nuovoArray.push(numeri[i]*2)
+    }
+    console.log(nuovoArray)
 }
 
+raddoppiare([2,3,4,5,6])
+*/
+//esercizio 44
+/*
+let punteggio=[]
+function punteggioTotale(punteggio){
+   console.log(punteggio)
+    
 
-numeroRandom ("giocatore 1")
-numeroRandom ("giocatore 2")
+}
+punteggioTotale(`2:0`,`3:0`,`2:0`)
+*/
