@@ -495,23 +495,24 @@ terzoArray([2,7,4],[3,2,9],"sottrazione")
         
 
 // esercizio 39
-/*
-let numeroSottoLaMedia=[0]
+
+let numeroSottoLaMedia=[]
 function ottimizzareMedia (numero){
     let numeroCompleto = 0 
     for(i=0;i<numero.length;i++){
         numeroCompleto+=numero[i]
         media=numeroCompleto/numero.length
-        if(numero[i]<media){
-        numero[i]=numero[i]
-        numeroSottoLaMedia=numero[i]
-        }
     } 
+    for(i=0;i<numero.length;i++){
+        if(numero[i]<media){
+            numeroSottoLaMedia.push(numero[i])
+            }
+    }
                 
-    console.log(media + "\nI numeri sotto la media sono: " + [numeroSottoLaMedia])
+    console.log(media + "\nI numeri sotto la media sono: " + numeroSottoLaMedia)
 }           
-ottimizzareMedia([4,3,6,2,5])
-*/        
+ottimizzareMedia([4,3,6,2,-5,10])
+        
 // esercizio 40
 /*
 function divisione (list,divisore){
@@ -557,9 +558,12 @@ function raddoppiare(numeri){
 raddoppiare([2,3,4,5,6])
 */
 //esercizio 44
-function punteggio([punteggio]){
-    let risultato= punteggio.split(":")
+/*
+let punteggio=[]
+function punteggioTotale(punteggio){
+   console.log(punteggio)
     
-    console.log(risultato)
+
 }
-punteggio([`2:0`,`2:0`,`2:0`])
+punteggioTotale(`2:0`,`3:0`,`2:0`)
+*/

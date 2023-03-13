@@ -79,6 +79,97 @@ console.log(`Media = ${somma1/Arr1.length}, Valori minori= ${Arr2}`)
 */
 
 //ESERCIZIO 40
+/*
+const Arr1 = [1,2,3,4,5,6,,7,8,9,10]
+let divisore = 2
+const Arr2 =[]
+
+for(let i=0;i<Arr1.length;i++){
+    let numero = Arr1[i]
+  if(numero % divisore == 0){
+    Arr2.push(numero)
+  }
+}
+console.log(Arr2)
+
+//Metodo2
+Arr1.forEach(numero1 =>{
+    if(numero1 % divisore == 0){
+        Arr2.push(numero1)
+    }
+})
+console.log(Arr2)
+
+//Metodo 3
+function ciao(array, numero){
+    array.forEach(numero1 => {
+      if(numero1 % numero == 0){
+        Arr2.push(numero1)
+      }
+    })
+}
+ciao([1,2,3,4,5,6,,7,8,9,10], 2)
+console.log(Arr2)
+*/
+
+/*
+//ESERCIZIO 41
+
+//Metodo 1
+const Arr1 = ["Pesce", 3, 9, 10, "Mitico"]
+let Y = "Great"
+let X = 3
+console.log(Arr1.includes(Y))
+console.log(Arr1.includes(X))
+
+//Metodo 2
+function ciao(x, y){
+    console.log(x.includes(y))
+}
+ciao(["BANANA", 3, "PESCE"], 3)
+*/
+/*
+//ESERCIZIO 42
+let somma = 0
+
+function sumPositive(Arr){
+    for(let i=0;i<Arr.length;i++){
+        let numero = Arr[i]
+        if(numero > 0){
+            somma = somma + numero //Si può scrivere anche somma += numero "somma + se stessa + numero"
+        }
+    }
+}
+sumPositive([-1,3,-7,14])
+console.log(somma)
+
+function sumPositive(Arr){
+    Arr.forEach(element => {
+        if(element > 0){
+            somma += element
+        return somma
+        }
+    });
+}
+sumPositive([1,-4,7,12])
+console.log(somma)
+*/
+/*
+//ESERCIZIO 43
+const Arr2 = []
+function doppio(arr){
+    arr.forEach(element => {
+        Arr2.push(element * 2)
+    });
+}
+doppio([1,2,3,4,5,6])
+console.log(Arr2)
+*/
+/*
+//ESERCIZIO 44
+*/
+
+
 
 
 
