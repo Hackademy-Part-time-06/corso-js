@@ -105,7 +105,7 @@ let listaFiltrata = listanumeri.filter(numero1 => {
 console.log(listaFiltrata)
 
 /*
-con if, dobbiamo far "ritornare" un booleano. function() inserisce un elemento nel nuovo array solo se la logica discriminante + "true".
+con if, dobbiamo far "ritornare" un booleano. function() inserisce un elemento nel nuovo array solo se la logica discriminante è "true".
 
 let listaFiltrata = listanumeri.filter(numero1 => {
     if (numero1 < 10){
@@ -116,3 +116,23 @@ let listaFiltrata = listanumeri.filter(numero1 => {
     }
 })
 */
+/*
+//Somma
+*/
+let Somma = 0
+let lista1 = [1,2,3,4,5]
+console.log("lista1", lista1)
+
+lista1.forEach(numero5 => {
+     Somma += numero5
+})
+console.log(Somma)
+
+//reduce()
+let paroleFrase = ["Ciao", "sono", "Pino"]
+
+let frase = paroleFrase.reduce(function(fraseFinale, parole) {
+   return fraseFinale += parole
+})
+console.log("Lista parole", paroleFrase)
+console.log("Frase finale", frase)
