@@ -734,7 +734,7 @@ function raddoppia (numbers) {
 raddoppia([1, 2, 3]);
 */
 
-// esercizio 44
+/* esercizio 44
 
 function punti (risultato) {
     let puntiFinali = 0;
@@ -755,3 +755,163 @@ function punti (risultato) {
     console.log(puntiFinali);
 }
 punti(["1:5", "6:4", "2:5"]);
+*/
+
+//esercizio 45
+/*parte 1 - 38
+function totale (lista1, lista2, operazione) {
+    let risultato = lista1.map(function (elemento, index) {
+        let risultatoOperazione;
+        switch(operazione) {
+            case "addizione":
+                risultatoOperazione = elemento + lista2[index];
+            break;
+            case "sottrazione":
+                risultatoOperazione = elemento - lista2[index];
+            break;
+            case "moltiplicazione":
+                risultatoOperazione = elemento * lista2[index];
+            break;
+            case "divisione":
+                risultatoOperazione = elemento / lista2[index];
+            break;
+        }
+    return risultatoOperazione;
+    })
+console.log(risultato);
+}
+totale([3, 7, 2, 5, 8], [9, 3, 1, 4, 7], "addizione");
+*/
+
+
+/* parte2 - 39
+function mediaERitorno (listaNumeri) {
+    let media = listaNumeri.reduce(function (somma, elemento) {
+        somma = somma + elemento;
+        return somma;
+    })
+    risultatoMedia = media / listaNumeri.length;
+    console.log(risultatoMedia);
+    let listaFiltrata = listaNumeri.filter(function (numero) {
+        return numero < risultatoMedia;
+    })
+    console.log(listaFiltrata);
+}
+mediaERitorno([3, 5, 10, 2, 8]);
+*/
+
+
+/*parte3 - 40
+
+function dividiamo (numeri, divisore) {
+    let divisione = numeri.filter(function (elemento) {
+        return elemento % divisore === 0
+    });
+    console.log(divisione);
+}
+dividiamo([1, 2, 3, 4, 5, 6], 2);
+*/
+
+/* parte4 - 42
+
+function sommaPositivi (numeri) {
+    let numeriPositivi = numeri.filter (function (elementi) {
+        return elementi > 0;
+    });
+    console.log(numeriPositivi);
+    let sommaNumeri = numeriPositivi.reduce (function (elementi, somma) {
+        return somma + elementi;
+    });
+    console.log(sommaNumeri);
+}
+sommaPositivi([1, -4, 7, 12]);
+*/
+
+/* parte 5 - 43
+
+function raddoppia (listaNumeri) {
+    let numeriRaddoppiati = listaNumeri.map (function (numeri) {
+        return numeri * 2;
+    });
+    console.log(numeriRaddoppiati);
+}
+raddoppia([1, 2, 3]);
+*/
+
+// parte 6 - 44
+function punteggioTotale(punteggio){
+    let puntiFinali=0;
+    let punti = 0;
+    let punteggioSingolo= punteggio.map(function(number){
+        let separati= number.split(":");
+        return separati;
+    })
+    punteggioSingolo.forEach(function(element){
+            if(element[0]>element[1]){
+                console.log("vinto");
+                punti=3;
+            }
+            else if (element[0]<element[1]){
+                console.log("perso");
+                punti= 0;
+            }
+            else if (element[0]=element[1]){
+                console.log("pareggio");
+                punti=1;
+            }
+            puntiFinali+= punti;
+    });
+
+    console.log(puntiFinali);
+}
+punteggioTotale(["1:5", "6:4", "2:5"]);
+
+
+/* esercizio 46
+
+function primeLettere (frase) {
+    let paroleSeparate = frase.split(" ");
+    console.log(paroleSeparate);
+    let primaLettera = paroleSeparate.map (function (parole) {
+        return parole.charAt(0);
+    })
+    console.log(primaLettera);
+    let stringa = primaLettera.join("");
+    console.log(stringa);
+}
+primeLettere("Ciao sono un esercizio sui metodi avanzati degli array");
+*/
+
+/* esercizio 47
+function arrayUnico (lista) {
+    let cose = lista.reduce (function (elementi, index) {
+        let lista2 = elementi.concat(index);
+        return lista2;
+    })
+    console.log(cose);
+}
+
+arrayUnico([
+    ["abc", "gino", "aaa"],
+    ["abc", "dino", 123],
+    ["aaa", "gino", 321],
+    ["xyz", "klm", "aaa"],
+]);
+*/
+
+/* esercizio 48
+
+function somma (listaNumeri) {
+    let numeriDivisibili = listaNumeri.filter(function (numeri) {
+        return numeri % 2 === 0;
+    })
+    console.log(numeriDivisibili);
+    let sommaNumeri = numeriDivisibili.reduce(function (yeee, index) {
+        totale = yeee + index;
+        return totale;
+    })
+    numeri = numeriDivisibili.join("+");
+    console.log(numeri + "=" + sommaNumeri);
+}
+somma([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+*/
