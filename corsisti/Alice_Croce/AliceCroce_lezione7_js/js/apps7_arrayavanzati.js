@@ -104,35 +104,3 @@ console.groupEnd();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-console.group("Esercizio 45")
-
-
-
-
-
-
-
-
-
-
-
-
-console.groupEnd();
-
-
-
-
-

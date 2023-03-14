@@ -37,13 +37,7 @@ var listaNumerica = [10, 20, 30, 40, 50, 60, 70];
 // REDUCE - crea e ritorna un valore aggregato ciclando sull'array al quale viene applicato. L'elemento aggregato viene
 // generato dagli amenti che ritornoio nella callback tramite il return di un determinato valore
 // https://www.w3schools.com/jsref/jsref_foreach.asp
-var valoreAggregatoReduce = listaNumerica.reduce(function(elementoFinale, elementoArray, index) {
-  console.log("elementoFinale = ", elementoFinale);
-  console.log("elementoArray = ", elementoArray);
-  console.log("index = ", index);
-  return elementoFinale += elementoArray;
-});
-
+element%2===0
 // posso specificare un valore col quale inizializzare la variabile che mi verrà ritornata
 var valoreAggregatoReducePartendoDa100 = listaNumerica.reduce(function(elementoFinale, elementoArray, index) {
   console.log("elementoFinale = ", elementoFinale);
