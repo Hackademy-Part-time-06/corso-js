@@ -237,3 +237,40 @@ calculatePoints(["1:1","2:2","3:3","4:4","2:2","3:3","4:4","3:3","4:4","4:4"]) -
 calculatePoints(["0:1","0:2","0:3","0:4","1:2","1:3","1:4","2:3","2:4","3:4"]) ---> 0
 calculatePoints(["1:0","2:0","3:0","4:0","2:1","1:3","1:4","2:3","2:4","3:4"]) ---> 15*/
 
+console.group("Esercizio 44")
+
+function whoWonChampionship(arr) {
+    let result = [] //mettiamo un risult vuoto perchè così mi restituisce un array
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i][0] > arr[i][2]) {
+            //[0 è il primo carattere dell'array, mentre il 2 è quello dopo il :, quindi il : è il numero 1];
+            sum += 3;
+        }
+        else if (arr[i][0] === arr[i][2]) { // se non c'è un maggiore o un minore, quindi se pareggiano è 1 punto (sarebbe l'ultima stringa;)
+            sum += 1;
+        }
+        else { // questo sarebbe la seconda condizione, la mettiamo per ultima perchè è più facile da fare sul finale, piuttosto che le precedenti.
+            sum += 0;
+        }
+    }
+    return sum;
+}
+console.log(whoWonChampionship(["1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"]))
+console.log(whoWonChampionship(["1:1", "2:2", "3:3", "4:4", "2:2", "3:3", "4:4", "3:3", "4:4", "4:4"]))
+console.log(whoWonChampionship(["0:1", "0:2", "0:3", "0:4", "1:2", "1:3", "1:4", "2:3", "2:4", "3:4"]))
+console.log(whoWonChampionship(["1:0", "2:0", "3:0", "4:0", "2:1", "1:3", "1:4", "2:3", "2:4", "3:4"]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.groupEnd();
