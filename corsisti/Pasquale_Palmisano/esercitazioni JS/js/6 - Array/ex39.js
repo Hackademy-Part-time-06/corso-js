@@ -23,9 +23,7 @@ Scrivi un programma che dato un array di numeri, calcoli la media dei valori e r
     function under_average(array, average) {
         let under = []
 
-        under = array.filter(x => {
-            return x < average
-        })
+        under = array.filter(x => {return x < average})
 
         return under
     }
