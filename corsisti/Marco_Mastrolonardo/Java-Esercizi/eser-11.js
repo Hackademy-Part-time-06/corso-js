@@ -58,6 +58,7 @@ function operazione(array1, array2, operatore){
     } 
 }
 operazione([3,7,2,5,8], [9,3,1,4,7], "addizione")
+*/
 /*
 (5) [12, 6, 4, 7, 10]
 (5) [16, 10, 8, 11, 14]
@@ -65,15 +66,37 @@ operazione([3,7,2,5,8], [9,3,1,4,7], "addizione")
 (5) [14, 8, 6, 9, 12]
 (5) [17, 11, 9, 12, 15]
 */
-/*
-//ESERCIZIO 45(39)
 
+
+//Utilizziamo .map per iterare fra gli elementi
+function operazione(array1, array2, operatore){
+    let risultato = array1.map((numero, i) => {
+        console.log("Elemento array1", numero)
+        console.log("index =", i)
+        let operazione
+//Switch per variare l'operazione.
+        switch(operatore){
+            case "addizione":
+                operazione = numero + array2[i]
+                break;
+            case "sottrazione":
+                operazione = numero - array2[i]
+                break;
+        }
+        return operazione
+    })
+    return risultato
+}
+console.log(operazione([3,7,2,5,8], [9,3,1,4,7], "addizione"))
+console.log(operazione([3,7,2,5,8], [9,3,1,4,7], "sottrazione"))
+
+//ESERCIZIO 45(39)
+/*
 il primo argomento è noto come accumulatore, a cui viene assegnato il valore di ritorno della funzione di callback dall’iterazione precedente, il secondo è l’elemento corrente in elaborazione (i primi due "totale" e "valoreCorrente" sono obbligatori), il terzo è l’indice di quell’elemento e il quarto è l’array su cui reduce è chiamato.
 Esegue l’iterazione su ogni numero dell’array come farebbe in un ciclo for. Quando il ciclo inizia, il totale è il numero all’estrema sinistra (3) e il valore corrente è quello accanto (5). I due valori vengono sommati e immagazzinati nel totale.
 
 Ora il terzo valore dell’array (10) viene immagazzinato come valore corrente e il calcolo viene ripetuto per ogni valore nell’array, cambiando il contenuto del valore corrente con il numero successivo nell’array, spostandosi a destra finché non ci sono più numeri nell’array. A questo punto restituisce il totale.
 */
-
 /*
 //Test 1
 function funzione1(array){
@@ -118,9 +141,22 @@ function esercizio(array){
 }
 esercizio([3,5,10,2,8])
 */
+console.log("-------------------------------------------")
+//Utilizzare .reduce per la somma(quindi media) poi filter per i numeri minori della media
+function media(arraynumeri){
+    let sum = arraynumeri.reduce(function(totale, valoreCorrente) {
+    totale += valoreCorrente
+    return totale
+    }, 0)
+    console.log("somma =", sum)
+    let media = sum / arraynumeri.length
+    console.log("media =", media)
 
+    let numeriMinoriMedia = arraynumeri.filter(numero => numero < media)
+    console.log("Lista valori minori di ", + media, numeriMinoriMedia)
+}
+console.log(media([3,5,10,2,8]))
 /*
-
 //ESERCIZIO 45(41)
 //Test1
 function funzione1(array, parola){
@@ -183,6 +219,16 @@ function somma(array){
 }
 console.log(somma([1,-4,7,12]))
 */
+function sommaPositivi(arraynumeri){
+    let arrayfiltrato = arraynumeri.filter(numero => {
+        return numero > 0
+    })
+    let result = arrayfiltrato.reduce(function(totale1, numero1) {
+        return totale1 += numero1
+    }, 0)
+    return result
+}
+console.log("somma positivi",sommaPositivi([1,-4,7,12]))
 /*
 //ESERCIZIO 45(43)
 
