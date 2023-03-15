@@ -140,7 +140,6 @@ function esercizio(array){
     console.log(`Numeri minori di ${media} =`, numeriMinoriMedia)
 }
 esercizio([3,5,10,2,8])
-
 */
 console.log("-------------------------------------------")
 //Utilizzare .reduce per la somma(quindi media) poi filter per i numeri minori della media
@@ -220,6 +219,16 @@ function somma(array){
 }
 console.log(somma([1,-4,7,12]))
 */
+function sommaPositivi(arraynumeri){
+    let arrayfiltrato = arraynumeri.filter(numero => {
+        return numero > 0
+    })
+    let result = arrayfiltrato.reduce(function(totale1, numero1) {
+        return totale1 += numero1
+    }, 0)
+    return result
+}
+console.log("somma positivi",sommaPositivi([1,-4,7,12]))
 /*
 //ESERCIZIO 45(43)
 
