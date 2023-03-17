@@ -451,7 +451,7 @@ function ordineCrescente(a,b){
     };
 console.log(listaNumeri.sort(ordineDecrescente));
 console.log(listaNumeri.sort(ordineCrescente));
-*/        
+*/
 // esercizio 38
 /*      
 c=[]
@@ -492,10 +492,57 @@ terzoArray([2,7,4],[3,2,9],"moltiplicazione")
 terzoArray([2,7,4],[3,8,9],"addizione")
 terzoArray([2,7,4],[3,2,9],"sottrazione")
 */
+// esercizio 38 Array avanzati
+/*
+function terzoArray(a,b,operation){
+    let addizione=[]
+    let sottrazione=[]
+    let moltiplicazione=[]
+    let divisione=[]
+    // let primaLista= a.map((elemento1,index,a)=>{
+
+    //     let secondaLista= b.map((elemento2,index,b)=>{
+
+            
+    //     })
+    // })
+    switch (operation){
+        case "addizione":
+            a.forEach((element,index) => {
+                addizione.push(element+b[index])
+            });
+            console.log(addizione)
         
+            break;
+        case "sottrazione":
+            a.forEach((element,index) => {
+                sottrazione.push(element-b[index])
+            });
+            console.log(sottrazione)
+        
+            break;
+        case "moltiplicazione":
+            a.forEach((element,index) => {
+                moltiplicazione.push(element*b[index])
+            });
+            console.log(moltiplicazione)
+            break;
+        case "divisione":
+            a.forEach((element,index) => {
+                divisione.push(element/b[index])
+            });
+            console.log(divisione)
+            break;
+    }
+    }
 
+terzoArray([2,7,4],[3,2,9],"divisione")
+terzoArray([2,7,5],[3,2,9],"moltiplicazione")
+terzoArray([2,7,5],[3,8,9],"addizione")
+terzoArray([2,7,6],[3,2,9],"sottrazione")
+*/
 // esercizio 39
-
+/*
 let numeroSottoLaMedia=[]
 function ottimizzareMedia (numero){
     let numeroCompleto = 0 
@@ -512,7 +559,24 @@ function ottimizzareMedia (numero){
     console.log(media + "\nI numeri sotto la media sono: " + numeroSottoLaMedia)
 }           
 ottimizzareMedia([4,3,6,2,-5,10])
-        
+*/
+// esercizio 39 array avanzati
+/*
+function ottimizzareMedia (numero){
+    let sommaTotale = numero.reduce(function(element,index){
+        element= element+index
+        return element
+    });
+    console.log(sommaTotale)
+    let media= sommaTotale/numero.length
+    console.log(media)
+    let numeriSottoLaMedia = numero.filter(function(number){
+        return number<media
+    })
+    console.log(`media:${media},valori sotto la media: ${numeriSottoLaMedia}`)
+}
+ottimizzareMedia([4,3,6,2,5,10])
+*/
 // esercizio 40
 /*
 function divisione (list,divisore){
@@ -523,6 +587,16 @@ function divisione (list,divisore){
 }
 divisione([2,5,8,9,10],2)
 */
+// esercizio 40
+/*
+function divisione(numeri,divisore){
+    numeriDivisibili = numeri.filter(function(number){
+        return number % divisore === 0
+    })
+    console.log( numeriDivisibili)
+}
+divisione([2,5,8,9,10],2)
+*/
 // esercizio 41
 /*
 function ricerca(list,valoreDaCercare){
@@ -530,7 +604,7 @@ function ricerca(list,valoreDaCercare){
 }
 ricerca([2,3,4,5,6,7],"2")
 ricerca(['what', 'a', 'great', 'kata'], 'what')
-*/
+*/ 
 //esercizio 42
 /*
 function sommaPositiva(numero){
@@ -545,6 +619,23 @@ function sommaPositiva(numero){
 }
 sommaPositiva([2,3,-4,-5,6])
 */
+//esercizio 42 array avanzati
+/*
+function sommaPositiva(numero){
+    let somma=0
+    let numeriBelli= numero.filter(function(number){
+        return number>0
+    })
+    console.log(numeriBelli)
+    somma = numeriBelli.reduce(function(number,index){
+        number= number + index
+        return number
+    })
+    console.log(somma)
+}
+
+sommaPositiva([2,3,-4,-5,6])
+*/
 //esercizio 43
 /*
 function raddoppiare(numeri){
@@ -557,13 +648,104 @@ function raddoppiare(numeri){
 
 raddoppiare([2,3,4,5,6])
 */
+//esercizio 43
+/*
+function raddoppiare(numeri){
+    numeroRaddoppiato= numeri.map(function(number){
+        return number * 2
+    })
+    console.log(numeroRaddoppiato)
+}
+raddoppiare([2,3,4,5,6])
+*/
 //esercizio 44
 /*
-let punteggio=[]
 function punteggioTotale(punteggio){
-   console.log(punteggio)
-    
-
+    let puntiFinali= 0
+    for(i=0; i<punteggio.length;i++){
+        let punteggioSingolo= punteggio[i].split(":")
+        if(punteggioSingolo[0]>punteggioSingolo[1]){
+            punti=3
+        }
+        else if(punteggioSingolo[0]<punteggioSingolo[1]){
+            punti=0
+        }
+        else{punti=1}
+        puntiFinali+= punti
+    }
+    console.log(puntiFinali)
 }
-punteggioTotale(`2:0`,`3:0`,`2:0`)
+punteggioTotale(["2:0","3:0","2:2","1:2","2:0"])
 */
+// esercizio 44
+/*
+function punteggioTotale(punteggio){
+    let puntiFinali=0
+    let punti = 0
+    let punteggioSingolo= punteggio.map(function(number){
+        let separati= number.split(":")
+        return separati
+    })
+    punteggioSingolo.forEach(function(element,index){
+            if(element[0]>element[1]){
+                console.log("vinto")
+                punti=3
+            }
+            else if (element[0]<element[1]){
+                console.log("perso")
+                punti= 0 
+            }
+            else if (element[0]=element[1]){
+                console.log("pareggio")
+                punti=1
+            }
+            puntiFinali+= punti
+    });
+    
+    console.log(puntiFinali)
+}
+punteggioTotale(["2:0","3:0","2:2","1:2","2:0"])
+*/
+// esercizio 46
+/*
+function primeLettere(frase){
+    
+    listaFrase= frase.split(" ");
+    let iniziali = listaFrase.map(function(elemento,index,listaFrase){
+        elemento=elemento.charAt(0)
+        return elemento
+    })
+    tutteLeIniziali=iniziali.join("")
+    console.log(tutteLeIniziali)
+}
+primeLettere("Ciao sono un esercizio sui metodi avanzati degli array")
+primeLettere("Ciao mondo come va")
+*/
+// esercizio 47
+/*
+function arrayUnico(lista){
+    let listeComplete= lista.reduce(function(totale,parola){
+        totale=totale.concat(parola)
+        return totale
+
+    })
+    console.log(listeComplete)
+}
+arrayUnico([["abc", "gino", "aaa"],["abc", "dino", 123],["aaa", "gino", 321],["xyz", "klm", "aaa"]])
+*/
+// esercizio 48
+/*
+function sommaDividendi(lista){
+    let dividendi= lista.filter(function(numeroPari){
+        return numeroPari % 2 === 0
+    })
+    let totale=dividendi.reduce(function(elemento,numero){
+        elemento= elemento+ numero
+        return elemento
+    })
+    numeri = dividendi.join(" + ")
+    console.log (numeri + " = " + totale)
+}
+sommaDividendi([1, 2, 3, 4, 5, 6, 7, 8, 9])
+*/
+// finito
