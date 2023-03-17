@@ -71,3 +71,51 @@ console.log("L'elemento \"elementoConId\" ha una classe chiamata \"lead\"?", ele
 elementoConId.style.color = "red";
 elementoConId.style.fontSize = "30px";
 elementoConId.style.fontWeight = "900";
+
+
+
+
+// 1. Creare l'elemento <div>
+let elementoCustomDiv = document.createElement('div');
+
+// 2. Impostare la sua classe ad "alert"
+elementoCustomDiv.classList.add("alert");
+
+// 3. Riempirlo con il contenuto
+elementoCustomDiv.innerHTML = "Ciao sono <b>Gino</b>";
+
+
+// 4. aggiungo l'elemento come ultimo tag del body
+document.body.append(elementoCustomDiv);
+
+
+
+/**
+ * 
+ */
+let elementoOl = document.getElementById("ol");
+
+let elementoBefore = document.createElement("p");
+elementoBefore.innerText = "prima"
+elementoOl.before(elementoBefore); // inserisce la stringa "prima" prima di <ol>
+
+
+let elementoAfter = document.createElement("p");
+elementoAfter.innerText = "dopo"
+elementoOl.after(elementoAfter); // inserisce la stringa "dopo" dopo di <ol>
+
+
+let liFirst = document.createElement('li');
+liFirst.innerHTML = 'prepend';
+elementoOl.prepend(liFirst); // inserisce liFirst all'inizio di <ol>
+
+let liLast = document.createElement('li');
+liLast.innerHTML = 'append';
+elementoOl.append(liLast); // inserisce liLast alla fine di <ol>
+
+
+
+
+
+
+
