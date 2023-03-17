@@ -241,6 +241,10 @@ function double(array1){
 }
 console.log(double([1,2,3]))
 */
+function double(array) {
+    return array.map((numero) => numero * 2)
+}
+console.log(double([1,2,3]))
 /*
 //ESERCIZIO 45(44)
 
