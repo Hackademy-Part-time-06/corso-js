@@ -3,7 +3,7 @@ console.log("Index Js caricato!");
 let stringaMese = prompt("Inserisci il mese: ");
 switch (stringaMese.toLowerCase()) {
     case "Gennaio":
-        alert("I giorni presenti di questo mese sono: 31");
+        console.log("I giorni presenti di questo mese sono: 31");
         break;
     case "Febbraio":
         window.alert("I giorni presenti di questo mese sono: 28");

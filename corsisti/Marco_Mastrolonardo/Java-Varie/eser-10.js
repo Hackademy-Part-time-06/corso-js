@@ -102,10 +102,10 @@ console.log("Lista aggiornata post Map", listaAggiornata)
 let listaFiltrata = listanumeri.filter(numero1 => {
     return numero1 < 20
 })
-console.log(listaFiltrata)
+console.log("Listra Filtrata", listaFiltrata)
 
 /*
-con if, dobbiamo far "ritornare" un booleano. function() inserisce un elemento nel nuovo array solo se la logica discriminante è "true".
+con if, dobbiamo far "ritornare" un booleano. function() inserisce un elemento nel nuovo array solo se la logica discriminante + "true".
 
 let listaFiltrata = listanumeri.filter(numero1 => {
     if (numero1 < 10){
@@ -117,22 +117,18 @@ let listaFiltrata = listanumeri.filter(numero1 => {
 })
 */
 /*
-//Somma
+var listaNumerica = [10, 20, 30, 40, 50, 60, 70];
+
+// REDUCE - crea e ritorna un valore aggregato ciclando sull'array al quale viene applicato. L'elemento aggregato viene
+// generato dagli amenti che ritornoio nella callback tramite il return di un determinato valore
+// https://www.w3schools.com/jsref/jsref_foreach.asp
+var valoreAggregatoReduce = listaNumerica.reduce(function(elementoFinale, elementoArray, index) {
+  console.log("elementoFinale = ", elementoFinale);
+  console.log("elementoArray = ", elementoArray);
+  console.log("index = ", index);
+  return elementoFinale += elementoArray;
+});
 */
-let Somma = 0
-let lista1 = [1,2,3,4,5]
-console.log("lista1", lista1)
 
-lista1.forEach(numero5 => {
-     Somma += numero5
-})
-console.log(Somma)
 
-//reduce()
-let paroleFrase = ["Ciao", "sono", "Pino"]
 
-let frase = paroleFrase.reduce(function(fraseFinale, parole) {
-   return fraseFinale += parole
-})
-console.log("Lista parole", paroleFrase)
-console.log("Frase finale", frase)

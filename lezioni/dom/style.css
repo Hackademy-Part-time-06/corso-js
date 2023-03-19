@@ -1,0 +1,13 @@
+.stile-1 {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
+.stile-2 {
+    font-style: italic;
+    text-transform: uppercase;
+    color: green;
+}
+.stile-3 {
+    color: gray;
+}
