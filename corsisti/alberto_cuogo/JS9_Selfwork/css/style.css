@@ -1,0 +1,15 @@
+.testo1 {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
+
+.testo2 {
+    font-style: italic;
+    text-transform: uppercase;
+    color: red;
+}
+
+.testo3 {
+    color: grey;
+}
