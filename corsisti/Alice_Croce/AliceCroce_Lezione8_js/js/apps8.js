@@ -126,7 +126,7 @@ console.log(listaFiltrataPerModello);*/
 Creare una funzione che calcoli il totale di ogni giocatore e estragga il vincitore della partita */
 
 let salaBowl = {
-    giocatori: [
+    giocatori: [//STEP 1- trasformo la lista in stringhe mettendo le parentesi quadre, perchè trasformo in stringa? perchè sort si può usare SOLO nelle stringhe.
         {
             nome: "Mattia",
             punteggio: [2, 4],
@@ -139,42 +139,84 @@ let salaBowl = {
             nome: "Alice",
             punteggio: [9, 18],
         },
-    ]
-}
+    ],
+    //STEP2- inserisco una funzione che cicli (for oppure forEach) i punteggi dei giocatori e che "riDuca" questi in un singolo valore che sarà il punteggio finale del singolo giocatore, quindi uso REDUCE
+    youWin: function () {
+        for (let i = 0; i < this.giocatori.length; i++)//this= in questo oggetto =salaBowl
+        {
+            let giocatoreSingolo = this.giocatori[i].punteggio
+            let PunteggioFinale = giocatoreSingolo.reduce(function (tot, val) {// utilizzo REDUCE per trovare il totale del punteggio di ogni giocatore, in quanto REDUCE risuce i valori da una stringa ad un solo valore.
+                return tot += val;// il RETURN sarà il totale (valore finale che sto cercando) e val (cioè il singolo elemento che la funzione prende in considerazione ad ogni ciclo), += perchè è return tot = totale+ valore;
+            })
+            giocatoreSingolo.PunteggioFinale = PunteggioFinale//invoco il punteggio finale
+            console.log(PunteggioFinale)// lo stampo
+        }
+    },
 
-salaBowl.youWin = function () {
-    for (let i = 0; i < this.giocatori.length; i++)//this= in questo oggetto 
-    {
-        let giocatoreSingolo = this.giocatori[i].punteggio
-        let somma = giocatoreSingolo.reduce(function(tot, val){
-            return tot += val;  
+    sottoChiVince: function () {
+        this.giocatori = this.giocatori.sort((a, b) => {
+            return b.PunteggioFinale - a.PunteggioFinale
         })
-        giocatoreSingolo.somma = somma
-        console.log(somma);
+        console.log(salaBowl.giocatori)
     }
 }
 salaBowl.youWin()
+
+let allaFineDellaFiera = salaBowl.sottoChiVince()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let salaDaBowling = {
     listaGiocatori: [
         {
             nome: "Jimbo",
-            punteggi: [10, 10, 10, 10 ,1]
+            punteggi: [10, 10, 10, 10, 1]
         },
         {
             nome: "Antonio",
-            punteggi: [5, 8, 7, 3 ,10]
+            punteggi: [5, 8, 7, 3, 10]
         },
         {
             nome: "Ciro",
-            punteggi: [8, 9, 9, 10 ,10]
+            punteggi: [8, 9, 9, 10, 10]
         },
         {
             nome: "Simone",
-            punteggi: [5, 5, 5, 10 ,7]
+            punteggi: [5, 5, 5, 10, 7]
         }
     ],
-    calcoloPunteggioFinale: function() {
+    calcoloPunteggioFinale: function () {
         this.listaGiocatori.forEach((giocatore) => {
             let PunteggioFinale = giocatore.punteggi.reduce((valorePrecedente, valoreCorrente) => {
                 console.log(valorePrecedente + "/" + valoreCorrente)
@@ -183,7 +225,7 @@ let salaDaBowling = {
             giocatore.PunteggioFinale = PunteggioFinale
         })
     },
-    chiEIlVincitore: function() {
+    chiEIlVincitore: function () {
         this.listaGiocatori = this.listaGiocatori.sort((a, b) => {
             return b.PunteggioFinale - a.PunteggioFinale
 
