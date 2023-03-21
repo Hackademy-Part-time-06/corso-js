@@ -491,3 +491,172 @@ let lista = {
 }
 console.log(lista.linkCategoria("fantasy"))
 */
+/*
+//ESERCIZIO 55
+programma che generi un oggetto(settimana = {})contenente i giorni. Ogni giorno sarà un array al quale si potrà aggiungere un evento(oggetto) che contiene le chiavi nomeEvento ed inizioEvento
+//Test 1
+let settimana = {
+    lunedi: [],
+    martedi: [],
+    mercoledi:[],
+    giovedi: [],
+    venerdi: [],
+    sabato: [],
+    domenica: [],
+    aggiungievento: function(giorno){
+        switch(giorno){
+            case "lunedi":
+                let eventoLune = {
+                    nomeEvento: prompt("nome evento"),
+                    inizioEvento: +prompt("inizio evento")
+                }
+                this.lunedi.push(eventoLune)
+                break;
+            case "martedi":
+                let eventoMart = {
+                    nomeEvento: prompt("nome evento"),
+                    inizioEvento: prompt("inizio evento")
+                }
+                this.martedi.push(eventoMart)
+                break;
+            case "mercoledi":
+                let eventoMerc = {
+                    nomeEvento: prompt("nome evento"),
+                    inizioEvento: prompt("inizio evento")
+                }
+                this.mercoledi.push(eventoMerc)
+                break;
+        }
+        return settimana
+    }
+}
+settimana.aggiungievento("mercoledi")
+settimana.aggiungievento("lunedi")
+settimana.aggiungievento("lunedi")
+console.log(settimana)
+*/
+/*
+//Test 2
+let settimana = {
+    lunedi: [],
+    martedi: [],
+    mercoledi:[],
+    giovedi: [],
+    venerdi: [],
+    sabato: [],
+    domenica: [],
+    aggiungoevento: function(giorno){
+        for(let key in settimana){
+            if(key === giorno){
+                this[key] = [{
+                    nomeEvento: "nome evento",
+                    inizioEvento: "inizio evento"
+                }]
+            }
+        }
+        return settimana
+    },
+    filtropergiorno: function(giorno){
+        let risultato;
+        for(let key in settimana){
+            if(giorno === key){
+                return risultato = settimana[key]
+            }
+        }
+        return risultato
+    }
+}
+settimana.aggiungoevento("martedi")
+settimana.aggiungoevento("lunedi")
+settimana.aggiungoevento("mercoledi")
+console.log(settimana)
+console.log(settimana.filtropergiorno("martedi"))
+console.log(settimana.filtropergiorno("lunedi"))
+/*
+for(let key in settimana){
+    if(Giorno === key){
+        console.log(settimana[key])
+    }
+}
+*/
+let settimana = {
+    lunedi: [],
+    martedi: [],
+    mercoledi:[],
+    giovedi: [],
+    venerdi: [],
+    sabato: [],
+    domenica: [],
+    aggiungoevento: function(giorno){
+        let evento = {
+            nomeEvento: "nomeEvento", //prompt("inserisci nome Evento")
+            inizioEvento: "inizioEvento"    
+        }
+        for (let key in settimana){
+            if(giorno === key){
+                settimana[key].push(evento)
+            }
+        }
+        return settimana
+    },
+    filtropergiorno: function(giorno){
+        let risultato;
+        for(let key in settimana){
+            if(giorno === key){
+                return risultato = settimana[key]
+            }
+        }
+        return risultato
+    },
+    filtropergiorno: function(giorno){
+        let risultato;
+        for(let key in settimana){
+            if(giorno === key){
+                return risultato = settimana[key]
+            }
+        }
+        return risultato
+    },
+    filtropernomeevento: function(nomeEvento){
+        let eventipernome = []
+
+        //ciclo sull'oggetto settimana
+        for(let key in this){
+            
+            //Se l'elemento dell'oggetto è un array
+            if(Array.isArray(this[key])){
+
+                //ciclo sugli elementi dell'array, ovvero gli eventi.
+                this[key].forEach(evento => {
+
+                    //condizione se il nomeEvento dell'evento corrisponde a quello immesso dall'utente
+                    if(evento.nomeEvento === nomeEvento){
+                        return eventipernome.push(evento)
+                    }
+                    
+                })
+               
+            }
+            
+        }
+        return eventipernome
+    }
+}
+settimana.aggiungoevento("lunedi")
+settimana.aggiungoevento("lunedi")
+settimana.aggiungoevento("mercoledi")
+settimana.aggiungoevento("giovedi")
+console.log("oggetto settimana a cui sono stati aggiunti gli oggetti",settimana)
+settimana.filtropergiorno("lunedi")
+console.log("eventi per giorno", settimana.filtropergiorno("mercoledi"))
+console.log("eventi filtrati", settimana.filtropernomeevento("nomeEvento"))
+
+
+
+
+
+
+
+
+
+

@@ -1,8 +1,8 @@
 //Esercizio 46-------------------------------------------------------------
 
 /*Scrivi una funzione che, data una frase, ritorni la prima lettera di ogni parola presente nella frase:
-es: 
-input: “Ciao sono un esercizio sui metodi avanzati degli array” 
+es:
+input: “Ciao sono un esercizio sui metodi avanzati degli array”
 output: Csuesmada*/
 
 
@@ -23,17 +23,15 @@ function prendiPrimaLettera(str) {
       .split(' ') //.split divide tutte le lettere una per una
       .map(singolaParola => singolaParola.charAt(0)) //.map divide le parole una ad una e tramite la arrow function impone di prendere con charAt(0) la prima lettera di ogni parola
       .join(''); //.join le unisce tutte, se provi a toglierlo ti darà tutte le lettere staccate da una virgola
-  
+
     return primaLettera; //obbligatorio quando usi il map
   }
-  
+
   console.log(prendiPrimaLettera('Ciao sono un esercizio sui metodi avanzati degli array'));
 
   console.groupEnd();*/
 
 //Esercizio 47-------------------------------------------------------------
-
-console.group("Esercizio 47")
 
 /*Scrivi una funzione crei un unico array unendo gli array innestati
    es:
@@ -44,10 +42,12 @@ console.group("Esercizio 47")
          ["aaa", "gino", 321],
          ["xyz", "klm", "aaa"],
      ]
-     
+
      output
 
         ["abc", "gino", "aaa", "abc", "dino", 123, "aaa", "gino", 321, "xyz", "klm", "aaa”]*/
+
+/*console.group("Esercizio 47")
 
 let parole = [
     ["abc", "gino", "aaa"],
@@ -55,7 +55,7 @@ let parole = [
     ["aaa", "gino", 321],
     ["xyz", "klm", "aaa"],
 ]
-console.log (parole)
+console.log(parole)
 
 let unicoArr = parole.reduce((elemento, numero) => { //elemento è il valore finale
     return elemento.concat(numero)
@@ -63,17 +63,16 @@ let unicoArr = parole.reduce((elemento, numero) => { //elemento è il valore fin
 
 console.log(unicoArr)
 
-console.groupEnd();
+console.groupEnd();*/
 
 
 //Esercizio 48-------------------------------------------------------------
-
 /*Scrivi una funzione che, dato un array di numeri, ritorni la somma dei numeri divisibili per 2:
-es: 
+es:
 input: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 output: 2 + 4 + 6 + 8 = 20*/
 
-console.group("Esercizio 48")
+/*console.group("Esercizio 48")
 
 listaNumeri = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 // con questo filter sto selezionando tutti i numeri divisibili per due
@@ -95,10 +94,30 @@ function sommaListaFiltrata(listaFiltrata) {
     return somma;
 }
 
-
 sommaListaFiltrata(listaFiltrata);
 
-console.groupEnd();
+console.groupEnd();*/
+
+//Esercizio 37-------------------------------------------------------------
+
+/*Scrivi un programma che dato un array di 10 numeri interi ordinati in modo casuale li riordini in modo decrescente.
+
+    Esempio:
+    Input: array = [3, 7, -2, 5, 8, 1, 2, 5, 6, -4]
+    Output: [8, 7, 6, 5, 5, 3, 2, 1, -2, -4]
+
+Variante:
+Dopo averli ordinati in ordine decrescente ordinali in ordine crescente*/
+console.group("Esercizio 37")
+
+let listaNumeri = function(arr) {
+    return arr.sort()
+}
+console.log(listaNumeri([3, 7, -2, 5, 8, 1, 2, 5, 6, -4]));//lista numeri crescenti
+
+console.groupEnd()
+
+//Esercizio 38-------------------------------------------------------------
 
 
 
