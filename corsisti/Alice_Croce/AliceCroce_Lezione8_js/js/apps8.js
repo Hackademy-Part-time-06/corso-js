@@ -140,7 +140,7 @@ let salaBowl = {
             punteggio: [9, 18],
         },
     ],
-    //STEP2- inserisco una funzione che cicli (for oppure forEach) i punteggi dei giocatori e che "riDuca" questi in un singolo valore che sarà il punteggio finale del singolo giocatore, quindi uso REDUCE
+    //STEP2- inserisco una funzione che cicli (for oppure forEach) i punteggi dei giocatori e che "riduca" questi in un singolo valore che sarà il punteggio finale del singolo giocatore, quindi uso REDUCE
     youWin: function () {
         for (let i = 0; i < this.giocatori.length; i++)//this= in questo oggetto =salaBowl
         {
@@ -152,17 +152,17 @@ let salaBowl = {
             console.log(PunteggioFinale)// lo stampo
         }
     },
-
+    //andiamo al vincitore "sotto chi vince" per il quale userò il sort che ordina appunto da a a b, cioè dal punteggio più alto a quello più basso
     sottoChiVince: function () {
-        this.giocatori = this.giocatori.sort((a, b) => {
-            return b.PunteggioFinale - a.PunteggioFinale
+        this.giocatori = this.giocatori.sort((a, b) => {//salaBowl.giocatori = salaBowl.giocatori.sort (dal più alto al più basso)
+            return b.PunteggioFinale - a.PunteggioFinale//ritornami un array che sottragga al punteggi finali più bassi meno i punteggi finali più alti (e questo non me lo chiedere perchè non l'ho capito)-------??------??---------NICOLA-----NICOLA-----
         })
         console.log(salaBowl.giocatori)
     }
 }
 salaBowl.youWin()
 
-let allaFineDellaFiera = salaBowl.sottoChiVince()
+let allaFineDellaFiera = salaBowl.sottoChiVince()// alla fine il vincitore sarà uguale a della sala bowling il risultato di "sotto chi vince"
 
 
 
