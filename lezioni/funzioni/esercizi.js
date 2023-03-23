@@ -507,6 +507,8 @@ Un volta calcolato il risultato mostrarlo in console o tramite un alert.
 
 */
 
+console.group("MORRA CINESE")
+/*
 function generaValoreMorraCinese() {
   let valoreCasuale = generaNumeroRandomico(3, 1);
   let risultato = "";
@@ -526,7 +528,329 @@ function generaValoreMorraCinese() {
   return risultato
 }
 
+function calcolaPunteggioMorraCinese(manoGiocatore1, manoGiocatore2) {
+  let vincitore;
+
+  switch (manoGiocatore1) {
+    case "forbici":
+      switch (manoGiocatore2) {
+        case "carta":
+          vincitore = "giocatore 1";
+          break;
+        case "sasso":
+          vincitore = "giocatore 2";
+          break;
+        case "forbici":
+          vincitore = "pareggio";
+          break;
+      }
+      break;
+    case "sasso":
+      switch (manoGiocatore2) {
+        case "carta":
+          vincitore = "giocatore 2";
+          break;
+        case "sasso":
+          vincitore = "pareggio";
+          break;
+        case "forbici":
+          vincitore = "giocatore 1";
+          break;
+      }
+      break;
+    case "carta":
+      switch (manoGiocatore2) {
+        case "carta":
+          vincitore = "pareggio";
+          break;
+        case "sasso":
+          vincitore = "giocatore 1";
+          break;
+        case "forbici":
+          vincitore = "giocatore 2";
+          break;
+      }
+      break;
+  }
+  
+  return vincitore
+}
+
 function morraCinese() {
   let manoGiocatore1 = generaValoreMorraCinese();
   let manoGiocatore2 = generaValoreMorraCinese();
+  console.log("mano giocatore 1:", manoGiocatore1)
+  console.log("mano giocatore 2:", manoGiocatore2)
+
+  let vincitore = calcolaPunteggioMorraCinese(manoGiocatore1, manoGiocatore2);
+
+  console.log("Vincitore: ", vincitore)
 }
+
+morraCinese()
+*/
+
+
+
+
+
+
+
+/**
+
+
+Amplia il programma scritto nell’esercizio precedente.
+Il pareggio non è più ammesso per i nostri giocatori!!!!!
+In caso di pareggio continua a farli giocare finchè uno dei 2 non verrà sconfitto!
+
+NB: serve il while!!!!!!
+
+
+*/
+
+
+/*
+
+function generaValoreMorraCinese() {
+  let valoreCasuale = generaNumeroRandomico(3, 1);
+  let risultato = "";
+
+  switch (valoreCasuale) {
+    case 1:
+      risultato = "forbici";
+      break;
+    case 2:
+      risultato = "carta";
+      break;
+    case 3:
+      risultato = "sasso";
+      break;
+  }
+
+  return risultato
+}
+
+function calcolaPunteggioMorraCinese(manoGiocatore1, manoGiocatore2) {
+  let vincitore;
+
+  switch (manoGiocatore1) {
+    case "forbici":
+      switch (manoGiocatore2) {
+        case "carta":
+          vincitore = "giocatore 1";
+          break;
+        case "sasso":
+          vincitore = "giocatore 2";
+          break;
+        case "forbici":
+          vincitore = "pareggio";
+          break;
+      }
+      break;
+    case "sasso":
+      switch (manoGiocatore2) {
+        case "carta":
+          vincitore = "giocatore 2";
+          break;
+        case "sasso":
+          vincitore = "pareggio";
+          break;
+        case "forbici":
+          vincitore = "giocatore 1";
+          break;
+      }
+      break;
+    case "carta":
+      switch (manoGiocatore2) {
+        case "carta":
+          vincitore = "pareggio";
+          break;
+        case "sasso":
+          vincitore = "giocatore 1";
+          break;
+        case "forbici":
+          vincitore = "giocatore 2";
+          break;
+      }
+      break;
+  }
+  
+  return vincitore
+}
+
+function morraCinese() {
+
+  let pareggio = true;
+
+  do {
+    let manoGiocatore1 = generaValoreMorraCinese();
+    let manoGiocatore2 = generaValoreMorraCinese();
+    console.log("mano giocatore 1:", manoGiocatore1)
+    console.log("mano giocatore 2:", manoGiocatore2)
+  
+    let vincitore = calcolaPunteggioMorraCinese(manoGiocatore1, manoGiocatore2);
+  
+    if (vincitore !== "pareggio") {
+      pareggio = false;
+    }
+
+    console.log("Vincitore: ", vincitore)
+  }
+  while (pareggio);
+}
+
+morraCinese()
+*/
+
+
+
+
+
+
+
+
+
+
+
+/**
+
+
+Amplia il programma scritto nell’esercizio precedente.
+La partita secca genera troppo astio!
+Si è deciso per giocare al meglio delle 3 vittorie!
+
+Quindi il primo che raggiunge le 3 vittore può considerarsi il reale vincitore della partita!!
+
+
+*/
+
+
+
+
+function generaValoreMorraCinese() {
+  let valoreCasuale = generaNumeroRandomico(3, 1);
+  let risultato = "";
+
+  switch (valoreCasuale) {
+    case 1:
+      risultato = "forbici";
+      break;
+    case 2:
+      risultato = "carta";
+      break;
+    case 3:
+      risultato = "sasso";
+      break;
+  }
+
+  return risultato
+}
+
+function calcolaPunteggioMorraCinese(manoGiocatore1, manoGiocatore2) {
+  let vincitore;
+
+  switch (manoGiocatore1) {
+    case "forbici":
+      switch (manoGiocatore2) {
+        case "carta":
+          vincitore = "giocatore 1";
+          break;
+        case "sasso":
+          vincitore = "giocatore 2";
+          break;
+        case "forbici":
+          vincitore = "pareggio";
+          break;
+      }
+      break;
+    case "sasso":
+      switch (manoGiocatore2) {
+        case "carta":
+          vincitore = "giocatore 2";
+          break;
+        case "sasso":
+          vincitore = "pareggio";
+          break;
+        case "forbici":
+          vincitore = "giocatore 1";
+          break;
+      }
+      break;
+    case "carta":
+      switch (manoGiocatore2) {
+        case "carta":
+          vincitore = "pareggio";
+          break;
+        case "sasso":
+          vincitore = "giocatore 1";
+          break;
+        case "forbici":
+          vincitore = "giocatore 2";
+          break;
+      }
+      break;
+  }
+  
+  return vincitore
+}
+
+function morraCinese() {
+
+  let vincitore;
+  let pareggio = true;
+
+  do {
+    let manoGiocatore1 = generaValoreMorraCinese();
+    let manoGiocatore2 = generaValoreMorraCinese();
+    console.log("mano giocatore 1:", manoGiocatore1)
+    console.log("mano giocatore 2:", manoGiocatore2)
+  
+    vincitore = calcolaPunteggioMorraCinese(manoGiocatore1, manoGiocatore2);
+  
+    if (vincitore !== "pareggio") {
+      pareggio = false;
+    }
+
+    console.log("Vincitore: ", vincitore)
+  }
+  while (pareggio);
+
+  return vincitore
+}
+
+
+function alMeglioDelle3Vittorie() {
+  let vittorieVincitore1 = 0;
+  let vittorieVincitore2 = 0;
+  let continuaAGiocare = true;
+
+  while (continuaAGiocare) {
+    let vincitore = morraCinese();
+    if (vincitore === "giocatore 1") {
+      vittorieVincitore1++;
+    }
+    else {
+      vittorieVincitore2++;
+    }
+
+    if (vittorieVincitore1 === 3 || vittorieVincitore2 === 3) {
+      continuaAGiocare = false;
+    }
+  }
+
+  console.log("--------------");
+  console.log("--------------");
+  console.log("--------------");
+
+  console.log("Vittore giocatore 1:", vittorieVincitore1);
+  console.log("Vittore giocatore 2:", vittorieVincitore2);
+}
+
+
+
+
+alMeglioDelle3Vittorie()
+
+
+
+console.groupEnd()
