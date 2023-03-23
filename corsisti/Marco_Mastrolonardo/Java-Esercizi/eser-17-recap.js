@@ -131,7 +131,7 @@ function stringa(titolo, autore){
 }
 console.log(stringa("Il Signore Degli Anelli", "Tolkien"))
 */
-//ESERCIZIO 66
+//ESERCIZIO 66-67-68
 /*
 function numerorandom(){
     return Math.floor(Math.random() * (3 - 1 + 1)) + 1
