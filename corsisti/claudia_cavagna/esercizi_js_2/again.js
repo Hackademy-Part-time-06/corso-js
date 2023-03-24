@@ -1302,11 +1302,23 @@ function aggiuntaEventi (giornoEvento, nomeEvento, inizioEvento) {
         if (giorno === giornoEvento) {
             calendario[giorno].push({nomeEvento, inizioEvento})
             console.log("Nuovo evento: ", giorno, calendario[giorno])
+            function compare( a, b ) {
+                if ( a.inizioEvento < b.inizioEvento ){
+                  return -1;
+                }
+                if ( a.inizioEvento > b.inizioEvento ){
+                  return 1;
+                }
+                return 0;
+              }
+              
+            console.log(calendario[giorno].sort( compare ));
         }
     }
 }
-// non so come ordinarli, il sort non funziona, ordinateli tu :)
 
+
+/*
 function filtraGiorni (day) {
     for (let giorno in calendario) {
         if (day === giorno) {
@@ -1324,9 +1336,11 @@ function occorrenze (cose){
         })
     }
 }
-
+*/
+aggiuntaEventi("martedi", "schifo2", "10:00")
 aggiuntaEventi("martedi", "schifo", "08:00")
+
 aggiuntaEventi("lunedi", "flexiamo", "22:44")
-filtraGiorni("martedi")
-occorrenze("Lezione")
+// filtraGiorni("martedi")
+// occorrenze("Lezione")
 

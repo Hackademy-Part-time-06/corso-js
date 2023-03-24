@@ -30,6 +30,13 @@ let week = {
     sunday: new Array
 }
 
-function add_event(day, name) {
-    week.day.push(name)
+function add_event(day, name, time) {
+    week[`${day}`].push({name: `${name}`, time: `${time}`})
+    order(`${day}`)
 }
+
+function order(day) {
+    week[`${day}`].sort((x,y) => x.time - y.time)
+}
+
+//NON RIESCO A ORDINARE
