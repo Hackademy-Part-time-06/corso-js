@@ -234,3 +234,108 @@ function giocaCartaForbiciSassoSenzaPareggio() {
 }
 console.log(giocaCartaForbiciSassoSenzaPareggio())
 */
+ /*
+        Esercizio 69
+        La Rubrica
+        
+        Data la seguente lista di persone
+        let persone = [
+            {
+                nome: ‘Gino’
+                cognome: ‘Ginoli’,
+                nuovoUtente: false
+            },
+            {
+                nome: ‘Pino
+                cognome: ‘Pinoli’,
+                nuovoUtente: true
+            }
+        ]
+        Crea una lista da visualizzare in una pagina html. Per la lista utilizza il list-group di bootstrap:
+        https://getbootstrap.com/docs/5.3/components/list-group/
+        Se l’utente ha la proprietà nuovoUtente settata a true aggiungi un badge con la scritta new di fianco al suo nome (https://getbootstrap.com/docs/5.3/components/badge/)
+        
+        function rubrica(nome, cognome, nuovoUtente) {
+            if (nuovoUtente == true) {
+                let elemento = document.createElement("div")
+                elemento.innerHTML = `<div>${nome} ${cognome}<span class="badge bg-secondary">new</span></div>`
+                document.body.append(elemento)
+            }
+            else if (nuovoUtente == false) {
+                let elemento = document.createElement("div")
+                elemento.innerHTML = `<div>${nome} ${cognome}</div>`
+                document.body.append(elemento)
+            }
+        }
+        rubrica("mattia", "cau", true)
+        rubrica("mattia", "cau", false)
+        */
+        /*
+        Esercizio 70
+        Il blog
+        
+        Dato il seguente elenco di oggetti relativo ad un blog genera le card per ogni articolo:
+        let articoli = [
+            {
+                titolo: ‘Il realismo magico di Sergio Toppi’,
+                riassunto: ‘NPE ristampa una storia del cosiddetto "Filone fantastico toppiano", creata dal maestro Sergio Toppi nel 1987: "Isola Gentile".’,
+                link: ‘https://www.lospaziobianco.it/il-realismo-magico-di-sergio-toppi/’,
+                immagine: ‘https://www.lospaziobianco.it/wp-content/uploads/2023/02/ImmagineEvidenza2-240x150.jpg’
+            },
+        ]
+        
+        Per ogni elemento genera una card di bootstrap (https://getbootstrap.com/docs/5.3/components/card/) da inserire nella tua pagina html
+        La card dovrà contenere:
+        
+        - l’immagine
+        - il titolo
+        - il riassunto
+        - un bottone con scritto “Leggi di più” che linkerà alla pagina dell’articolo e la farà aprire in una nuova finestra
+        
+        function card(titolo, riassunto, link , immagine) {
+            let elemento= document.createElement("div")
+            elemento.innerHTML = `<div class="card" style="width: 18rem;">
+            <img src="${immagine}" class="card-img-top" alt="300">
+            <div class="card-body">
+            <h5 class="card-title">${titolo}</h5>
+            <p class="card-text">${riassunto}</p>
+            <a href="${link}" class="btn btn-primary">Leggi di più</a>
+            </div>
+            </div>`
+            document.body.append(elemento)
+        }
+        card("Il realismo magico di Sergio Toppi", `NPE ristampa una storia del cosiddetto "Filone fantastico toppiano", creata dal maestro Sergio Toppi nel 1987: "Isola Gentile".`, `https://www.treccani.it/vocabolario/scimmia/`, `https://styles.redditmedia.com/t5_4bnm12/styles/communityIcon_5yl8civa1wv61.png`)
+        */
+        /*
+        Esercizio 71 - BONUS
+        La Registrazione
+        Chiedi all’utente i seguenti dati tramite 3 prompt:
+        - username
+        - email
+        - password
+        Una volta inseriti i dati mostra una modale col titolo “Registrazione Effettuata” e col testo:
+        “Ciao ${username} (${email}), benvenuto nella tua area personale”
+        La modale la devi creare tramite bootstrap: https://getbootstrap.com/docs/5.3/components/modal/
+        */
+        
+        function modale() {
+            let username = prompt("nome")
+            let email=prompt("mail")
+            
+            if (username && email) {
+                let elemento= document.createElement("div")
+                elemento.innerHTML =`
+                <div class="modal show" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-body">
+                Ciao ${username} ${email}, benvenuto nella tua area personale
+                </div>
+                </div>
+                </div>
+                </div>`
+
+                document.body.append(elemento)
+        
+        }
+        modale()
