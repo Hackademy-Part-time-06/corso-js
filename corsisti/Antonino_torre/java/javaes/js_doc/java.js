@@ -1045,15 +1045,25 @@ let calendario = {
     domenica : [],
 }
 
- 
 function aggiuntaEventi (giornoEvento, nomeEvento, inizioEvento) {
     for (let giorno in calendario) {
         if (giorno === giornoEvento) {
             calendario[giorno].push({nomeEvento, inizioEvento})
            console.log("Nuovo evento: ", giorno, calendario[giorno])
+           function compare( a, b ) {
+            if ( a.inizioEvento < b.inizioEvento ){
+              return -1;
+            }
+            if ( a.inizioEvento > b.inizioEvento ){
+              return 1;
+            }
+            return 0;
+            }
+            console.log(calendario[giorno].sort(compare))
         }
     }
 }
+
 
 function filtraGiorni (day) {
     for (let giorno in calendario) {
