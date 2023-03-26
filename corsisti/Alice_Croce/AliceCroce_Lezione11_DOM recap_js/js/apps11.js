@@ -207,6 +207,39 @@ articoli.forEach(singoloArticolo => {
 
 //Esercizio 71-----------------------------------
 
+/*La Registrazione
+
+Chiedi all’utente i seguenti dati tramite 3 prompt:
+
+- username
+- email
+- password
+
+Una volta inseriti i dati mostra una modale col titolo “Registrazione Effettuata” e col testo:
+“Ciao ${username} (${email}), benvenuto nella tua area personale”
+
+La modale la devi creare tramite bootstrap: https://getbootstrap.com/docs/5.3/components/modal/*/
+
+/*<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>*/
+
+
+
 
 
 
