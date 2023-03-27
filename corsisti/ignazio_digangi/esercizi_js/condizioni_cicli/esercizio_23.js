@@ -1,4 +1,9 @@
-console.log("Index Js caricato!");
+"use strict"
+console.log("File JS caricato correttamente");
+
+/*
+Scrivi un programma che passato un numero in input controlli che sia pari o dispari
+*/
 
 let n;//numero intero                  
      /*Chiedo dati in Input*/
