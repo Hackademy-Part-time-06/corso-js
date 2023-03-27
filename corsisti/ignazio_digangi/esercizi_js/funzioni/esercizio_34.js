@@ -1,5 +1,6 @@
+"use strict"
 console.log("Esercizio 34")
-console.log("Simula una partita a dadi")
+console.log("File JS caricato correttamente")
 /*
 Scrivi una funzione che si occupi di lanciare i dadi (usa la funzione creata nell’esercizio precedente) un numero di volte che verrà definito tramite parametro passato in input.
 Una volta lanciati i dadi controlla chi ha vinto (vince chi lancia il numero più alto).

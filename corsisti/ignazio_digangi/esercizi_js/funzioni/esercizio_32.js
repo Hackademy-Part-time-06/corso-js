@@ -1,5 +1,9 @@
+"use strict"
 console.log("Esercizio 32")
-console.log("Scrivi una funzione che prenda in input una stringa e la restituisca capovolta.")
+console.log("File JS caricato correttamente")
+/*
+Scrivi una funzione che prenda in input una stringa e la restituisca capovolta
+*/
 
 let parolaInput =prompt("Scrivi la tua stringa")
 
