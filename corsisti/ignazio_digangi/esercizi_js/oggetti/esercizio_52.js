@@ -1,5 +1,6 @@
-console.log("File caricato");
-
+"use strict"
+console.log("Esercizio 52");
+console.log("File JS caricato correttamnte");
 /*
 Definisci un oggetto che rappresenti una sala da bowling, dovrà contenere una lista di giocatori che saranno formati dalle proprietà, nome e punteggi
 

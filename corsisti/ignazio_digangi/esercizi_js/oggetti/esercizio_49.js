@@ -1,5 +1,6 @@
-console.log("File caricato");
-
+"use strict"
+console.log("Esercizio 49");
+console.log("File JS caricato correttamnte");
 /*
 Definisci un oggetto playlist che contiene una proprietà canzoni.
 Inserisci una o 2 canzoni e ciascuna deve avere le seguenti proprietà:
@@ -26,6 +27,7 @@ let playlist = {
 
 };
 */
+
 function Playlist (titolo, nomeCantante, anno){
     this.titolo = titolo;
     this.nomeCantante = nomeCantante;

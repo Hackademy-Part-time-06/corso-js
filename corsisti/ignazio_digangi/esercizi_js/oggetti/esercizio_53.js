@@ -1,5 +1,6 @@
-console.log("File caricato");
-
+"use strict"
+console.log("Esercizio 53");
+console.log("File JS caricato correttamnte");
 /*
 Scrivi una funzione che conti le occorrenze dei singoli elementi presenti in array annidati:
 es: 

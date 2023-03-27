@@ -1,5 +1,6 @@
-console.log("File caricato");
-
+"use strict"
+console.log("Esercizio 54");
+console.log("File JS caricato correttamnte");
 /*
 Scrivi un programma che, per il sito www.lamiasuperlibreria.aulab, prenda in input la lista “libri” ed una “categoria” passata dall’utente. Il programma dovrà ritornare una lista di tag anchor (naturalmente questi devono essere delle semplici stringhe da mostrare in console) con il relativo url e come contenuto il titolo del libro. Questa lista dovrà contenere  solo gli elementi appartenenti alla categoria espressa in input.
 La creazione della url dovrà rispettare queste regole:

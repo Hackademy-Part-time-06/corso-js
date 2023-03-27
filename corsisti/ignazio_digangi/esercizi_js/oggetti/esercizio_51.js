@@ -1,5 +1,6 @@
-console.log("File caricato");
-
+"use strict"
+console.log("Esercizio 51");
+console.log("File JS caricato correttamnte");
 /*
 Definisci un oggetto che rappresenti un garage. Dovrà contenere una lista di automobili. 
 Per ciascuna automobile dovrà essere definito un attributo marca e modello  (es {brand : ‘renault’ , model : ‘twingo’}).
