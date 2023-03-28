@@ -1,7 +1,7 @@
 "use strict"
 // ESERCIZIO 69
-/*
-let persone = [
+
+/*let persone = [
     {
         nome: "Gino",
         cognome: "Ginoli",
@@ -17,18 +17,19 @@ let lista = document.createElement("ul");
 document.body.append(lista);
 lista.setAttribute("class", "list-group");
 lista.innerText = "Lista persone";
+
 persone.forEach(function (persona) {
     let singleItem = document.createElement("li")
     singleItem.innerText = persona.nome + " " + persona.cognome;
     lista.append(singleItem);
-    if(persona.nuovoUtente === true){
+    if (persona.nuovoUtente === true) {
         let newEntry = document.createElement("span");
         newEntry.setAttribute("class", "badge bg-secondary")
         newEntry.innerText = "New";
         singleItem.append(newEntry)
     }
-});
-*/
+});*/
+
 //ESERCIO 70
 
 let articoli = [
