@@ -316,7 +316,6 @@ console.log(giocaCartaForbiciSassoSenzaPareggio())
         Una volta inseriti i dati mostra una modale col titolo “Registrazione Effettuata” e col testo:
         “Ciao ${username} (${email}), benvenuto nella tua area personale”
         La modale la devi creare tramite bootstrap: https://getbootstrap.com/docs/5.3/components/modal/
-        */
         
         function modale() {
             let username = prompt("nome")
@@ -339,3 +338,136 @@ console.log(giocaCartaForbiciSassoSenzaPareggio())
         
         }
         modale()
+        */
+        /*
+        Es - 72
+            
+            Dati i seguenti tag html:
+            
+            - <div id=”dado”></div>
+            - <button id=”lancia-dado”>Lancia dado</button>
+            
+            al click del bottone genera un numero casuale da 1 a 6 ed inserisci l’output nel div dado.
+            
+            let dado = document.getElementById("dado")
+            let lancia = document.getElementById("lancia")
+            lancia.addEventListener("click", function() {
+                dado.innerText = Math.floor(Math.random() * 7)
+            })
+            */
+            /*
+            Es - 73
+            Dato il seguente tag html:
+            
+            - <a href=”https://www.google.it/”>Cerca su google</a>
+            
+            fai in modo che ogni volta che un utente clicca sul link, invece di andare nella pagina di ricerca di google, appaia un alert con un qualsiasi messaggio. Solo dopo il terzo click sul link, verrà eseguito il suo naturale comportamento cambiando pagina.
+            
+            
+            let link = document.getElementById("link")
+            let counter = 0
+            link.addEventListener("click", function (e) {
+                counter ++
+                alert("stai entrando su google")
+                if (counter < 3){
+                    e.preventDefault()
+                }
+            })*/
+            /*
+            Es - 74
+            const libri = [
+                {
+                    titolo: " Il Signore degli Anelli ",
+                    autore: "Tolkien",
+                    categoria: "fantasy"
+                },
+                {
+                    titolo: "Harry Potter",
+                    autore: "Rowling",
+                    categoria: "fantasy"
+                },
+                {
+                    titolo: "Il Conte di Montecristo",
+                    autore: "Dumas",
+                    categoria: "narrativa classica"
+                },
+                {
+                    titolo: "Dune",
+                    autore: "Herbert",
+                    categoria: "fantascienza"
+                },
+                {
+                    titolo: "Fight Club",
+                    autore: "Palahniuk",
+                    categoria: "narrativa moderna"
+                }
+            ];
+            Crea un programma  che crei una lista usando il titolo dei libri.
+            Ogni titolo avrà al suo fianco un bottone con scritto "aggiungi ai preferiti". Al click di uno specifico bottone verrà emesso un alert col seguente testo: 
+            "Il libro {nome_del_libro} è stato aggiunto ai preferiti"
+            
+            
+            const libri = [
+                {
+                    titolo: " Il Signore degli Anelli ",
+                    autore: "Tolkien",
+                    categoria: "fantasy"
+                },
+                {
+                    titolo: "Harry Potter",
+                    autore: "Rowling",
+                    categoria: "fantasy"
+                },
+                {
+                    titolo: "Il Conte di Montecristo",
+                    autore: "Dumas",
+                    categoria: "narrativa classica"
+                },
+                {
+                    titolo: "Dune",
+                    autore: "Herbert",
+                    categoria: "fantascienza"
+                },
+                {
+                    titolo: "Fight Club",
+                    autore: "Palahniuk",
+                    categoria: "narrativa moderna"
+                }
+            ];
+            
+            console.log(libri.titolo);
+            
+            let ul = document.createElement("ul")
+            
+            libri.forEach(function (libro1) {
+                let li = document.createElement("li")
+                let btn = document.createElement("button")
+                btn.innerText= "aggiungi ai preferiti"
+                btn.addEventListener("click", function () {
+                    alert(`Il libro ${libro1.titolo} è stato aggiunto ai preferiti`)
+                })
+                li.innerHTML=`${libro1.titolo} `
+                document.body.append(li)
+                li.append(btn)
+            })
+            */
+            /*
+            Es - 75 - BONUS
+            Crea un programma chiamato “calcolatrice”. In questo programma devono essere presenti 2 tag input nei quali si potranno inserire dei numeri.
+            Oltre a questi saranno presenti quattro bottoni coi seguenti simboli:
+            - +
+            - -
+            - *
+            - /
+            Al click di uno dei bottoni si dovrà eseguire l’operazione matematica corrispondente relativa all’operatore selezionato rispetto ai valori dei 2 input.
+            Mostrare il risultato all’utente
+            
+            
+            let input1 = document.getElementById("input1")
+            let input2 = document.getElementById("input2")
+            let risultato = document.getElementById("risultato")
+            let btnPiu = document.getElementById("btn+")
+            btnPiu.addEventListener("click", function (event) {
+                risultato.innerText = input1 + input2
+            })
+            */
