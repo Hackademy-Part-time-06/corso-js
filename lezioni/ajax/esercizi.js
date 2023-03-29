@@ -53,14 +53,14 @@ fetch('https://jsonplaceholder.typicode.com/posts')
     elementoListaPostUL.classList.add("list-group")
 
     // ciclo la lista dei post col metodo forEach
-    listaPost.forEach(function(singoloPost) {
+    listaPost.forEach(function(singoloPost, idx) {
 
       // creo una variabile col valore del title del post
       let titoloPost = singoloPost.title;
 
       // aggiungo l'icona come stringa -> tanto ci penserà l'innerHTML a renderizzarmela
       // la creazione della stringa è complessa quindi uso il template literl
-      let titoloPostConIcona = `${titoloPost} <i class="bi bi-arrows-fullscreen" data-is-my-trigger="true" data-post-id="${singoloPost.id}" data-user-id="${singoloPost.userId}"></i>`;
+      let titoloPostConIcona = `${idx} - ${titoloPost} <i class="bi bi-arrows-fullscreen" data-is-my-trigger="true" data-post-id="${singoloPost.id}" data-user-id="${singoloPost.userId}"></i>`;
 
       console.log("Titolo singolo post:", titoloPost);
 
@@ -136,7 +136,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
             contenutoInfoAutore.innerHTML = `
                     <div>
                         <hr/>
-                        <h4>${autore.name} - alias: ${autore.username}</h4>
+                        <h4><a href="/lezioni/ajax/user.html?userId=${autore.id}">${autore.name}</a> - alias: ${autore.username}</h4>
                         <ul>
                             <li><b>email:</b> ${autore.email}</li>
                             <li><b>phone:</b> ${autore.phone}</li>
