@@ -64,29 +64,33 @@
                 
                 listaCompleta.forEach(element => {
                     let titolo = element.title
+                    let id = element.id
+                    let corpo = element.body
                     console.log(titolo);
                     let li = document.createElement("li")
                     ul.append(li)
                     li.innerHTML= `
-                    <li> ${titolo} 
-                    <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <li>Titolo: ${titolo} 
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#${id}">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-fullscreen" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/>
                     </svg>
-                    </button 
+                    </button>
                     </li>            
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="${id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-body">
-                    ${titolo}
+                    Titolo: ${titolo}
+                    </div>
+                    <div class="modal-body">
+                     <hr>
+                    ${corpo}
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
-                    </div>
-                    </div>
                     </div>`
                 });
-                
             })
+ 
