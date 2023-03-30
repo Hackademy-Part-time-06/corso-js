@@ -21,6 +21,7 @@ lancioIlDado.addEventListener("click", function (evento) {
     let numeroRandomico = Math.floor(Math.random() * (6 - 1 + 1)) + 1;// questa non la capirai mai, è solo un dogma
     dado.innerText = numeroRandomico;//questo innerText inserisce nel browser il numero randomico che risulta ogni qual volta si lanciano i dadi
 });
+
 console.groupEnd();
 
 //Esercizio 73------------------------------------------------
@@ -35,7 +36,7 @@ fai in modo che ogni volta che un utente clicca sul link, invece di andare nella
 
 //STEP2=> richiamo l'anchor altrimenti non posso lavorarci su
 let anchorDaSelezionare = document.querySelector("a");
-//scelgo un querySelector piuttosto che un getElementsByTagName, NICOLAAAAAAAA PERCHèèèè???--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//scelgo un querySelector piuttosto che un getElementsByTagName per selezionare UN SOLO ELEMENTO, il secondo invece torna una lista
 
 /*ragionamento: "SE" l'utente clicca meno di tre volte, compare un alert, allora useremo un "if"*/
 
@@ -49,7 +50,7 @@ anchorDaSelezionare.addEventListener("click", function (evento) {
         alert("Cliccami almeno tre volte, oh please!")
     }
 })
-//NICOLAAAAAAA PERCHè NON POSSO USARE LE ARROW???--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 console.groupEnd();
 
 //Esercizio 74------------------------------------------------
@@ -84,7 +85,7 @@ console.groupEnd();
     Crea un programma  che crei una lista usando il titolo dei libri.
     Ogni titolo avrà al suo fianco un bottone con scritto “aggiungi ai preferiti”. Al click di uno specifico bottone verrà emesso un alert col seguente testo: 
     “Il libro {nome_del_libro} è stato aggiunto ai preferiti”*/
-
+console.group("Esercizio 73")
 //STEP1==> La consegna dice "crea un programma", questo vuol dire che in primis devo infilare i libri dentro una funzione (e già partiamo male, Nicolaaaaaaaa, ma perchè fai ste cose?)
 function creoProgrammaPerLista() {
     //NB NB NB, Alice se non metti in calce fuori dalla funzione creoProgrammaPerLista(), non si vedrà NULLA di ciò che stai facendo e ti sentirai una fallita, la funzione dopo che viene innestata, va sempre RICHIAMATA ALL'ESTERNO
@@ -159,6 +160,25 @@ function creoProgrammaPerLista() {
     })
 }
 creoProgrammaPerLista()
+console.groupEnd();
+//Esercizio 75------------------------------------------------
+/*Crea un programma chiamato “calcolatrice”. In questo programma devono essere presenti 2 tag input nei quali si potranno inserire dei numeri.
+Oltre a questi saranno presenti quattro bottoni coi seguenti simboli:
+
+- +
+- -
+- *
+- /
+
+Al click di uno dei bottoni si dovrà eseguire l’operazione matematica corrispondente relativa all’operatore selezionato rispetto ai valori dei 2 input.
+Mostrare il risultato all’utente*/
+
+
+
+
+
+console.group("Esercizio 75")
+
 
 
 
