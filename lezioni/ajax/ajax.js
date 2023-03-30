@@ -199,3 +199,21 @@ const getData = async function() {
 };
 
 getData();
+
+
+
+
+
+
+/**
+ * URL  
+ * creare un oggetto URL per gestire la creazione/manipolazione di eventuali link
+ * 
+ */
+
+let url = new URL('https://jsonplaceholder.typicode.com/posts');
+
+url.searchParams.append("prova_parametro", "valore-parametro");
+url.searchParams.append("altra-query-string", "suo-rispettivo-valore")
+
+console.log(url.href) // https://jsonplaceholder.typicode.com/posts?prova_parametro=valore-parametro&altra-query-string=suo-rispettivo-valore
