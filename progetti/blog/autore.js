@@ -8,7 +8,7 @@ function programma() {
   
   let ulEL = document.createElement("ul");
   ulEL.classList.add("list-group");
-  document.body.append(ulEL);
+  document.getElementById("contenitore-posts").append(ulEL);
 
 
   fetch("https://jsonplaceholder.typicode.com/users/" + searchParams.get("userId"))
