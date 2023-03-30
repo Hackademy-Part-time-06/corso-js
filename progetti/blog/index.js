@@ -55,8 +55,6 @@ console.log("Ci sono!");
   }
 
   function stampaListaPost() {
-    listenerIconaPosts();
-
     for (let i = 0; i < listaPost.length; i++) {
       let articolo = listaPost[i];
       stampaSingoloPost(articolo);
@@ -113,6 +111,8 @@ console.log("Ci sono!");
         stampaListaPost();
       });
   }
+
+  listenerIconaPosts();
 
   getPosts();
 
