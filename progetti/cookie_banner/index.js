@@ -2,34 +2,32 @@
 console.log("Ci sono!");
 
 
-(function () {
-    let bannerEl = document.getElementById("cookie-banner");
-    let noBtn = bannerEl.querySelector("#no");
-    let siBtn = bannerEl.querySelector("#si");
+let bannerEl = document.getElementById("cookie-banner");
+let noBtn = bannerEl.querySelector("#no");
+let siBtn = bannerEl.querySelector("#si");
 
-    function laodScript(url, successCallback) {
-        let script = document.createElement("script")
-        script.setAttribute("src", url);
-        if (successCallback) {
-            script.addEventListener("load", successCallback)
-        }
-
-        document.body.append(script)
+function laodScript(url, successCallback) {
+    let script = document.createElement("script")
+    script.setAttribute("src", url);
+    if (successCallback) {
+        script.addEventListener("load", successCallback)
     }
 
-    noBtn.addEventListener("click", function() {
-        bannerEl.remove()
-    })
+    document.body.append(script)
+}
 
-    siBtn.addEventListener("click", function() {
-        bannerEl.remove();
-        laodScript(
-            "/progetti/cookie_banner/analytics.js",
-            function() {
-                analytics.registraAzione("page view");
+noBtn.addEventListener("click", function() {
+    bannerEl.remove()
+})
 
-                laodScript("/progetti/cookie_banner/adv.js")
-            }
-        )
-    })
-})()
+siBtn.addEventListener("click", function() {
+    bannerEl.remove();
+    laodScript(
+        "/progetti/cookie_banner/analytics.js",
+        function() {
+            analytics.registraAzione("page view");
+
+            laodScript("/progetti/cookie_banner/adv.js")
+        }
+    )
+})
