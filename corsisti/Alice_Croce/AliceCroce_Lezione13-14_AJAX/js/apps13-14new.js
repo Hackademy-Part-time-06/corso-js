@@ -117,7 +117,7 @@ function mostraPostInModale(articolo) {
                     let liProp = document.createElement("li");
                     //*** creo un li che accolga questa lista di "name" che sono proprietà di autore, quindi se nomeProp è uguale alla stringa "name" (che è l'unica parte che ci interessa) allora inseriamo "name" nell'innerHTML, se invece nella sua ricerca l'if non trova il "name" allora vada nell'else.
                     if (nomeProp === "name") {//°° come compongo un url?vai a vedere giù
-                        liProp.innerHTML = `${nomeProp}: <b><a href="http://127.0.0.1:5500/corsisti/Alice_Croce/AliceCroce_Lezione13/14_AJAX_js/index13-14new.html?userId=${articolo.userId}">${autore[nomeProp]}</a></b>`;//così hai reso DINAMICA LA MODALE, FINALMENTE!
+                        liProp.innerHTML = `${nomeProp}: <b><a href="http://127.0.0.1:5500/corsisti/Alice_Croce/AliceCroce_Lezione13-14_AJAX/index13-14new.html?userId=${articolo.userId}">${autore[nomeProp]}</a></b>`;//così hai reso DINAMICA LA MODALE, FINALMENTE!
                     } else {
                         liProp.innerHTML = `${nomeProp}: <b>${autore[nomeProp]}</b>`;
                     }
@@ -143,7 +143,7 @@ per passare dei dati da una pagina all’altra possiamo usare molti modi, ma in 
 //°° userId è l'identificativo che cambia, quindi è dinamicizzato dal = difatti per ogni post se clicchi ti da un userId diverso.
 //°°nel JS, invece dovrai emulare questo anchor con href ecc ecc, ma con incluso anche il numeretto antecedente all'interno dell'in contenuto nell'if che a sua volte contenuto in una fetch, una serie di parametri all'interno di quella stringa ti danno modo di accedere ai diversi Id, basta vederlo per comprenderlo: bene hai appena costruito LA TUA PRIMA QUERY STRING, BRAVA ALICE!
 
-//==> STEP8- Ora costrisci la nuova pagina che accolta tutti i post che ha pubblicato ogni singolo autore
+//==> STEP8- Ora costrisci la nuova pagina che accolga tutti i post che ha pubblicato ogni singolo autore
 
 
 
