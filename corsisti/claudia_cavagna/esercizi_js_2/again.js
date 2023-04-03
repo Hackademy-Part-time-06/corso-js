@@ -812,8 +812,8 @@ function dividiamo (numeri, divisore) {
 dividiamo([1, 2, 3, 4, 5, 6], 2);
 */
 
-/* parte4 - 42
-
+// parte4 - 42
+/*
 function sommaPositivi (numeri) {
     let numeriPositivi = numeri.filter (function (elementi) {
         return elementi > 0;
@@ -827,6 +827,20 @@ function sommaPositivi (numeri) {
 sommaPositivi([1, -4, 7, 12]);
 */
 
+/*
+function sommaPositivi (numero) {
+    somma = 0;
+    numeriPositivi = numero.filter (function (number){
+        if (number > 0) {
+            somma += number;
+        }
+        return somma;
+    })
+    console.log(somma);
+}
+sommaPositivi([-2, -3, -4, -5, -6]);
+*/
+
 /* parte 5 - 43
 
 function raddoppia (listaNumeri) {
@@ -838,7 +852,7 @@ function raddoppia (listaNumeri) {
 raddoppia([1, 2, 3]);
 */
 
-// parte 6 - 44
+/* parte 6 - 44
 function punteggioTotale(punteggio){
     let puntiFinali=0;
     let punti = 0;
@@ -865,6 +879,7 @@ function punteggioTotale(punteggio){
     console.log(puntiFinali);
 }
 punteggioTotale(["1:5", "6:4", "2:5"]);
+*/
 
 
 /* esercizio 46
@@ -915,3 +930,417 @@ function somma (listaNumeri) {
 }
 somma([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 */
+
+
+// esercizio 49
+/*let playlist = {
+    canzoni : {
+        canzone1 : {
+            titolo : "Ma che ne so",
+            nomeCantante : "Uno poco famoso",
+            anno : 2023,
+        },
+        canzone2 : {
+            titolo : "asdfghjhtfg",
+            nomeCantante : "Gigi",
+            anno : 2000,
+        },
+        canzone3 : {
+            titolo : prompt("Inserisci il titolo della canzone"),
+            nomeCantante : prompt("Inserisci il nome del cantante"),
+            anno : prompt("Inserisci l'anno di uscita"),
+        },
+        canzone4 : {
+            titolo : prompt("Inserisci il titolo di un'altra canzone"),
+            nomeCantante : prompt("Inserisci il nome del cantante"),
+            anno : prompt("Inserisci l'anno di uscita"),
+        }
+    }
+}
+console.log(playlist.canzoni);*/
+
+/*
+let playlist = {
+    canzoni : [
+        {
+            titolo: "Fuori luogo",
+            nomeCantante: "Mr. Rain",
+            anno: 2018,
+        },
+    ],
+    aggiungiCanzone : function (titolo, nomeCantante, anno) {
+
+        let nuovaCanzone = {
+            titolo : titolo,
+            nomeCantante : nomeCantante,
+            anno : anno,
+            
+        }
+        console.log("Nuova canzone: ", nuovaCanzone);
+        playlist.canzoni.push(nuovaCanzone);
+    },
+    stampaCanzoni : function () {
+        playlist.canzoni.forEach (function (canzoni){
+            console.log(`${canzoni.titolo} - ${canzoni.nomeCantante} (${canzoni.anno})`);
+        })
+    }
+}
+console.log(playlist.canzoni)
+playlist.aggiungiCanzone("Guerra e pace", "PSICOLOGI", 2021);
+playlist.aggiungiCanzone("Sparire", "I Cani", 2022);
+playlist.stampaCanzoni();
+*/
+
+
+/* esercizio 50
+
+let rubrica = {
+    utenti : {
+        utente1 : {
+            nome : "Gino",
+            cognome : "Gini",
+            telefono : 1234444444,
+            indirizzo : {
+                via : "via dei Gini",
+                città : "Ginoland",
+                cap : 12345,
+            }
+        },
+        utente2 : {
+            nome : "Dino",
+            cognome : "Dini",
+            telefono : 1235555555,
+            indirizzo : {
+                via : "via dei Dini",
+                città : "Dinoland",
+                cap : 12345,
+            }
+        },
+        utente3 : {
+            nome : "Pino",
+            cognome : "Pini",
+            telefono : 1236666666,
+            indirizzo : {
+                via : "via dei Pini",
+                città : "Pinoland",
+                cap : 12345,
+            }
+        },
+    },
+}
+console.log(rubrica.utenti);
+
+delete rubrica.utenti.utente1;
+
+console.log(rubrica.utenti);
+*/
+/*
+let rubrica = {
+    utenti : [],
+
+    aggiungiUtente : function (nome, cognome, telefono, via, città, cap) {
+        let nuovoUtente = {
+            nome : nome,
+            cognome : cognome,
+            telefono : telefono,
+            indirizzo : {
+                via : via,
+                città : città,
+                cap : cap,
+            }
+        }
+        rubrica.utenti.push(nuovoUtente);
+        console.log("Aggiunto utente: ", nuovoUtente);
+
+    },
+
+}
+
+rubrica.aggiungiUtente("Tizio", "Tizi", "23456789", "Viaffanculo", "Mondo", "23456");
+rubrica.aggiungiUtente("Tizia", "Tizi", "23456789", "Viaffanculo", "Mondo", "23456");
+rubrica.utenti.pop(),
+console.log("Cancellato utente:", rubrica.utenti);
+*/
+
+
+/* esercizio 51
+
+let garage = {
+    automobili : [{
+        brand : "renault",
+        model : "twingo",
+    }, 
+    {
+        brand : "fiat",
+        model : "panda",
+    },
+    {
+        brand : "renault",
+        model : "megane",
+    }],
+    cercaAuto : function (nome) {
+        let modelloPresente = garage.automobili.filter (function(auto, index){
+            return auto.brand === nome
+        })
+        console.log(modelloPresente)
+    }
+}
+let nome = prompt("inserisci marca auto");
+garage.cercaAuto(nome);
+*/
+/*
+let garage = {
+    automobili : [{
+        brand : "Renault",
+        model : "Twingo",
+    },
+    {
+        brand : "Renault",
+        model : "Clio",
+    },
+    {
+        brand : "Fiat",
+        model : "Panda",
+    }],
+    filtraAuto : function (auto) {
+        garage.automobili.filter(function (brandAuto){
+            if (brandAuto.brand === auto) {
+                console.log(`${brandAuto.brand} - ${brandAuto.model}`)
+            };
+        })
+    }
+}
+garage.filtraAuto("Renault")
+*/
+
+// esercizio 52
+/*
+let partitaABowling ={
+    listaGiocatori:[{
+        punteggio:[8,10,10,10,1,1,0,2,8,7],
+        giocatore:"Tizio",
+    },{
+        punteggio:[10,10,10,10,10,10,10,10,10,9],
+        giocatore:"Caio",
+    },{
+        punteggio:[2,3,4,1,4,6,9,9,0,0],
+        giocatore:"Sempronio",
+    }],
+    punteggioTotale: function(){
+        let punti = partitaABowling.listaGiocatori.map(function(puntiTot,index){
+            let puntiTot2 = puntiTot.punteggio.reduce(function(numeroTot,index){
+                let totale= numeroTot+index
+                return totale
+            })
+            console.log(puntiTot2)
+
+        })
+
+    },
+}
+partitaABowling.punteggioTotale()
+*/
+/* 
+let salaDaBowling = {
+    listaGiocatori:[{
+        punteggio:[8,10,10,10,1,1,0,2,8,7],
+        giocatore:"Tizio",
+    },{
+        punteggio:[10,10,10,10,10,10,10,10,10,9],
+        giocatore:"Caio",
+    },{
+        punteggio:[2,3,4,1,4,6,9,9,0,0],
+        giocatore:"Sempronio",
+    }],
+    conteggioPunti : function () {
+        salaDaBowling.listaGiocatori.forEach (function (punti) {
+            punti.totale = punti.punteggio.reduce(function (totale, index) {
+                return totale += index;
+
+            })
+            console.log(punti);
+        })
+    },
+    chiVince : function () {
+        salaDaBowling.conteggioPunti();
+
+        let vincitore = {
+            totale : 0,
+        }
+
+        salaDaBowling.listaGiocatori.forEach(function (giocatore) {
+            if (giocatore.totale > vincitore.totale) {
+                vincitore = giocatore;
+            }
+        })
+        return vincitore;
+    }
+}
+
+console.log("VINCE!" , salaDaBowling.chiVince());
+*/
+
+
+/*esercizio 53
+
+let lista = [
+    ["abc", "gino", "aaa"],
+    ["abc", "dino", 123],
+    ["aaa", "gino", 321],
+    ["xyz", "klm", "aaa"],
+]
+
+function occorrenze(lista) {
+    let listaNuova = []
+    lista.forEach(function (elemento){
+        listaNuova = listaNuova.concat(elemento)
+    })
+    console.log(listaNuova)
+
+    let ricorrenze = {}
+    listaNuova.forEach(function (elemento){
+        if (ricorrenze.hasOwnProperty(elemento)){
+            ricorrenze[elemento] = ricorrenze[elemento] +1
+        }
+        else {
+            ricorrenze[elemento] = 1
+        }
+    })
+    return ricorrenze
+}
+
+console.log(occorrenze(lista))
+*/
+
+
+/* esercizio 54
+const LIBRI = [
+    {
+            titolo: "Il Signore degli Anelli",
+            autore: "Tolkien",
+            categoria: "fantasy"
+    },
+    {
+            titolo: "Harry Potter",
+            autore: "Rowling",
+            categoria: "fantasy",
+    },
+    {
+            titolo: "Il Conte di Montecristo",
+            autore: "Dumas",
+            categoria: "narrativa classica"
+    },
+    {
+            titolo: "Dune",
+            autore: "Herbert",
+            categoria: "fantascienza"
+    },
+    {
+            titolo: "Fight Club",
+            autore: "Palahniuk",
+            categoria: "narrativa moderna"
+    }
+  ]
+
+let cheVuoi = prompt("Inserisci una categoria");
+
+let lista = LIBRI.forEach(function(element){
+    if (cheVuoi === element.categoria) {
+        console.log(`<a href = "www.lamiasuperlibreria.aulab/${element.autore.toLowerCase().replaceAll(" ", "-")}/${element.titolo.toLowerCase().replaceAll(" ", "-")}"> ${element.titolo} </a>`)
+    }
+    else {
+        console.log("Nessun libro presente")
+    }
+}) 
+*/
+
+
+//esercizio 55
+
+let calendario = {
+    lunedi : [
+        {
+            nomeEvento : "Lezione",
+            inizioEvento : "18:30",
+        },
+    ],
+    martedi : [
+        {
+            nomeEvento : "Lezione",
+            inizioEvento : "18:30",
+        },
+    ],
+    mercoledi : [
+        {
+            nomeEvento : "Lezione",
+            inizioEvento : "18:30",
+        },
+    ],
+    giovedi : [
+        {
+            nomeEvento : "Lezione",
+            inizioEvento : "18:30",
+        },
+        {
+            nomeEvento : "Lezione",
+            inizioEvento : "21:30",
+        },
+    ],
+    venerdi : [
+        {
+            nomeEvento : "Lezione",
+            inizioEvento : "18:30",
+        },
+    ],
+    sabato : [],
+    domenica : [],
+}
+
+
+function aggiuntaEventi (giornoEvento, nomeEvento, inizioEvento) {
+    for (let giorno in calendario) {
+        if (giorno === giornoEvento) {
+            calendario[giorno].push({nomeEvento, inizioEvento})
+            console.log("Nuovo evento: ", giorno, calendario[giorno])
+            function compare( a, b ) {
+                if ( a.inizioEvento < b.inizioEvento ){
+                  return -1;
+                }
+                if ( a.inizioEvento > b.inizioEvento ){
+                  return 1;
+                }
+                return 0;
+              }
+              
+            console.log(calendario[giorno].sort( compare ));
+        }
+    }
+}
+
+
+/*
+function filtraGiorni (day) {
+    for (let giorno in calendario) {
+        if (day === giorno) {
+            console.log("Oggi dovresti fare: ", calendario[giorno])
+        }
+    }
+}
+
+function occorrenze (cose){
+    for(let giorno in calendario){
+        calendario[giorno].forEach(function(dentroIlGiorno){
+            if (cose === dentroIlGiorno.nomeEvento){
+                console.log(`${giorno} - ${dentroIlGiorno.nomeEvento} (${dentroIlGiorno.inizioEvento})`)
+            }
+        })
+    }
+}
+*/
+aggiuntaEventi("martedi", "schifo2", "10:00")
+aggiuntaEventi("martedi", "schifo", "08:00")
+
+aggiuntaEventi("lunedi", "flexiamo", "22:44")
+// filtraGiorni("martedi")
+// occorrenze("Lezione")
+

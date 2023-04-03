@@ -116,6 +116,36 @@ elementoOl.append(liLast); // inserisce liLast alla fine di <ol>
 
 
 
+/**
+ * Esempio creazione elemento Bootstrap
+ */
 
 
+let haiLaPatente = prompt("Hai la patente?");
 
+console.log("L'utente ha la patente?", haiLaPatente)
+
+
+function generaAlert(type, message) {
+    let divAlert = document.createElement("div");
+    console.log("Div dell'Alert di Bootstrap:", divAlert)
+
+
+    divAlert.classList.add("alert", "alert-" + type);
+    divAlert.setAttribute("role", "alert");
+
+    divAlert.innerText = message;
+
+    document.body.append(divAlert)
+}
+
+
+if (haiLaPatente === "si") {
+    generaAlert("success", "Bravo che c'hai la patente!")
+}
+else if (haiLaPatente === "no") {
+    generaAlert("danger", "Male!!! Se guidi vai in galera!")
+}
+else {
+    generaAlert("warning", "Che hai detto???")
+}
