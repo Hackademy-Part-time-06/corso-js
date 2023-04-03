@@ -1,4 +1,3 @@
-"use strict"
 //Esercizio 72------------------------------------------------
 /*Dati i seguenti tag html:
 
@@ -36,7 +35,7 @@ fai in modo che ogni volta che un utente clicca sul link, invece di andare nella
 
 //STEP2=> richiamo l'anchor altrimenti non posso lavorarci su
 let anchorDaSelezionare = document.querySelector("a");
-//scelgo un querySelector piuttosto che un getElementsByTagName per selezionare UN SOLO ELEMENTO, il secondo invece torna una lista
+//scelgo un querySelector piuttosto che un getElementsByTagName
 
 /*ragionamento: "SE" l'utente clicca meno di tre volte, compare un alert, allora useremo un "if"*/
 
@@ -53,38 +52,7 @@ anchorDaSelezionare.addEventListener("click", function (evento) {
 
 console.groupEnd();
 
-//Esercizio 74------------------------------------------------
 
-/*const libri = [
-    {
-            titolo: “Il Signore degli Anelli”,
-            autore: “Tolkien”,
-            categoria: “fantasy”
-    },
-    {
-            titolo: “Harry Potter”,
-            autore: “Rowling”,
-            categoria: “fantasy”
-    },
-    {
-            titolo: “Il Conte di Montecristo”,
-            autore: “Dumas”,
-            categoria: “narrativa classica”
-    },
-    {
-            titolo: “Dune”,
-            autore: “Herbert”,
-    categoria: “fantascienza”
-    },
-    {
-            titolo: “Fight Club”,
-            autore: “Palahniuk”,
-    categoria: “narrativa moderna”
-    }
-    ];
-    Crea un programma  che crei una lista usando il titolo dei libri.
-    Ogni titolo avrà al suo fianco un bottone con scritto “aggiungi ai preferiti”. Al click di uno specifico bottone verrà emesso un alert col seguente testo: 
-    “Il libro {nome_del_libro} è stato aggiunto ai preferiti”*/
 console.group("Esercizio 73")
 //STEP1==> La consegna dice "crea un programma", questo vuol dire che in primis devo infilare i libri dentro una funzione (e già partiamo male, Nicolaaaaaaaa, ma perchè fai ste cose?)
 function creoProgrammaPerLista() {
@@ -150,7 +118,6 @@ function creoProgrammaPerLista() {
         //STEP3=> attiviamo il bottone con "target" perchè, come nell'esercizio del new che compariva se l'utente nuovo era true, anche qui SE "if" il lubro viene messo nei preferiti allora verrà emesso un alert.
         //Il TARGET si prenderà la briga di "tracciare/targhettizzare" quelli messi tra i preferiti.
 
-        //ALICEEEEEEEEEEEEEEEEEEEEEEEEE IL TARGET FA PARTE DEGLI EVENTI DI DI CAPTURE-> TARGET -> BUBBLING, quindi dovevi creare un contenitore, vallo a dichiarare in cima con uno step4, svegliati!
 
         contenitoreTargetLibri.addEventListener("click", function (eventoScatenante) {
             if (eventoScatenante.target === bottoneLibroPreferito) {
@@ -160,40 +127,4 @@ function creoProgrammaPerLista() {
     })
 }
 creoProgrammaPerLista()
-console.groupEnd();
-//Esercizio 75------------------------------------------------
-/*Crea un programma chiamato “calcolatrice”. In questo programma devono essere presenti 2 tag input nei quali si potranno inserire dei numeri.
-Oltre a questi saranno presenti quattro bottoni coi seguenti simboli:
-
-- +
-- -
-- *
-- /
-
-Al click di uno dei bottoni si dovrà eseguire l’operazione matematica corrispondente relativa all’operatore selezionato rispetto ai valori dei 2 input.
-Mostrare il risultato all’utente*/
-
-
-
-
-
-console.group("Esercizio 75")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 console.groupEnd();

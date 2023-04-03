@@ -1,0 +1,14 @@
+.body {
+    position: relative;
+}
+
+#cookie-banner {
+    max-width: 350px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(209, 209, 209);
+    border: solid 1px grey;
+    border-radius: 20px;
+}

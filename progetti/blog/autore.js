@@ -5,10 +5,10 @@ function programma() {
   let searchParams = new URLSearchParams(window.location.search);
   let contenutoAutoreEl = document.getElementById("contenuto-autore");
 
-  
+
   let ulEL = document.createElement("ul");
   ulEL.classList.add("list-group");
-  document.body.append(ulEL);
+  document.getElementById("contenitore-posts").append(ulEL);
 
 
   fetch("https://jsonplaceholder.typicode.com/users/" + searchParams.get("userId"))
@@ -18,14 +18,14 @@ function programma() {
 
       for (let nomeProp in autore) {
         if (typeof autore[nomeProp] !== 'object') {
-            let liProp = document.createElement("li");
-            liProp.innerHTML = `${nomeProp}: <b>${autore[nomeProp]}</b>`
-            contenutoAutoreEl.append(liProp)
+          let liProp = document.createElement("li");
+          liProp.innerHTML = `${nomeProp}: <b>${autore[nomeProp]}</b>`
+          contenutoAutoreEl.append(liProp)
         }
-    }
+      }
     });
 
-    fetch(`https://jsonplaceholder.typicode.com/users/${searchParams.get("userId")}/posts`)
+  fetch(`https://jsonplaceholder.typicode.com/users/${searchParams.get("userId")}/posts`)
     .then((response) => response.json())
     .then((listaPost) => {
       console.log("listaPost:", listaPost);
@@ -34,10 +34,10 @@ function programma() {
         let articolo = listaPost[i];
         let liEL = document.createElement("li");
         liEL.classList.add("list-group-item")
-        liEL.innerHTML = `${articolo.id} - ${articolo.title}` ;
+        liEL.innerHTML = `${articolo.id} - ${articolo.title}`;
 
         ulEL.append(liEL)
-    }
+      }
     });
 }
 
