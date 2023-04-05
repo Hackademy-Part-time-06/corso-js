@@ -3,6 +3,34 @@
 let pulsante = document.getElementById("lista_utenti")
 pulsante.addEventListener("click", event => elenco())
 
+let form_submit = document.getElementById("post-form")
+form_submit.addEventListener("submit", event => {
+  event.preventDefault()
+  form()
+})
+
+function form() {
+  let title = document.getElementById("form-title")
+  let body = document.getElementById("form-body")
+
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: title.value,
+    body: body.value,
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => {
+    console.log(json)
+    
+  })
+}
+
 function elenco() {
     let lista = document.createElement("ul")
     lista.classList.add("list-group")
@@ -10,7 +38,7 @@ function elenco() {
 
     fetch("https://jsonplaceholder.typicode.com/posts")
     .then(response => response.json())
-    .then(json => json.forEach(x => {
+    .then(json => json.reverse().forEach(x => {
       let elemento = document.createElement("li")
       lista.append(elemento)
       elemento.classList.add("list-group-item")
