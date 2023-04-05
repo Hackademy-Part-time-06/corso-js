@@ -117,7 +117,7 @@ function mostraPostInModale(articolo) {
                     let liProp = document.createElement("li");
                     //*** creo un li che accolga questa lista di "name" che sono proprietà di autore, quindi se nomeProp è uguale alla stringa "name" (che è l'unica parte che ci interessa) allora inseriamo "name" nell'innerHTML, se invece nella sua ricerca l'if non trova il "name" allora vada nell'else.
                     if (nomeProp === "name") {//°° come compongo un url?vai a vedere giù
-                        liProp.innerHTML = `${nomeProp}: <b><a href="http://127.0.0.1:5500/corsisti/Alice_Croce/AliceCroce_Lezione13-14_AJAX/index13-14new.html?userId=${articolo.userId}">${autore[nomeProp]}</a></b>`;//così hai reso DINAMICA LA MODALE, FINALMENTE!
+                        liProp.innerHTML = `${nomeProp}: <b><a href="http://127.0.0.1:5500/corsisti/Alice_Croce/AliceCroce_Lezione13-14_AJAX/index_autore.html?userId=${articolo.userId}">${autore[nomeProp]}</a></b>`;//così hai reso DINAMICA LA MODALE, FINALMENTE, inserendo ossia IL LINK DELLA SCHEDA NUOVA DELL'AUTOREEEEEEEEEEE, HAI MESSO LA NUOVA PAGINAAAAAAAAAAA, NON SBAGLIARE
                     } else {
                         liProp.innerHTML = `${nomeProp}: <b>${autore[nomeProp]}</b>`;
                     }
@@ -138,12 +138,13 @@ per passare dei dati da una pagina all’altra possiamo usare molti modi, ma in 
 */
 
 
-//°°in primis devi creare una parte nell'html e per crearla ti ho dato tutte le info nell'html stesso, praticamente erò nell'html devi crearti una bse di row e column all'interno di un container, dove creerai un anchor (anche giustamente) che ancori un href che sarà il link che ti compare nel tuo broswer eslodendo la parte numerica, come noterai questa finisce con .html
+//°°in primis devi creare una parte nell'html e per crearla ti ho dato tutte le info nell'html stesso, praticamente nell'html devi crearti una base di row e column all'interno di un container, dove creerai un anchor (anche giustamente) che ancori un href che sarà il link che ti compare nel tuo broswer eslodendo la parte numerica, come noterai questa finisce con .html
 //°°in seconda battura sappi che comparià un ? che separa l'estensione del file corrente dalla prima variabile necessaria alla lettura del contenuto della pagina, agginchè esso sia dinamico, quindi per esempio: /corsisti/Alice_Croce/AliceCroce_Lezione13/14_AJAX_js/index13-14new.html?userId=10, questo ti condurrà ad una pagina bianca (che dovrebbe includere il filtro per cui per ogni autore ci sono i suoi articoli, ma lo faremo in un secondo momento, torniamo a noi)
+//°°NB: LA PAGINA DI CUI PARLO è QUELLA NUOVA DELL'AUTORE, STAI CREANDO UN LINK E UN'ANCORA A CUI DEVE ANCORARSI LA NUOVA PAGINA
 //°° userId è l'identificativo che cambia, quindi è dinamicizzato dal = difatti per ogni post se clicchi ti da un userId diverso.
 //°°nel JS, invece dovrai emulare questo anchor con href ecc ecc, ma con incluso anche il numeretto antecedente all'interno dell'in contenuto nell'if che a sua volte contenuto in una fetch, una serie di parametri all'interno di quella stringa ti danno modo di accedere ai diversi Id, basta vederlo per comprenderlo: bene hai appena costruito LA TUA PRIMA QUERY STRING, BRAVA ALICE!
 
-//==> STEP8- Ora costrisci la nuova pagina che accolga tutti i post che ha pubblicato ogni singolo autore
+//==> STEP8- Ora costrisci la nuova pagina che accolga tutti i post che ha pubblicato ogni singolo autore E LA INTEGRI NELLO STEP PRECEDENTE
 
 
 
