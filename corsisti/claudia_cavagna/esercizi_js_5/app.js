@@ -372,7 +372,7 @@ fetch("https://jsonplaceholder.typicode.com/posts")
 */
 
 
-// esercizio 79
+/* esercizio 79
 
 let listaTitoli = document.createElement("ul")
 document.body.append(listaTitoli)
@@ -424,4 +424,188 @@ fetch("https://jsonplaceholder.typicode.com/posts")
             })
         })
     })
+})
+*/
+
+
+/* esercizio 81 
+
+let listaTitoli = document.createElement("ul")
+document.body.append(listaTitoli)
+
+fetch("https://jsonplaceholder.typicode.com/posts")
+.then(function(response){
+    return response.json()
+})
+.then(function(lista){
+    let listaInvertita = lista.reverse()
+    listaInvertita.forEach(function(cose){
+        let li = document.createElement("li")
+        li.innerHTML = `${cose.title}`
+        listaTitoli.append(li)
+        let icona = document.createElement("span")
+        icona.innerHTML = ` <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-fullscreen" viewBox="0 0 16 16" data-bs-toggle="modal" data-bs-target="#exampleModal-${cose.id}">
+        <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/>
+      </svg>`
+      li.append(icona)
+        let modal = document.createElement("div")
+        modal.innerHTML = `<div class="modal fade" id="exampleModal-${cose.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">${cose.title}</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ${cose.body}
+              <div id="modalBody-${cose.id}">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`
+      
+        document.body.append(modal)
+
+        icona.addEventListener("click", function(){
+            fetch(`https://jsonplaceholder.typicode.com/users/${cose.userId}`)
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(user){
+                console.log(user)
+                let coseExtra = document.getElementById(`modalBody-${cose.id}`)
+                coseExtra.innerHTML = `<b>Nome:</b> 
+                <a href="/autore.html?userId=${cose.id}&" target="_blank">${user.name}</a> <br> <b>Username:</b> ${user.username} <br> <b>Email:</b> ${user.email} <br> <b>Numero di telefono:</b> ${user.phone} <br> <b>Sito:</b> ${user.website}`
+            })
+        })
+    })
+})
+
+*/
+
+// esercizio 82 - 83
+
+let listaTitoli = document.createElement("ul")
+document.body.append(listaTitoli)
+
+fetch("https://jsonplaceholder.typicode.com/posts")
+.then(function(response){
+    return response.json()
+})
+.then(function(lista){
+    lista.reverse()
+    lista.forEach(function(cose){
+
+        let li = document.createElement("li")
+        li.innerHTML = `${cose.id} - ${cose.title}`
+        listaTitoli.append(li)
+        let icona = document.createElement("span")
+        icona.innerHTML = ` <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-fullscreen" viewBox="0 0 16 16" data-bs-toggle="modal" data-bs-target="#exampleModal-${cose.id}">
+        <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/>
+      </svg>`
+      li.append(icona)
+        let modal = document.createElement("div")
+        modal.innerHTML = `<div class="modal fade" id="exampleModal-${cose.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">${cose.title}</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ${cose.body}
+              <div id="modalBody-${cose.id}">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`
+      
+        document.body.append(modal)
+
+        icona.addEventListener("click", function(){
+            fetch(`https://jsonplaceholder.typicode.com/users/${cose.userId}`)
+            .then(function(response){
+                return response.json()
+            })
+            .then(function(user){
+                console.log(user)
+                let coseExtra = document.getElementById(`modalBody-${cose.id}`)
+                coseExtra.innerHTML = `<b>Nome:</b> 
+                <a href="/autore.html?userId=${cose.id}&" target="_blank">${user.name}</a> <br> <b>Username:</b> ${user.username} <br> <b>Email:</b> ${user.email} <br> <b>Numero di telefono:</b> ${user.phone} <br> <b>Sito:</b> ${user.website}`
+            })
+        })
+    })
+    
+    let titoloNew = document.getElementById("titoloPiu")
+    let bodyNew = document.getElementById("bodyPiu")
+    let bottone = document.getElementById("bottonePiu")
+
+    bottone.addEventListener("click", function(){
+        let titoloAggiunto = titoloNew.value
+        let bodyAggiunto = bodyNew.value
+        console.log(titoloAggiunto)
+        console.log(bodyAggiunto)
+        fetch('https://jsonplaceholder.typicode.com/posts/', {
+        method: 'POST',
+        body: JSON.stringify({
+        title: titoloAggiunto,
+        body: bodyAggiunto,
+        userId: 1,
+    }),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+    },
+})
+ 
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(stocazzo){
+        lista.unshift(stocazzo)
+        listaTitoli.innerHTML = ""
+        lista.forEach(function(cose){
+            let li = document.createElement("li")
+            li.innerHTML = `${cose.id} - ${cose.title}`
+            listaTitoli.append(li)
+            let icona = document.createElement("span")
+            icona.innerHTML = ` <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-fullscreen" viewBox="0 0 16 16" data-bs-toggle="modal" data-bs-target="#exampleModal-${cose.id}">
+            <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"/>
+          </svg>`
+          li.append(icona)
+            let modal = document.createElement("div")
+            modal.innerHTML = `<div class="modal fade" id="exampleModal-${cose.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">${cose.title}</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ${cose.body}
+                  <div id="modalBody-${cose.id}">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>`
+          
+            document.body.append(modal)
+    
+            icona.addEventListener("click", function(){
+                fetch(`https://jsonplaceholder.typicode.com/users/${cose.userId}`)
+                .then(function(response){
+                    return response.json()
+                })
+                .then(function(user){
+                    console.log(user)
+                    let coseExtra = document.getElementById(`modalBody-${cose.id}`)
+                    coseExtra.innerHTML = `<b>Nome:</b> 
+                    <a href="/autore.html?userId=${cose.id}&" target="_blank">${user.name}</a> <br> <b>Username:</b> ${user.username} <br> <b>Email:</b> ${user.email} <br> <b>Numero di telefono:</b> ${user.phone} <br> <b>Sito:</b> ${user.website}`
+                })
+            })
+        })
+    })
+})
 })
