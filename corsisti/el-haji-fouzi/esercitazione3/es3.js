@@ -152,7 +152,7 @@ for (let i = 0; i < totaleNumeriDaCensurare; i++ ) {
 alert(`Il mio numero di telefono e' ${censura}${ultimiTreNumeri}`);
 
 console.groupEnd();
-*/
+
 
 // Esercizio 21
 
