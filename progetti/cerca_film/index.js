@@ -34,8 +34,8 @@ function stampaSingoloFilm(film) {
       <div class="card-body">
         <h5 class="card-title">${film.Title}</h5>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Anno: ${film.Year}li>
+      <ul class="list-group list-group-flush p-2">
+        <li class="list-group-item">Anno: ${film.Year}</li>
         <li class="list-group-item">Tipo: ${film.Type}</li>
       </ul>
       <div class="card-body">
@@ -78,9 +78,9 @@ function getFilms(parolaDaCercare, pagina=1) {
         stampaListaFilm(rispostaObj.Search)
 
         pagination.handlePagination(rispostaObj, pagina)
-
-        spinner.classList.add("d-none");
       }
+      
+      spinner.classList.add("d-none");
     });
 }
 
