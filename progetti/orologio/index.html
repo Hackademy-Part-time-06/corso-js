@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Corso Javascript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="orologio-container absolute-centering">
+    <div class="time-section">
+        <span class="label">TIME</span>
+        <div class="time-data">
+            <span id="time-content">18:30</span>
+            <div class="seconds-wrapper">
+                <div class="seconds-badge">
+                    <div class="absolute-centering" id="seconds-content">--</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="data-section">
+        <span class="label">DATE</span>
+        <div class="date-data">
+            <div class="date-item day-container">
+                <div class="d-label">Lun</div>
+                <div class="d-info">10</div>
+            </div>
+            <div class="date-item month-container">
+                <div class="d-label">Gen</div>
+                <div class="d-info">01</div>
+            </div>
+            <div class="date-item year-container">
+                <div class="d-label">20</div>
+                <div class="d-info">23</div>
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="weather-section">
+        <span class="label">WEATHER</span>
+        <div class="weather-data">
+            <div id="city"></div>
+            <div class="temp">
+                <div id="temp-data"></div>
+                <div class="temp-icon"><img id="temp-icon" src="//cdn.weatherapi.com/weather/64x64/day/113.png" /></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+<script src="app.js"></script>
+</body>
+</html>
