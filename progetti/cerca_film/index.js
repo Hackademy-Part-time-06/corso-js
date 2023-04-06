@@ -6,6 +6,7 @@ console.log("Ci sono!");
 let formEl = document.querySelector("form");
 let titoloInput = formEl.querySelector("#title");
 let contenitoreListaFIlm = document.getElementById("contenitore-lista-film");
+let spinner = document.getElementById("spinner-overlay");
 
 function initForm() {
   formEl.addEventListener("submit", function (event) {
@@ -56,6 +57,8 @@ function stampaListaFilm(listaFilm) {
 
 
 function getFilms(parolaDaCercare, pagina=1) {
+  spinner.classList.remove("d-none");
+
   console.log("[get-films] search keyword:", titoloInput.value);
 
   // reset film container
@@ -75,6 +78,8 @@ function getFilms(parolaDaCercare, pagina=1) {
         stampaListaFilm(rispostaObj.Search)
 
         pagination.handlePagination(rispostaObj, pagina)
+
+        spinner.classList.add("d-none");
       }
     });
 }

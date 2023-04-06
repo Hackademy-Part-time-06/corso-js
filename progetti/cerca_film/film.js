@@ -11,7 +11,6 @@ function getFilm() {
 
   let url = new URL("http://www.omdbapi.com/?apikey=9f6ae0f5");
   url.searchParams.append("i", searchParams.get("filmId"))
-
   fetch(url)
     .then((response) => response.json())
     .then((film) => {
