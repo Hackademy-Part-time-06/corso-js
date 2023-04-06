@@ -1,0 +1,29 @@
+#img-modal {
+    width: 200px;
+}
+
+.img-fluid {
+    width: 100%;
+}
+body{
+    font-family: 'Dosis', sans-serif;;
+}
+h1, h2 {
+    font-family: 'Creepster', cursive;
+}
+#h1{
+    font-size: 200px;
+}
+
+
+h5 {
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+svg{
+    color: white;
+}
+
+#li-char{
+    color: rgb(8,255,8);
+}
