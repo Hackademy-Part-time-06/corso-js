@@ -23,7 +23,6 @@ prevPage.addEventListener("click", function(event){
     personaggi()
 })
 
-
 function personaggi(){
     fetch(urlNuova)
     .then(function (response) {
@@ -57,8 +56,6 @@ function personaggi(){
             cardAnchor.setAttribute("data-id", charList.results[oggChar].id)
             cardAnchor.innerHTML = `Scheda personaggio ${charList.results[oggChar].id}`
             cardBody.append(cardAnchor)
-
-
         }
         for (let listaCard in charList.results) {
             creaCard(listaCard)
@@ -114,10 +111,6 @@ function personaggi(){
                 }
                 myModal.show()
             }
-
         })
-
     })
-
-
 }
