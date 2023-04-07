@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orologio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body style="font-family: 'Montserrat', sans-serif; background-image: url(./img/venezia.jpg); background-position: center; background-repeat: no-repeat; background-size: cover; height: 95vh;">
+    <div class="container-fluid">
+        <div class="row justify-content-center my-4">
+            <div class="col-4 col-md-3">
+                <div class="card border-0 shadow bg-primary text-light text-center ">
+                    <p class="fs-1 fw-bold my-2">
+                        <span id="ore-automatic"></span> :
+                        <span id="minuti-automatic"></span> :
+                        <span id="secondi-automatic" class="fs-3"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <div class="col-4 col-md-3">
+                <div class="card border-0 shadow text-center ">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center fs-4">
+                            <p class="mt-2 mb-0">
+                                <span id="giorno-let"></span>
+                                <span id="mese-let" class="mx-3"></span>
+                                <span id="anno-let"></span>
+                            </p>
+                        </div>
+                        <div class="row justify-content-center fs-2 fw-bold">
+                            <p class="my-2">
+                                <span id="giorno-num" class="me-3"></span>/
+                                <span id="mese-num" class="ms-2 me-3"></span>/
+                                <span id="anno-num" class="ms-2"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center mb-4">
+            <div class="col-4 col-md-3">
+                <div class="card border-0 shadow text-center ">
+                    <p class="fs-3 my-2">
+                        <span id="citta" class="fw-bold"></span>
+                        <span id="temperatura"></span>
+                        <img id="icona-meteo">
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+<!-- OROLOGIO MANUALE
+    <div id="input-orario" class="container-fluid mb-4">
+        <h2 class="text-center fs-3"><em>Che ore sono?</em></h2>
+        <form id="formOrologio" class="input-group" style="padding: 0 15rem;">
+            <input type="number" id="inputOre" class="form-control text-center" placeholder="ORE" max="24">
+            <input type="number" id="inputMinuti" class="form-control text-center" placeholder="MINUTI" max="60">
+            <input type="number" id="inputSecondi" class="form-control text-center" placeholder="SECONDI" max="60">
+            <button class="form-control input-group-text justify-content-center bg-primary bg-gradient text-light fw-bold p-" style="width: 10%;">START</button>
+        </form>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="card text-center ">
+                    <p class="fs-1 fw-bold my-2">
+                        <span id="ore"></span> :
+                        <span id="minuti"></span> :
+                        <span id="secondi" class="fs-3"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

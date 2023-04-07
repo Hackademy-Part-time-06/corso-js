@@ -23,6 +23,7 @@ fetch(urlApi)
             if (filmSingolo !== "Title" && filmSingolo !== "Poster" && filmSingolo !== "Ratings") {
                 let liFilm = document.createElement("li");
                 liFilm.classList.add("list-group-item");
+                liFilm.setAttribute("id", "liFilm")
                 liFilm.innerHTML = `${filmSingolo}: ${film[filmSingolo]}`
                 ul.append(liFilm)
             }
