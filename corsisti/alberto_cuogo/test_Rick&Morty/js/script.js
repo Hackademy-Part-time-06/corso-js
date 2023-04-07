@@ -61,7 +61,6 @@ paginationNext.addEventListener("click", function (event) {
 });
 // end events listeners generici
 
-
 /**
  * LOGICA PROGRAMMA DIVISA IN FUNZIONI
  */
@@ -224,6 +223,7 @@ function gestisciVisibilitaPaginazione() {
 }
 
 function chiamataApi() {
+  spinner.show();
   fetch(urlAPI)
     .then(function (response) {
       return response.json();
@@ -235,6 +235,8 @@ function chiamataApi() {
       stampaListaCards();
 
       gestisciVisibilitaPaginazione();
+
+      spinner.hide();
     });
 }
 

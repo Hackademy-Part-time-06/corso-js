@@ -1,12 +1,18 @@
 "use strict"
 
-setTimeout(function() {
-    let portalSpinner = document.getElementById("portal-spinner")
-    portalSpinner.classList.add("d-none")
-    let containerBody = document.getElementById("container-body")
-    containerBody.classList.remove("d-none")
-}, 0)
+let portalSpinner = document.getElementById("portal-spinner")
+let containerBody = document.getElementById("container-body")
 
+let spinner = {
+    show: function() {
+        portalSpinner.classList.remove("d-none")
+        containerBody.classList.add("d-none")
+    },
+    hide: function() {
+        portalSpinner.classList.add("d-none")
+        containerBody.classList.remove("d-none")
+    }
+}
 
 function scrollBackground(){
     if(document.documentElement.scrollTop > 100){
