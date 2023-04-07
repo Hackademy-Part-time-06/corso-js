@@ -155,11 +155,11 @@ function startDay() {
 
     giornoNum.innerHTML = today.toLocaleDateString("it-IT", {
         day: "numeric"
-    }).toUpperCase()
+    })
 
     meseNum.innerHTML = today.toLocaleDateString("it-IT", {
         month: "numeric"
-    }).toUpperCase()
+    })
 
     annoNum.innerHTML = today.toLocaleDateString("it-IT", {
         year: "2-digit"
