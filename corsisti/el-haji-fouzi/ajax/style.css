@@ -1,0 +1,12 @@
+@font-face {
+    font-family: digital;
+    src: url(./digital-7\ \(italic\).ttf);
+}
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+body {
+    
+}
