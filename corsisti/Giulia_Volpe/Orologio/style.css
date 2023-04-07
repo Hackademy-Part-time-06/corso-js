@@ -1,0 +1,14 @@
+body{
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+}
+
+h1{
+    font-family: 'Special Elite', cursive;
+}
+
+
+.card:hover{
+    background-color: black;
+    color: rgb(205, 164, 52);
+}
