@@ -1,0 +1,15 @@
+body{
+    background-color:black;
+}
+h1{
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 46pt;
+}
+.card-title{
+    font-family: 'Signika', sans-serif;
+
+}
+
+#prevPage, #nextPage{
+    cursor: pointer;
+}

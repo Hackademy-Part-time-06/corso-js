@@ -1,20 +1,44 @@
 "use strict"
 
-// PROGETTO SITO CERCA FILM
-
 let divCardContainer = document.getElementById("cardContainer");
 let form = document.querySelector("form");
 let submit = document.getElementById("submitBtn");
 let input = document.getElementById("inputTitolo");
 
-submit.addEventListener("click", function (event) {
+let prevPage = document.getElementById("prevPage");
+let nextPage = document.getElementById("nextPage");
+let page = 0
+let urlApi = new URL ("http://www.omdbapi.com/?apikey=201e6329");
+
+
+//listener per titolo
+submit.addEventListener("click", function(event){
     event.preventDefault()
-    let urlApi = new URL("http://www.omdbapi.com/?apikey=201e6329")
-    divCardContainer.innerHTML = ""
+    divCardContainer.innerHTML = "";
     let valInput = input.value;
+    urlApi.searchParams.set("s", valInput)
+    cercaTitolo()
 
-    urlApi.searchParams.append("s", valInput)
+   
+})
 
+nextPage.addEventListener("click", function(event){
+    divCardContainer.innerHTML = ""
+    page++
+    urlApi.searchParams.set("page", page)
+    console.log("ciao")
+
+    cercaTitolo()
+})
+
+prevPage.addEventListener("click", function(event){
+    divCardContainer.innerHTML = ""
+    page--
+    urlApi.searchParams.set("page", page)
+    cercaTitolo()
+})
+
+function cercaTitolo(){
     fetch(urlApi)
         .then(function (response) {
             return response.json()
@@ -31,7 +55,7 @@ submit.addEventListener("click", function (event) {
 
                 let cardImg = document.createElement("img")
                 cardImg.classList.add("card-img-top");
-                //cardImg.alt = listaFilm.Search[OggFilm].Title;
+                cardImg.alt = listaFilm.Search[OggFilm].Title;
                 cardImg.src = "https://placehold.co/600x400?text=image+not+present";
                 divCard.append(cardImg);
 
@@ -55,7 +79,7 @@ submit.addEventListener("click", function (event) {
                 let cardAnchor = document.createElement("a");
                 cardAnchor.classList.add("btn", "btn-primary");
                 cardAnchor.href = `http://127.0.0.1:5500/movie.html?i=${listaFilm.Search[OggFilm].imdbID}`
-                cardAnchor.innerHTML = `<i class="bi bi-film">Scheda film</i>`
+                cardAnchor.innerHTML = `<i class="bi bi-film">  Scheda film</i>`
                 cardBody.append(cardAnchor)
             
             }
@@ -64,7 +88,4 @@ submit.addEventListener("click", function (event) {
                 creaCard(listaCard)
             }
         })
-
-})
-
-
+}
