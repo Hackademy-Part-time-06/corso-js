@@ -1,0 +1,30 @@
+body {
+    font-family: 'Russo One', sans-serif;
+}
+
+.orologio {
+    font-size: 80px;
+    color: coral;
+}
+
+#secondi {
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.data {
+    font-size: 80px;
+}
+
+#giornoLettere {
+    font-size: 40px;
+}
+
+#meseLettere {
+    font-size: 40px;
+}
+
+#annoBoh {
+    font-size: 40px;
+}
+
