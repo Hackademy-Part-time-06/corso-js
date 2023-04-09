@@ -17,7 +17,6 @@ let titoloPersonaggio = document.getElementById("modal-title")
 
 let h3PaginaCorrente = document.getElementById("pagina-corrente")
 
-
 // ! INIT event listener generici
 
 contenitoreCardList.addEventListener("click", function (event) {
