@@ -20,4 +20,31 @@ function paginaCorrente() {
     }
 }
 
+
+function popoloMenuCategorie() {
+    fetch("/progetti/presto_it/fake-server/api/categorie.json")
+    .then(response => response.json())
+    .then((listaCategorie) => {
+        console.log("Lista Categorie:", listaCategorie)
+
+        // cerco/prendo l'elemento che contiene il dropdown al quale appenderò le singole categorie
+        let dropdownEl = document.getElementById("menu-dropdown-categorie");
+        listaCategorie.forEach((categoria) => {
+            console.log("creo il singolo elemento per il dropdown delle categorie")
+
+            // <li><a class="dropdown-item" href="#">Action</a></li>
+            let liCategoria = document.createElement("li"); 
+            liCategoria.innerHTML = `
+                <a class="dropdown-item" href="#">${categoria.name}</a>
+            `
+            ;
+            dropdownEl.append(liCategoria);
+        })
+    })
+    .catch((error) => {
+        console.error("Errore nella chiamata all'api delle categorie:", error)
+    })
+}
+
 paginaCorrente();
+popoloMenuCategorie();
