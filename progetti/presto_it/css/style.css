@@ -16,3 +16,27 @@
     height: 50vh;
     background-color: var(--main-light);    
 }
+
+.annuncio-type-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 10px;
+}
+
+.card-title.price {
+    color: var(--main);
+}
+
+
+.annuncio-extra-info-container {
+    border-top: 1px dashed var(--main);
+}
+
+.aeic-category {
+    border-right: 1px dashed var(--main);
+}
+
+.bg-custom {
+    background-color: var(--main);
+}
