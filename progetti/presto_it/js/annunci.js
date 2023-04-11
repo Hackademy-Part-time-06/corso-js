@@ -4,6 +4,10 @@ console.log("annunci.js caricato")
 
 
 let contenitoreListaAnnunci = document.getElementById("contenitore-lista-annunci");
+let bntCerca = document.getElementById("btn-cerca");
+let inputCercaPerNome = document.getElementById("cerca-per-nome");
+
+let listaAnnunciGlobale = [];
 
 
 function stampaCardAnnuncio(annuncio) {
@@ -41,6 +45,9 @@ function stampaCardAnnuncio(annuncio) {
 function stampaListaAnnunci(listaAnnunci=[]) {
     console.log("fn stampaListaAnnunci:", listaAnnunci)
 
+    // RESET CONTENUTO CONTENITORE
+    contenitoreListaAnnunci.innerHTML = "";
+
     listaAnnunci.forEach((annuncio) => {
         stampaCardAnnuncio(annuncio)
     })
@@ -51,15 +58,49 @@ function caricaAnnunci() {
     fetch("/progetti/presto_it/fake-server/api/annunci.json")
     .then(response => response.json())
     .then(listaAnnunci => {
+        listaAnnunciGlobale = listaAnnunci
         console.log("Lista annunci:", listaAnnunci);
 
-        stampaListaAnnunci(listaAnnunci)
+        stampaListaAnnunci(listaAnnunci);
     })
     .catch((error) => {
         console.error("Errore nella chiamata all'api degli annunci:", error)
     })
 }
 
+function cercaPerNome(query, listaAnnunci) {
+    console.log("fn cercaPerNome - query:", query)
+    console.log("fn cercaPerNome - listaAnnunci:", listaAnnunci)
+
+    let listaFiltrata = listaAnnunci.filter((annuncio) => {
+        let nomeTM = annuncio.name.toLowerCase();
+        let queryTM = query.toLowerCase();
+        
+        if (nomeTM.includes(queryTM)) {
+            return true
+        }
+        else {
+            return false;
+        }
+    })
+
+
+    console.log("fn cercaPerNome - listaFiltrata:", listaFiltrata)
+
+    stampaListaAnnunci(listaFiltrata)
+}
+
+function inizializzaFiltri() {
+    bntCerca.addEventListener("click", function(event) {
+        console.log("Bottone 'cerca' cliccato")
+        console.log("valore cerca per nome:", inputCercaPerNome.value)
+
+        cercaPerNome(inputCercaPerNome.value, listaAnnunciGlobale)
+    })
+}
+
+
+inizializzaFiltri()
 
 caricaAnnunci();
 
