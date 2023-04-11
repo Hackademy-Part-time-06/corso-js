@@ -11,3 +11,8 @@
     font-weight: 800;
     color: #00b98e;
 }
+
+.header-annunci {
+    height: 50vh;
+    background-color: var(--main-light);    
+}
