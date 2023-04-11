@@ -6,3 +6,8 @@
     --dark : #0e2e50;
     --neutral : #666565;
 }
+
+.navbar-nav .nav-link.active {
+    font-weight: 800;
+    color: #00b98e;
+}
