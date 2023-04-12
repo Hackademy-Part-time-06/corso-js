@@ -20,10 +20,24 @@ function pagginaCorrente() {
 // chiamare le elementi dal api
 
 function popoloListaCategoria() {
-    fetch("../fake-server/categorie.json")
+    fetch("../server/categorie.json")
         .then(response => response.json())
         .then((listaCategoria) => {
             console.log("la lista categoria", listaCategoria);
+
+            //cerco l elemento che contiene il dropdown
+
+            let dropdown = document.getElementById("menu-dropdown-")
+            listaCategoria.forEach((categoria) => {
+                console.log("creo il sigolo elemento per il drop down")
+                let liCategoria = document.createElement("li");
+                liCategoria.innerHTML = ` <a class="dropdown-item" href="#">${categoria.name}</a>`;
+                dropdown.append(liCategoria)
+
+            })
+
+          
+
         })
         .catch((error) => {
             console.error("Failed to fetch categoria")
