@@ -6,12 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Cookie Banner</title>
+    <title>Cerca Film</title>
 </head>
+
 <body>
+    <h1 class="m-3">CERCA FILM</h1>
+
+    <form id="movie_finder" class="mx-3">
+        <label for="movie_title_search">Inserisci il Titolo</label>
+        <input id="movie_title_search" type="text" minlength="3">
+        <button class="mx-3" type="submit">Submit</button>
+    </form>
     
-    
+    <div class="container">
+        <div class="row" id="card_container"></div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
+
 </html>
