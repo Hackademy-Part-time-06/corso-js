@@ -13,6 +13,7 @@ bottoneCerca.addEventListener("click",function(event){
         return response.json()
     })
     .then(function(raccolta){
+        console.log(raccolta)
         let contenitore = document.createElement("div")
         contenitore.setAttribute("class", "row")
         document.body.append(contenitore)
@@ -31,5 +32,11 @@ bottoneCerca.addEventListener("click",function(event){
               </div>
             </div>`
         })
+        if (raccolta.totalResults > "10") {
+            console.log("PAGINA 2")
+            let pag2 = document.createElement("a")
+            document.body.append(pag2)
+            pag2.innerHTML =` <a href="http://127.0.0.1:5500/pagina2/pagina2.html?apikey=32949988&s=${inputFilm.value}&page=2" target="_blank">pagina2</a>`
+          }
     })
 })
