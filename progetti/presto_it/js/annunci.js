@@ -106,7 +106,7 @@ function cercaPerNome(query, listaAnnunci) {
 
     console.log("fn cercaPerNome - listaFiltrata:", listaFiltrata)
 
-    stampaListaAnnunci(listaFiltrata)
+    return listaFiltrata
 }
 
 function cercaPerCategoria(categoria, listaAnnunci) {
@@ -123,19 +123,24 @@ function cercaPerCategoria(categoria, listaAnnunci) {
             return annuncio.category === categoria
         })
     }
-    
+
     console.log("cercaPerCategoria - listaAnnunciFiltrata:", listaFiltrata)
 
-    stampaListaAnnunci(listaFiltrata)
+    return listaFiltrata;
 }
 
 function inizializzaFiltri() {
     bntCerca.addEventListener("click", function(event) {
         console.log("Bottone 'cerca' cliccato")
 
-        //cercaPerNome(inputCercaPerNome.value, listaAnnunciGlobale)
+        let listaFiltrata = listaAnnunciGlobale
 
-        cercaPerCategoria(selectCercaPerCategoria.value, listaAnnunciGlobale);
+        listaFiltrata = cercaPerNome(inputCercaPerNome.value, listaFiltrata)
+
+        listaFiltrata = cercaPerCategoria(selectCercaPerCategoria.value, listaFiltrata);
+
+
+        stampaListaAnnunci(listaFiltrata)
     })
 }
 
