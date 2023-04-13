@@ -94,18 +94,34 @@ function caricaAnnunci() {
     .then(response => response.json())
     .then(listaAnnunci => {
         listaAnnunciGlobale = listaAnnunci
+        let listaFiltrata = listaAnnunciGlobale;
+
         console.log("Lista annunci:", listaAnnunci);
 
-        stampaListaAnnunci(listaAnnunci);
+        // cerco i valori passati nella url dal blocco dei filtri in homepage
+        let url = new URL(window.location.href);
+        console.log("current URL:", url)
+
+        // prendo il filtro corrispondente alla "ricerca per nome" 
+        let queryDiRicerca = url.searchParams.get("query")        
+        console.log("query di ricerca:", queryDiRicerca)
+
+        // controllo che sia valorizzata la query string nella url relativa alla ricerca per nome passatammi dalla homepage
+        if (queryDiRicerca) {
+
+            // prefillo il campo input corrispondente alla 'ricerca per nome' 
+            inputCercaPerNome.value = queryDiRicerca;
+
+            // filtro gli annunci per nome
+            listaFiltrata = cercaPerNome(inputCercaPerNome.value, listaFiltrata)
+        }
+
+        stampaListaAnnunci(listaFiltrata)
     })
     .catch((error) => {
         console.error("Errore nella chiamata all'api degli annunci:", error)
     })
 }
-
-
-
-
 
 
 /**
@@ -192,7 +208,9 @@ function cercaPerPrezzoMassimo(prezzoMax, listaAnnunci) {
     console.log("cercaPerPrezzoMassimo - prezzoMax:", prezzoMax)
     console.log("cercaPerPrezzoMassimo - listaAnnunci:", listaAnnunci);
     
-    let listaFiltrata = listaAnnunci.filter((annuncio) => {
+    let listaFiltrata = listaAnnunci;
+    
+    listaAnnunci.filter((annuncio) => {
         if (+annuncio.price < +prezzoMax) {
             return true
         }
@@ -216,10 +234,10 @@ function cercaPerPrezzoMassimo(prezzoMax, listaAnnunci) {
  * ////////////////////////////////////////
  * ////////////////////////////////////////
  */
-function inizializzaFiltri() {
+function listenerRicerca() {
     bntCerca.addEventListener("click", function(event) {
         console.log("Bottone 'cerca' cliccato")
-
+        
         let listaFiltrata = listaAnnunciGlobale
 
         listaFiltrata = cercaPerNome(inputCercaPerNome.value, listaFiltrata)
@@ -245,6 +263,6 @@ function inizializzaFiltri() {
  * ////////////////////////////////////////
  * ////////////////////////////////////////
  */
-inizializzaFiltri()
+listenerRicerca()
 caricaAnnunci();
 
