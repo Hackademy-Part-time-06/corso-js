@@ -17,6 +17,7 @@ let contenitoreListaAnnunci = document.getElementById("contenitore-lista-annunci
 let bntCerca = document.getElementById("btn-cerca");
 let inputCercaPerNome = document.getElementById("cerca-per-nome");
 let inputCercaPerPrezzoMin = document.getElementById("cerca-per-prezzo-min")
+let inputCercaPerPrezzoMax = document.getElementById("cerca-per-prezzo-max")
 
 // lista annunci con visilibità globale - popolata successivamente nella fetch verso l'api "fake-server/api/annunci.json"
 let listaAnnunciGlobale = [];
@@ -184,6 +185,25 @@ function cercaPerPrezzoMin(prezzoMin, listaAnnunci) {
     return listaFiltrata;
 }
 
+/**
+ * Cerca per prezzo massimo
+ */
+function cercaPerPrezzoMassimo(prezzoMax, listaAnnunci) {
+    console.log("cercaPerPrezzoMassimo - prezzoMax:", prezzoMax)
+    console.log("cercaPerPrezzoMassimo - listaAnnunci:", listaAnnunci);
+    
+    let listaFiltrata = listaAnnunci.filter((annuncio) => {
+        if (+annuncio.price < +prezzoMax) {
+            return true
+        }
+        else {
+            return false
+        }
+    })
+
+    return listaFiltrata;
+}
+
 
 
 
@@ -207,6 +227,8 @@ function inizializzaFiltri() {
         listaFiltrata = cercaPerCategoria(selectCercaPerCategoria.value, listaFiltrata);
 
         listaFiltrata = cercaPerPrezzoMin(inputCercaPerPrezzoMin.value, listaFiltrata);
+
+        listaFiltrata = cercaPerPrezzoMassimo(inputCercaPerPrezzoMax.value, listaFiltrata);
 
         stampaListaAnnunci(listaFiltrata)
     })
