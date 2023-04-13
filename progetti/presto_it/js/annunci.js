@@ -18,6 +18,7 @@ let bntCerca = document.getElementById("btn-cerca");
 let inputCercaPerNome = document.getElementById("cerca-per-nome");
 let inputCercaPerPrezzoMin = document.getElementById("cerca-per-prezzo-min")
 let inputCercaPerPrezzoMax = document.getElementById("cerca-per-prezzo-max")
+let selectSorting = document.getElementById("ordina-la-lista")
 
 // lista annunci con visilibità globale - popolata successivamente nella fetch verso l'api "fake-server/api/annunci.json"
 let listaAnnunciGlobale = [];
@@ -224,6 +225,38 @@ function cercaPerPrezzoMassimo(prezzoMax, listaAnnunci) {
 
 
 
+/**
+ * ////////////////////////////////////////
+ * ////////////////////////////////////////
+ * 
+ * SORTING
+ * 
+ * ////////////////////////////////////////
+ * ////////////////////////////////////////
+ */
+
+function sorting(ordinaPer, listaAnnunci) {
+    console.log("sorting - ordinaPer:", ordinaPer);
+    console.log("sorting - listaAnnunci:",  listaAnnunci)
+
+    let listaOrdinata  = listaAnnunci.sort((a, b) => {
+        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+      
+        return 0;
+      });
+
+    return listaOrdinata;
+}
+
+
+
 
 /**
  * ////////////////////////////////////////
@@ -247,6 +280,8 @@ function listenerRicerca() {
         listaFiltrata = cercaPerPrezzoMin(inputCercaPerPrezzoMin.value, listaFiltrata);
 
         listaFiltrata = cercaPerPrezzoMassimo(inputCercaPerPrezzoMax.value, listaFiltrata);
+
+        listaFiltrata = sorting(selectSorting.value, listaFiltrata)
 
         stampaListaAnnunci(listaFiltrata)
     })
