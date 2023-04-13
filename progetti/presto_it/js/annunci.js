@@ -2,12 +2,31 @@
 
 console.log("annunci.js caricato")
 
-
+// variabili globali
 let contenitoreListaAnnunci = document.getElementById("contenitore-lista-annunci");
 let bntCerca = document.getElementById("btn-cerca");
 let inputCercaPerNome = document.getElementById("cerca-per-nome");
+let selectCercaPerCategoria = document.getElementById("cerca-per-categoria")
 
 let listaAnnunciGlobale = [];
+
+
+function popolaSelectCategorie() {
+    fetch("/progetti/presto_it/fake-server/api/categorie.json")
+    .then(response => response.json())
+    .then((listaCategorie) => {
+        console.log("popolaSelectCategorie - Lista Categorie:", listaCategorie)
+
+        listaCategorie.forEach((categoria) => {
+            let optionEl = document.createElement("option");
+            optionEl.innerText = categoria.name;
+            selectCercaPerCategoria.append(optionEl);
+        })
+    })
+    .catch((error) => {
+        console.error("Errore nella chiamata all'api delle categorie:", error)
+    })
+}
 
 
 function stampaCardAnnuncio(annuncio) {
@@ -90,15 +109,38 @@ function cercaPerNome(query, listaAnnunci) {
     stampaListaAnnunci(listaFiltrata)
 }
 
+function cercaPerCategoria(categoria, listaAnnunci) {
+    console.log("cercaPerCategoria - categoria:", categoria)
+    console.log("cercaPerCategoria - listaAnnunci:", listaAnnunci);
+
+    let listaFiltrata = [];
+
+    if (categoria === "Tutte le categorie") {
+        listaFiltrata = listaAnnunci;
+    }
+    else {
+        listaFiltrata = listaAnnunci.filter((annuncio) => {
+            return annuncio.category === categoria
+        })
+    }
+    
+    console.log("cercaPerCategoria - listaAnnunciFiltrata:", listaFiltrata)
+
+    stampaListaAnnunci(listaFiltrata)
+}
+
 function inizializzaFiltri() {
     bntCerca.addEventListener("click", function(event) {
         console.log("Bottone 'cerca' cliccato")
-        console.log("valore cerca per nome:", inputCercaPerNome.value)
 
-        cercaPerNome(inputCercaPerNome.value, listaAnnunciGlobale)
+        //cercaPerNome(inputCercaPerNome.value, listaAnnunciGlobale)
+
+        cercaPerCategoria(selectCercaPerCategoria.value, listaAnnunciGlobale);
     })
 }
 
+
+popolaSelectCategorie();
 
 inizializzaFiltri()
 
