@@ -7,7 +7,7 @@ let contenitoreListaAnnunci = document.getElementById("contenitore-lista-annunci
 let bntCerca = document.getElementById("btn-cerca");
 let inputCercaPerNome = document.getElementById("cerca-per-nome");
 let selectCercaPerCategoria = document.getElementById("cerca-per-categoria")
-
+let inputCercaPerPrezzoMin = document.getElementById("cerca-per-prezzo-min")
 let listaAnnunciGlobale = [];
 
 
@@ -30,7 +30,7 @@ function popolaSelectCategorie() {
 
 
 function stampaCardAnnuncio(annuncio) {
-    console.log("fn stampaCardAnnuncio:", annuncio)
+    //console.log("fn stampaCardAnnuncio:", annuncio)
     let contenitoreSingolaCard = document.createElement("div");
     contenitoreSingolaCard.classList.add("col-12", "col-sm-4", "mb-4");
 
@@ -129,6 +129,22 @@ function cercaPerCategoria(categoria, listaAnnunci) {
     return listaFiltrata;
 }
 
+function cercaPerPrezzoMin(prezzoMin, listaAnnunci) {
+    console.log("cercaPerPrezzoMin - prezzoMin:", prezzoMin)
+    console.log("cercaPerPrezzoMin - listaAnnunci:", listaAnnunci);
+    
+    let listaFiltrata = listaAnnunci.filter((annuncio) => {
+        if (+annuncio.price > +prezzoMin) {
+            return true
+        }
+        else {
+            return false
+        }
+    })
+
+    return listaFiltrata;
+}
+
 function inizializzaFiltri() {
     bntCerca.addEventListener("click", function(event) {
         console.log("Bottone 'cerca' cliccato")
@@ -139,6 +155,7 @@ function inizializzaFiltri() {
 
         listaFiltrata = cercaPerCategoria(selectCercaPerCategoria.value, listaFiltrata);
 
+        listaFiltrata = cercaPerPrezzoMin(inputCercaPerPrezzoMin.value, listaFiltrata);
 
         stampaListaAnnunci(listaFiltrata)
     })
