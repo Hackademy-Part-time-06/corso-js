@@ -33,5 +33,10 @@
         "name": "Cucina", 
         "icon": "bi-fire", 
         "announcementsCount": "176"
+    },
+    {
+        "name": "Musica", 
+        "icon": "bi-fire", 
+        "announcementsCount": "176"
     }
 ]

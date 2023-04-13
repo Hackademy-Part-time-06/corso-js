@@ -2,34 +2,40 @@
 
 console.log("annunci.js caricato")
 
-// variabili globali
+/**
+ * ////////////////////////////////////////
+ * ////////////////////////////////////////
+ * 
+ * VARIABILI GLOBALI
+ * 
+ * ////////////////////////////////////////
+ * ////////////////////////////////////////
+ */
+
+// elementi html -> li prendo all'inizo globalmente cosi da averli sempre disponibili e da non doverli ricercare
 let contenitoreListaAnnunci = document.getElementById("contenitore-lista-annunci");
 let bntCerca = document.getElementById("btn-cerca");
 let inputCercaPerNome = document.getElementById("cerca-per-nome");
-let selectCercaPerCategoria = document.getElementById("cerca-per-categoria")
 let inputCercaPerPrezzoMin = document.getElementById("cerca-per-prezzo-min")
+
+// lista annunci con visilibità globale - popolata successivamente nella fetch verso l'api "fake-server/api/annunci.json"
 let listaAnnunciGlobale = [];
 
 
-function popolaSelectCategorie() {
-    fetch("/progetti/presto_it/fake-server/api/categorie.json")
-    .then(response => response.json())
-    .then((listaCategorie) => {
-        console.log("popolaSelectCategorie - Lista Categorie:", listaCategorie)
+/**
+ * ////////////////////////////////////////
+ * ////////////////////////////////////////
+ * 
+ * LOGICA
+ * 
+ * ////////////////////////////////////////
+ * ////////////////////////////////////////
+ */
 
-        listaCategorie.forEach((categoria) => {
-            let optionEl = document.createElement("option");
-            optionEl.innerText = categoria.name;
-            selectCercaPerCategoria.append(optionEl);
-        })
-    })
-    .catch((error) => {
-        console.error("Errore nella chiamata all'api delle categorie:", error)
-    })
-}
-
-
-function stampaCardAnnuncio(annuncio) {
+/**
+ * Funzione che stampa la SINGOLA card
+ */
+function stampaCardSingoloAnnuncio(annuncio) {
     //console.log("fn stampaCardAnnuncio:", annuncio)
     let contenitoreSingolaCard = document.createElement("div");
     contenitoreSingolaCard.classList.add("col-12", "col-sm-4", "mb-4");
@@ -61,6 +67,11 @@ function stampaCardAnnuncio(annuncio) {
     contenitoreListaAnnunci.append(contenitoreSingolaCard)
 }
 
+
+/**
+ * Funzione che stampa tutta la lista degli annunci -> tutte le card -> richiama la funzione 
+ * "stampaCardAnnuncio" per ogni annuncio presente nella lista che gli passo in input
+ */
 function stampaListaAnnunci(listaAnnunci=[]) {
     console.log("fn stampaListaAnnunci:", listaAnnunci)
 
@@ -68,11 +79,15 @@ function stampaListaAnnunci(listaAnnunci=[]) {
     contenitoreListaAnnunci.innerHTML = "";
 
     listaAnnunci.forEach((annuncio) => {
-        stampaCardAnnuncio(annuncio)
+        stampaCardSingoloAnnuncio(annuncio)
     })
 }
 
 
+/**
+ * Funzione che chiama l'API '/fake-server/api/annunci.json' -> richiama la funzione di stampa 
+ * annunci passandogli il valore della risposta dell'api
+ */
 function caricaAnnunci() {
     fetch("/progetti/presto_it/fake-server/api/annunci.json")
     .then(response => response.json())
@@ -87,6 +102,24 @@ function caricaAnnunci() {
     })
 }
 
+
+
+
+
+
+/**
+ * ////////////////////////////////////////
+ * ////////////////////////////////////////
+ * 
+ * FILTRI
+ * 
+ * ////////////////////////////////////////
+ * ////////////////////////////////////////
+ */
+
+/**
+ * Cerca per nome
+ */
 function cercaPerNome(query, listaAnnunci) {
     console.log("fn cercaPerNome - query:", query)
     console.log("fn cercaPerNome - listaAnnunci:", listaAnnunci)
@@ -109,6 +142,9 @@ function cercaPerNome(query, listaAnnunci) {
     return listaFiltrata
 }
 
+/**
+ * Cerca per categoria
+ */
 function cercaPerCategoria(categoria, listaAnnunci) {
     console.log("cercaPerCategoria - categoria:", categoria)
     console.log("cercaPerCategoria - listaAnnunci:", listaAnnunci);
@@ -129,6 +165,9 @@ function cercaPerCategoria(categoria, listaAnnunci) {
     return listaFiltrata;
 }
 
+/**
+ * Cerca per prezzo minimo
+ */
 function cercaPerPrezzoMin(prezzoMin, listaAnnunci) {
     console.log("cercaPerPrezzoMin - prezzoMin:", prezzoMin)
     console.log("cercaPerPrezzoMin - listaAnnunci:", listaAnnunci);
@@ -145,6 +184,18 @@ function cercaPerPrezzoMin(prezzoMin, listaAnnunci) {
     return listaFiltrata;
 }
 
+
+
+
+/**
+ * ////////////////////////////////////////
+ * ////////////////////////////////////////
+ * 
+ * LISTENERS
+ * 
+ * ////////////////////////////////////////
+ * ////////////////////////////////////////
+ */
 function inizializzaFiltri() {
     bntCerca.addEventListener("click", function(event) {
         console.log("Bottone 'cerca' cliccato")
@@ -162,9 +213,16 @@ function inizializzaFiltri() {
 }
 
 
-popolaSelectCategorie();
 
+/**
+ * ////////////////////////////////////////
+ * ////////////////////////////////////////
+ * 
+ * INIZIALIZZAZIONI
+ * 
+ * ////////////////////////////////////////
+ * ////////////////////////////////////////
+ */
 inizializzaFiltri()
-
 caricaAnnunci();
 
