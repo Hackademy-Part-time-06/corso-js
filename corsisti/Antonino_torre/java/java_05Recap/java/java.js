@@ -346,14 +346,59 @@ const LIBRI = [
 let lista = document.createElement("ul")
 document.body.append(lista)
 LIBRI.forEach(function(listeLibri){
-    let libro = document.createElement("li")
-    lista.append(libro)
-    bottone= document.createElement("button")
+    let liLibro = document.createElement("li")
+    lista.append(liLibro)
+    let span = document.createElement("span")
+    liLibro.append(span)
+    let bottone= document.createElement("button")
     bottone.innerHTML = "Aggiungi ai preferiti"
-    lista.append(bottone)
-    libro.innerHTML = `<strong>Titolo: </strong>${listeLibri.titolo}  <br><strong>Autore: </strong>${listeLibri.autore} <br><strong>Categoria: </strong>${listeLibri.categoria}`
+    
+    span.innerHTML = `<strong>Titolo: </strong>${listeLibri.titolo} `
     bottone.addEventListener("click",function(){
         alert(`Il libro "${listeLibri.titolo}" è stato aggiunto ai preferiti`)
     })
+    span.append(bottone)
 })
+*/
+// esercizio 75
+/*
+let contenitoreEsercizio75 = document.createElement("div")
+document.body.append(contenitoreEsercizio75)
+function calcolatrice (){
+    let input1 = document.createElement("input")
+    input1.setAttribute("type","number")
+    contenitoreEsercizio75.append(input1)
+    let input2 = document.createElement("input")
+    input2.setAttribute("type","number");
+    contenitoreEsercizio75.append(input2)
+    let bottoneAddizione = document.createElement("button")
+    let bottoneSottrazione = document.createElement("button")
+    let bottoneMoltiplicazione = document.createElement("button")
+    let bottoneDivisione = document.createElement("button")
+    contenitoreEsercizio75.append(bottoneAddizione)
+    contenitoreEsercizio75.append(bottoneSottrazione)
+    contenitoreEsercizio75.append(bottoneMoltiplicazione)
+    contenitoreEsercizio75.append(bottoneDivisione)
+    bottoneAddizione.innerText = "+"
+    bottoneSottrazione.innerText = "-"
+    bottoneMoltiplicazione.innerText = "*"
+    bottoneDivisione.innerText = "/"
+    bottoneAddizione.addEventListener("click",function(){
+        risultato = +input1.value + +input2.value 
+        alert(`Il risultato di ${input1.value} + ${input2.value} è ${risultato}`)
+    })
+    bottoneSottrazione.addEventListener("click",function(){
+        risultato= +input1.value - +input2.value 
+        alert(`Il risultato di ${input1.value} - ${input2.value} è ${risultato}`)
+    })
+    bottoneMoltiplicazione.addEventListener("click",function(){
+        risultato= +input1.value * +input2.value 
+        alert(`Il risultato di ${input1.value} * ${input2.value} è ${risultato}`)
+    })
+    bottoneDivisione.addEventListener("click",function(){
+        risultato= +input1.value / +input2.value 
+        alert(`Il risultato di ${input1.value} / ${input2.value} è ${risultato}`)
+    })
+}
+calcolatrice()
 */

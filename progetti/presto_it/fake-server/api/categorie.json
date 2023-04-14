@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Motori", 
+        "icon": "bi-car-front", 
+        "announcementsCount": "123"
+    },
+    {
+        "name": "Elettronica", 
+        "icon": "bi-laptop", 
+        "announcementsCount": "564"
+    },
+    {
+        "name": "Abbigliamento", 
+        "icon": "bi-universal-access", 
+        "announcementsCount": "321"
+    },
+    {
+        "name": "Sport", 
+        "icon": "bi-dribbble", 
+        "announcementsCount": "90"
+    },
+    {
+        "name": "Giardinaggio", 
+        "icon": "bi-flower1", 
+        "announcementsCount": "50"
+    },
+    {
+        "name": "Casa", 
+        "icon": "bi-shop", 
+        "announcementsCount": "134"
+    },
+    {
+        "name": "Cucina", 
+        "icon": "bi-fire", 
+        "announcementsCount": "176"
+    },
+    {
+        "name": "Musica", 
+        "icon": "bi-fire", 
+        "announcementsCount": "176"
+    }
+]

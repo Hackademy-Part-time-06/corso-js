@@ -1,0 +1,13 @@
+body{
+    font-size: 30px;
+    color: tomato;
+}
+.grande{
+    font-size: 60px;
+}
+.piccolo{
+    font-size: 40px;
+}
+.centrato{
+    width: 8%;
+}

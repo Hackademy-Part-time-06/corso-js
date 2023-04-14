@@ -1,7 +1,14 @@
 "use strict"
 
 let portalSpinner = document.getElementById("portal-spinner")
+let portalSpinnerIntro = document.getElementById("portal-spinner-intro")
 let containerBody = document.getElementById("container-body")
+
+
+setTimeout(function() {
+    containerBody.classList.replace("d-none", "d-block")
+    portalSpinnerIntro.classList.add("d-none")
+}, 3000)
 
 let spinner = {
     show: function() {
