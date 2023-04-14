@@ -36,11 +36,13 @@ let listaAnnunciGlobale = [];
 
 //STEP1==>CARICO GLI ANNUNCI
 function caricaAnnunci() {
-  fetch("/corsisti/Alice_Croce/AliceCroce_Presto_it/fake-server/categorie.json")
+  fetch("/corsisti/Alice_Croce/AliceCroce_Presto_it/fake-server/annunci.json")
     .then((response) => response.json())
     .then((listaAnnunci) => {
       listaAnnunciGlobale = listaAnnunci;
       let listaFiltrata = listaAnnunciGlobale;
+
+    stampaListaAnnunci(listaFiltrata);
 
       console.log("Lista annunci", listaAnnunci);
     })
