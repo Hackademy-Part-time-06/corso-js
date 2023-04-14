@@ -2,6 +2,14 @@
 
 console.log("common.js caricato")
 
+/**
+ * Variabili globali 
+ */
+
+// elemento html - mi servirà sia in fase di popolamento che in fase di filtraggio -> quindi globale
+let selectCercaPerCategoria = document.getElementById("cerca-per-categoria")
+
+
 // gestisco la classe active del menu
 function paginaCorrente() {
     let elementoMenu;
@@ -46,5 +54,26 @@ function popoloMenuCategorie() {
     })
 }
 
+
+function popolaSelectCategorie() {
+    if (selectCercaPerCategoria) {
+        fetch("/progetti/presto_it/fake-server/api/categorie.json")
+        .then(response => response.json())
+        .then((listaCategorie) => {
+            console.log("popolaSelectCategorie - Lista Categorie:", listaCategorie)
+    
+            listaCategorie.forEach((categoria) => {
+                let optionEl = document.createElement("option");
+                optionEl.innerText = categoria.name;
+                selectCercaPerCategoria.append(optionEl);
+            })
+        })
+        .catch((error) => {
+            console.error("Errore nella chiamata all'api delle categorie:", error)
+        })
+    }
+}
+
 paginaCorrente();
 popoloMenuCategorie();
+popolaSelectCategorie();

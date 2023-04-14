@@ -1,0 +1,15 @@
+body{
+    background-color: rgba(128, 128, 128, 0.384);
+}
+.my-badge{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 10px;
+}
+.footer-card{
+    border-top: 2px dashed rgb(255, 179, 0);
+}
+.presonalized-border{
+    border-right: 2px dashed rgb(255, 179, 0);
+}

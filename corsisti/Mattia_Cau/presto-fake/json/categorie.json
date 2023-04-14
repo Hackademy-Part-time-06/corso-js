@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Auto", 
+        "icon": "fa-car-rear", 
+        "announcementsCount": "123"
+    },
+    {
+        "name": "Elettronica", 
+        "icon": "fa-laptop", 
+        "announcementsCount": "564"
+    },
+    {
+        "name": "Moto", 
+        "icon": "fa-motorcycle", 
+        "announcementsCount": "230"
+    },
+    {
+        "name": "Elettronica", 
+        "icon": "fa-laptop", 
+        "announcementsCount": "564"
+    },
+    {
+        "name": "Abbigliamento", 
+        "icon": "fa-shirt", 
+        "announcementsCount": "321"
+    },
+    {
+        "name": "Sport", 
+        "icon": "fa-person-running", 
+        "announcementsCount": "90"
+    },
+    {
+        "name": "Giardinaggio", 
+        "icon": "fa-leaf", 
+        "announcementsCount": "50"
+    },
+    {
+        "name": "Casa", 
+        "icon": "fa-house-chimney", 
+        "announcementsCount": "134"
+    },
+    {
+        "name": "Cucina", 
+        "icon": "fa-fire-burner", 
+        "announcementsCount": "176"
+    }
+]

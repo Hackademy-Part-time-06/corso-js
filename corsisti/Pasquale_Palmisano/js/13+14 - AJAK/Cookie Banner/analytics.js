@@ -4,3 +4,5 @@ const analytics = {
         console.log("[ANALTYCS] azione registrata:", azione);
     }
 }
+
+analytics.registraAzione("page view")

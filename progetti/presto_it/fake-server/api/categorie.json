@@ -1,47 +1,42 @@
 [
     {
-        "name": "Auto", 
-        "icon": "fa-car-rear", 
+        "name": "Motori", 
+        "icon": "bi-car-front", 
         "announcementsCount": "123"
     },
     {
         "name": "Elettronica", 
-        "icon": "fa-laptop", 
-        "announcementsCount": "564"
-    },
-    {
-        "name": "Moto", 
-        "icon": "fa-motorcycle", 
-        "announcementsCount": "230"
-    },
-    {
-        "name": "Elettronica", 
-        "icon": "fa-laptop", 
+        "icon": "bi-laptop", 
         "announcementsCount": "564"
     },
     {
         "name": "Abbigliamento", 
-        "icon": "fa-shirt", 
+        "icon": "bi-universal-access", 
         "announcementsCount": "321"
     },
     {
         "name": "Sport", 
-        "icon": "fa-person-running", 
+        "icon": "bi-dribbble", 
         "announcementsCount": "90"
     },
     {
         "name": "Giardinaggio", 
-        "icon": "fa-leaf", 
+        "icon": "bi-flower1", 
         "announcementsCount": "50"
     },
     {
         "name": "Casa", 
-        "icon": "fa-house-chimney", 
+        "icon": "bi-shop", 
         "announcementsCount": "134"
     },
     {
         "name": "Cucina", 
-        "icon": "fa-fire-burner", 
+        "icon": "bi-fire", 
+        "announcementsCount": "176"
+    },
+    {
+        "name": "Musica", 
+        "icon": "bi-fire", 
         "announcementsCount": "176"
     }
 ]
