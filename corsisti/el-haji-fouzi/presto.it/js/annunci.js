@@ -1,25 +1,25 @@
-/// inizializo la pagina  con un cosole log
+/// inizializo la pagina  con un cosole log annunci 
 
 console.log(">=========LISTA ANNUNCI===========<");
 
 
-/// prendo il elemento dalla pagina (annunci.html)
+/// prendo il elemento contenitore dalla pagina (annunci.html)
 let contenitoreListaAnnunci = document.getElementById("contenitore-lista-annunci")
 
 
 
-///functio per generare le la singola card ********************************
+///function per generare le la singola card ********************************<<<<<
 function stampaCardAnnunci(annuncio) {
-    console.log("<<<< le card >>> ", annuncio);
-
+    console.log("<<<<<<<<< le card >>>>>>>> ", annuncio);
+    // creare il badge della card e dagli una condition
     let badgeEl;
     if (annuncio.type === "sell") {
         badgeEl = `<span class="badge bg-danger annuncio-badge">Vendo</span>`;
     } else {
-        badgeEl = `<span class="badge bg-success annuncio-badge">Cerco</span>`
+        badgeEl = `<span class="badge bg-custom annuncio-badge">Cerco</span>`
     }
 
-
+    //creazione la card con le proprieta del prodotto
     let contenitoreSingoloCard = document.createElement("div");
     contenitoreSingoloCard.className = ("col-12", "col-sm-4")
 
@@ -31,11 +31,14 @@ function stampaCardAnnunci(annuncio) {
              
        <h5 class="card-title price">${annuncio.price}$</h5>
         <h5 class="card-title">${annuncio.name}</h5>
-        <p class="card-text">the discription of the product</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        <div class= 
+        <p class="card-text">the discription of the product</p>      
    </div>
+    <div class="d-flex justify-content-evenly conteainer-info-annuncio">
+         <div class= "col text-center cont-categori py-2">${annuncio.category}</div>
+        <div class= "col text-center py-2">${annuncio.created_date}</div>
+        </div>
 </div>`;
+    // appendere ila card al contenitore
     contenitoreListaAnnunci.append(contenitoreSingoloCard);
 
 }
