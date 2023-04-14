@@ -1,0 +1,48 @@
+:root {
+    --main : #00b98e;
+    --main-dark : #02ab83;
+    --main-light : #26c49f;
+    --white : #EFFDF5;
+    --dark : #0e2e50;
+    --neutral : #666565;
+}
+
+nav {
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    box-shadow: 0px 3px 3px #c9c8c8;
+}
+
+#logo {
+    color: var(--main);
+    font-weight: bold;
+    font-size: larger;
+    
+}
+
+.nav-item {
+    font-weight: bold;
+    
+}
+
+#crea_annuncio_button {
+    background-color: #00b98e;
+    color: var(--white);
+    border-radius: 10px;
+}
+
+#search_bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100px;
+    background-color: var(--main);
+    border-radius: 10px;
+    width: 1000px;
+}
+
+#form_submit {
+    color: var(--white);
+    background-color: var(--dark);
+}

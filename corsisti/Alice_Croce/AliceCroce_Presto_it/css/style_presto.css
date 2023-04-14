@@ -1,13 +1,37 @@
 :root {
-    --main : #00b98e;
-    --main-dark : #02ab83;
-    --main-light : #26c49f;
-    --white : #EFFDF5;
-    --dark : #0e2e50;
-    --neutral : #666565;
+  --main: #00b98e;
+  --main-dark: #02ab83;
+  --main-light: #26c49f;
+  --white: #effdf5;
+  --dark: #0e2e50;
+  --neutral: #666565;
 }
 
 .navbar-nav .nav-link.active {
-    font-weight: 800;
-    color: var(--main);
+  font-weight: 800;
+  color: var(--main);
+}
+
+.header {
+  height: 100vh;
+  min-height: 500px;
+  background-image: url(/corsisti/Alice_Croce/AliceCroce_Presto_it/img/announcementsHeader.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.annuncio-type-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 10px;
+}
+
+.card-title.price {
+  color: var(--main);
+}
+
+.bg-custom {
+  background-color: var(--main);
 }

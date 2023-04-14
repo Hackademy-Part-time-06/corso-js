@@ -13,14 +13,20 @@ window.onload = (() => {
     </div>`
 
     remove_banner()
+    
 })
 
 function remove_banner() {
     let x = document.getElementById("x")
     x.addEventListener("click", event => {
+        
         let script = document.createElement("script")
         script.setAttribute("src", "analytics.js")
         document.body.append(script)
+
+        let script2 = document.createElement("script")
+        script2.setAttribute("src", "adv.js")
+        document.body.append(script2)
 
         let banner = document.getElementById("cookie-banner")
         document.body.removeChild(banner)

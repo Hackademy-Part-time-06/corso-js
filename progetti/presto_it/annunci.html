@@ -59,8 +59,7 @@
               >
                 Categorie
               </a>
-              <ul class="dropdown-menu" id="menu-dropdown-categorie">
-              </ul>
+              <ul class="dropdown-menu" id="menu-dropdown-categorie"></ul>
             </li>
             <li class="nav-item">
               <a class="nav-link">Profilo</a>
@@ -73,7 +72,6 @@
       </div>
     </nav>
 
-
     <header class="header-annunci">
       <h1 class="text-center">Cerca tra i nostri Annunci</h1>
     </header>
@@ -81,18 +79,46 @@
     <div class="container py-5">
       <div class="row" id="contenitore-filtri">
         <div class="col-12 col-sm-8">
-          <input type="text" id="cerca-per-nome" class="form-control">
+          <div class="row">
+            <div class="col-12 col-sm-4">
+              <input
+                type="text"
+                id="cerca-per-nome"
+                class="form-control"
+                placeholder="Ricerca libera"
+              />
+            </div>
+            <div class="col-12 col-sm-4">
+              <select class="form-select" id="cerca-per-categoria">
+                <option selected>Tutte le categorie</option>
+              </select>
+            </div>
+            <div class="col-12 col-sm-2">
+              <input type="number" class="form-control" id="cerca-per-prezzo-min" placeholder="Min" />
+            </div>
+            <div class="col-12 col-sm-2">
+              <input type="number" class="form-control" id="cerca-per-prezzo-max" placeholder="Max" />
+            </div>
+          </div>
         </div>
         <div class="col-12 col-sm-4">
           <button id="btn-cerca" class="btn btn-primary">Cerca</button>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-12 col-sm-4">
+          <select class="form-select" id="ordina-la-lista">
+            <option selected>Ordina per</option>
+            <option>A-Z</option>
+            <option>Z-A</option>
+          </select>
+        </div>
+      </div>
     </div>
 
-
     <div class="container py-5">
-      <div class="row" id="contenitore-lista-annunci">
-      </div>
+      <div class="row" id="contenitore-lista-annunci"></div>
     </div>
 
     <script
