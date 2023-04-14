@@ -19,3 +19,27 @@ function paginaCorrente() {
         ElementoMenu.classList.add('active');
     }
 }
+
+
+
+function popoloMenuCategorie () {
+    fetch('./api-mocked-data/categorie.json')
+    .then(Response => Response.json())
+    .then(listaCategorie => {
+
+        let dropdownEl = document.getElementById('menu-dropdown-categorie')
+        listaCategorie.forEach((categoria) => {
+            let liCategoria = document.createElement('li');
+            liCategoria.innerHTML = `<a class="dropdown-item" href="#">${categoria.name}</a>
+            `
+            dropdownEl.append(liCategoria)
+        });
+        console.log('lista categorie', listaCategorie);
+    })
+    .catch((errore) => {
+        console.error('errore nella chiamata dell api catogorie', errore)
+    })
+
+}
+paginaCorrente();
+popoloMenuCategorie();
