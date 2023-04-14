@@ -4,7 +4,12 @@ console.log(">=========LISTA ANNUNCI===========<");
 
 
 /// prendo il elemento contenitore dalla pagina (annunci.html)
-let contenitoreListaAnnunci = document.getElementById("contenitore-lista-annunci")
+let contenitoreListaAnnunci = document.getElementById("contenitore-lista-annunci");
+let buttoneCerca = document.getElementById("btn");
+let inputText = document.getElementById("cerca-per-nome");
+let listAnnunciGlobale = [];
+
+
 
 
 
@@ -24,7 +29,7 @@ function stampaCardAnnunci(annuncio) {
     contenitoreSingoloCard.className = ("col-12", "col-sm-4")
 
     contenitoreSingoloCard.innerHTML = `
-    <div class="card " >
+    <div class="card">
   <img src="../media/kv-galaxy-s23_s.jpg" class="card-img-top" alt="...">
     ${badgeEl}
     <div class="card-body">
@@ -63,6 +68,7 @@ function caricaAnnunci() {
     fetch("../server/annunci.json")
         .then(response => response.json())
         .then(datiLista => {
+            listAnnunciGlobale = datiLista;
             console.log(">======tutta la lista annunci=======<", datiLista);
             stampaListaAnnunci(datiLista);
         })
@@ -72,3 +78,30 @@ function caricaAnnunci() {
 
 }
 caricaAnnunci();
+
+///functio cerca nelle lista annunci per nome 
+function cercaPerNome(query, datilista) {
+    console.log("fn cerca per nome  query:", query);
+    console.log("fn cerca per nome  datalista:", datilista);
+
+    let listaFiltrata = datilista.filter(annuncio => {
+        let nomeTm = annuncio.name.toLowerCase();
+        let queryTm = annuncio.name.toLowerCase();
+        return annuncio.name.includes(queryTm);
+    })
+    console.log("lista filtrata", listaFiltrata);
+}
+
+
+
+/// function per prendere il valore del input 
+
+function inizializzaFiltri() {
+    buttoneCerca.addEventListener("click", function (event) {
+        console.log("buttone cliccato");
+        console.log("il valore cerca per nome :", inputText.value);
+        cercaPerNome(inputText.value, listAnnunciGlobale);
+    })
+
+}
+inizializzaFiltri();
