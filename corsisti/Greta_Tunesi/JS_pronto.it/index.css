@@ -22,3 +22,23 @@
     font-weight: 400;
     color: #00b98e !important;
 }
+
+.annuncio-type-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 10px;
+}
+
+.card-title.price {
+    color: var(--main);
+}
+
+
+.annuncio-extra-info-container {
+    border-top: 1px dashed var(--main);
+}
+
+.aeic-category {
+    border-right: 1px dashed var(--main);
+}
