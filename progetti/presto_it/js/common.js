@@ -7,7 +7,22 @@ console.log("common.js caricato")
  */
 
 // elemento html - mi servirà sia in fase di popolamento che in fase di filtraggio -> quindi globale
-let selectCercaPerCategoria = document.getElementById("cerca-per-categoria")
+let selectCercaPerCategoria = document.getElementById("cerca-per-categoria");
+let menuUserAccessItem = document.getElementById("menu-user-access");
+
+/**
+ * mostro/nascondo gli item relativi all'utente nel menù
+ * la informazione la reperisco dal localStorage
+ */
+function userStatusNelMenu() {
+    let userStatus = localStorage.getItem("userStatus")
+    console.log("userStatus:", userStatus);
+
+    if (userStatus === "logged") {
+        menuUserAccessItem.innerText = "Logout";
+        menuUserAccessItem.setAttribute("href", "/progetti/presto_it/logout.html");
+    }
+}
 
 
 // gestisco la classe active del menu
@@ -74,6 +89,8 @@ function popolaSelectCategorie() {
     }
 }
 
+
+userStatusNelMenu();
 paginaCorrente();
 popoloMenuCategorie();
 popolaSelectCategorie();

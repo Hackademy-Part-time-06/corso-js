@@ -69,53 +69,25 @@
       </div>
     </nav>
 
-    <header class="header-annunci">
-      <h1 class="text-center">Cerca tra i nostri Annunci</h1>
+    <header>
+      <h1 class="text-center">Login</h1>
     </header>
 
     <div class="container py-5">
       <div class="row" id="contenitore-filtri">
-        <div class="col-12 col-sm-8">
-          <div class="row">
-            <div class="col-12 col-sm-4">
-              <input
-                type="text"
-                id="cerca-per-nome"
-                class="form-control"
-                placeholder="Ricerca libera"
-              />
+        <div class="col-12">
+          <form id="form-login">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" required>
             </div>
-            <div class="col-12 col-sm-4">
-              <select class="form-select" id="cerca-per-categoria">
-                <option selected>Tutte le categorie</option>
-              </select>
-            </div>
-            <div class="col-12 col-sm-2">
-              <input type="number" class="form-control" id="cerca-per-prezzo-min" placeholder="Min" />
-            </div>
-            <div class="col-12 col-sm-2">
-              <input type="number" class="form-control" id="cerca-per-prezzo-max" placeholder="Max" />
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-4">
-          <button id="btn-cerca" class="btn btn-primary">Cerca</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-12 col-sm-4">
-          <select class="form-select" id="ordina-la-lista">
-            <option selected>Ordina per</option>
-            <option>A-Z</option>
-            <option>Z-A</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <div class="container py-5">
-      <div class="row" id="contenitore-lista-annunci"></div>
     </div>
 
     <script
@@ -126,6 +98,6 @@
 
     <!-- carico il mio codice js -->
     <script src="/progetti/presto_it/js/common.js"></script>
-    <script src="/progetti/presto_it/js/annunci.js"></script>
+    <script src="/progetti/presto_it/js/login.js"></script>
   </body>
 </html>
