@@ -115,6 +115,16 @@ function caricaAnnunci() {
         listaFiltrata = cercaPerNome(inputCercaPerNome.value, listaFiltrata);
       }
 
+
+      let queryCategoria = url.searchParams.get("categoria");
+      console.log("queryCategoria:", queryCategoria)
+
+      if (queryCategoria) {
+        selectCercaPerCategoria.value = queryCategoria;
+
+        listaFiltrata = cercaPerCategoria(selectCercaPerCategoria.value, listaFiltrata);
+      }
+
       stampaListaAnnunci(listaFiltrata);
     })
     .catch((error) => {
