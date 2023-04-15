@@ -43,10 +43,34 @@ function paginaCorrente() {
     }
 }
 
+/**
+ * POTEVO FARLO PIU' SEMPLICE MA ERA LA SCUSA PER USARE UN PO' DI CONCETTI AVANZATI:
+ * 
+ * - IFEE 
+ * - CLOSURE
+ * - PROMISE
+ * 
+ */
+let getCategorie = (function() {
+    let promessaCategorie = new Promise((resolve, reject) => {
+        fetch("/progetti/presto_it/fake-server/api/categorie.json")
+        .then(response => response.json())
+        .then((listaCategorie) => {
+            resolve(listaCategorie)
+        })
+        .catch((error) => {
+            console.error("getCategorie:", error)
+            reject(error)
+        })
+    }) 
+    return function() {
+        return promessaCategorie
+    }
+})()
+
 
 function popoloMenuCategorie() {
-    fetch("/progetti/presto_it/fake-server/api/categorie.json")
-    .then(response => response.json())
+    getCategorie()
     .then((listaCategorie) => {
         console.log("Lista Categorie:", listaCategorie)
 
@@ -72,8 +96,7 @@ function popoloMenuCategorie() {
 
 function popolaSelectCategorie() {
     if (selectCercaPerCategoria) {
-        fetch("/progetti/presto_it/fake-server/api/categorie.json")
-        .then(response => response.json())
+        getCategorie()
         .then((listaCategorie) => {
             console.log("popolaSelectCategorie - Lista Categorie:", listaCategorie)
     
