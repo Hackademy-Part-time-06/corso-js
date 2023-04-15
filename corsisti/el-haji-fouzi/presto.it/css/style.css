@@ -1,0 +1,50 @@
+:root {
+  --main: #00b98e;
+  --main-dark: #02ab83;
+  --main-light: #26c49f;
+  --white: #effdf5;
+  --dark: #0e2e50;
+  --neutral: #666565;
+}
+body {
+  background-color: #a0b9b3 !important;
+}
+
+.nav-link.active {
+  font-weight: 800;
+  color: #00b98e !important;
+}
+
+.header-annunci {
+  height: 50vh;
+  background: #00b98e;
+}
+.card {
+  margin: 5px !important;
+}
+.annuncio-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 10px;
+}
+.card-title.price {
+  color: var(--main);
+}
+.conteainer-info-annuncio {
+  border-top: 1px dashed var(--main) !important;
+}
+.cont-categori {
+  border-right: 1px dashed var(--main) !important;
+}
+.bg-custom {
+  background-color: var(--main) !important;
+}
+
+#card-radius {
+  border-radius: 8px !important;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
