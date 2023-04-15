@@ -1,0 +1,25 @@
+:root {
+    --main : #00b98e;
+    --main-dark : #02ab83;
+    --main-light : #26c49f;
+    --white : #EFFDF5;
+    --dark : #0e2e50;
+    --neutral : #666565;
+}
+
+.nav-link.active {
+    font-weight: 800;
+    color: #00b98e !important
+}
+.navbar-brand {
+    color: var(--main);
+}
+
+.navbar-toggler {
+    background-color: var(--main);
+}
+
+#bottone {
+    background: var(--main);
+}
+

@@ -20,8 +20,6 @@ function paginaCorrente() {
   }
 }
 
-
-
 //==>popolo menù categorie (dropdown) con api e json fake
 function popoloMenuCategorie() {
   fetch("/corsisti/Alice_Croce/AliceCroce_Presto_it/fake-server/categorie.json")
@@ -38,7 +36,13 @@ function popoloMenuCategorie() {
         //è solo un riferimento copiato dagli html
         let liCategoria = document.createElement("li");
         liCategoria.innerHTML = `<a class="dropdown-item" href="#">${categoria.name}</a>`;
+
+        //non puoi vedere le categorie nel dropdown se non le appendi
+        dropdownEl.append(liCategoria);
       });
+    })
+    .catch((error) => {
+      console.error("C'è un errore nella chiamata dell'api, riprova!", error);
     });
 }
 

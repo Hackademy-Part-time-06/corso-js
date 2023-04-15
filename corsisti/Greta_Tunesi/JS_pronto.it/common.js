@@ -36,7 +36,11 @@ function menuCategorie() {
     dropdownEl.append(liCategoria)
 
     })
-})}
+    })
+    .catch(function () {
+    console.log("REJECTTTTT!!!!");
+    })
+}
 
 
 
