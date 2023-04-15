@@ -1,12 +1,17 @@
 /// inizializo la pagina  con un cosole log annunci 
 
 console.log(">=========LISTA ANNUNCI===========<");
-
+//============================= VARIABILI PER CHIAMARE LE ELEMENTI===================================
 
 /// prendo il elemento contenitore dalla pagina (annunci.html)
-let contenitoreListaAnnunci = document.getElementById("contenitore-lista-annunci")
+let contenitoreListaAnnunci = document.getElementById("contenitore-lista-annunci");
+let buttoneCerca = document.getElementById("btn");
+let inputText = document.getElementById("cerca-per-nome");
+let listAnnunciGlobale = [];
 
 
+
+//=================================FUNCTION STAMPA ANNUNCI===============================
 
 ///function per generare le la singola card ********************************<<<<<
 function stampaCardAnnunci(annuncio) {
@@ -24,7 +29,7 @@ function stampaCardAnnunci(annuncio) {
     contenitoreSingoloCard.className = ("col-12", "col-sm-4")
 
     contenitoreSingoloCard.innerHTML = `
-    <div class="card " >
+    <div class="card">
   <img src="../media/kv-galaxy-s23_s.jpg" class="card-img-top" alt="...">
     ${badgeEl}
     <div class="card-body">
@@ -43,12 +48,15 @@ function stampaCardAnnunci(annuncio) {
 
 }
 
+//=============================LA FUNCTION STAMPA LISTA ANNUNCI===================================
+
 
 
 //functio per stampare la lista delle annunci ********************************
 
 function stampaListaAnnunci(listaAnnunci = []) {
     console.log("============fn list annunci============", listaAnnunci);
+    contenitoreListaAnnunci.innerHTML = ""; ///RESET IL CONTENETORE CARD 
     listaAnnunci.forEach((annuncio) => {
         stampaCardAnnunci(annuncio);
 
@@ -57,12 +65,15 @@ function stampaListaAnnunci(listaAnnunci = []) {
     })
 }
 
+//============================== LA FUNCTION CARICA ANNUNCI ==================================
+
 //function per caricare le annunci dalle Api*********************
 
 function caricaAnnunci() {
     fetch("../server/annunci.json")
         .then(response => response.json())
         .then(datiLista => {
+            listAnnunciGlobale = datiLista;
             console.log(">======tutta la lista annunci=======<", datiLista);
             stampaListaAnnunci(datiLista);
         })
@@ -71,4 +82,36 @@ function caricaAnnunci() {
         });
 
 }
-caricaAnnunci();
+caricaAnnunci();////// chiamare la function caricaAnnunci 
+
+//================================ LA FUNCTION CERCA PER NOME================================
+
+///functio cerca nelle lista annunci per nome 
+function cercaPerNome(query, listaAnnunci) {
+    console.log("fn cerca per nome  query:", query);
+    console.log("fn cerca per nome  datalista:", listaAnnunci);
+
+    let listaFiltrata = listaAnnunci.filter((annuncio) => {
+        let nomeTm = annuncio.name.toLowerCase();
+        let queryTm = query.toLowerCase();;
+        return nomeTm.includes(queryTm);
+    })
+    console.log(" fn cercaPerNome lista filtrata", listaFiltrata);
+
+    stampaListaAnnunci(listaFiltrata);// chiamare la function stamLstaAnnunci
+}
+
+//================================== LA FUNCTION PER INIZIALIZARE I FILTRI==============================
+
+
+/// function per prendere il valore del input 
+
+function inizializzaFiltri() {
+    buttoneCerca.addEventListener("click", function (event) {
+        console.log("buttone cliccato");
+        console.log("il valore cerca per nome :", inputText.value);
+        cercaPerNome(inputText.value, listAnnunciGlobale);//// chiamare la function cercaPerNome
+    })
+
+}
+inizializzaFiltri();
