@@ -31,15 +31,33 @@ let inputCercaPerPrezzoMax = document.getElementById("cerca-per-prezzo-max")
  */
 
 function cercaPerNome(urlDaCostruire) {
-    // prendo il valore dell'inpt
+    
+    // prendo il valore dell'input
     let queryDiRicerca = inputCercaPerNome.value;
     console.log("queryDiRicerca:", queryDiRicerca)
+
+    if (queryDiRicerca === "") {
+        return urlDaCostruire; // non eseguo il codice successivo
+    }
 
     // appendo il parametro alla nuova url
     urlDaCostruire.searchParams.set("query", queryDiRicerca);
 
-
     console.log("cercaPerNome - URL:", urlDaCostruire.hrefr)
+
+    return urlDaCostruire
+}
+
+
+function cercaPerCategoria(urlDaCostruire) {
+    let categoria = selectCercaPerCategoria.value;
+
+    if (categoria === "Tutte le categorie") {
+        return urlDaCostruire;
+    }
+
+    // qui aggiungerò la nuova query string
+    urlDaCostruire.searchParams.set("categoria", categoria)
 
     return urlDaCostruire
 }
@@ -62,7 +80,10 @@ function listenerRicerca() {
         
         // creo la nuova url
         let url = new URL(window.location.origin + "/progetti/presto_it/annunci.html");
+        
         url = cercaPerNome(url);
+
+        url = cercaPerCategoria(url);
 
 
         // faccio il redirect
