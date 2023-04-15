@@ -1,7 +1,7 @@
 /// inizializo la pagina  con un cosole log annunci 
 
 console.log(">=========LISTA ANNUNCI===========<");
-
+//============================= VARIABILI PER CHIAMARE LE ELEMENTI===================================
 
 /// prendo il elemento contenitore dalla pagina (annunci.html)
 let contenitoreListaAnnunci = document.getElementById("contenitore-lista-annunci");
@@ -11,7 +11,7 @@ let listAnnunciGlobale = [];
 
 
 
-
+//=================================FUNCTION STAMPA ANNUNCI===============================
 
 ///function per generare le la singola card ********************************<<<<<
 function stampaCardAnnunci(annuncio) {
@@ -48,12 +48,15 @@ function stampaCardAnnunci(annuncio) {
 
 }
 
+//=============================LA FUNCTION STAMPA LISTA ANNUNCI===================================
+
 
 
 //functio per stampare la lista delle annunci ********************************
 
 function stampaListaAnnunci(listaAnnunci = []) {
     console.log("============fn list annunci============", listaAnnunci);
+    contenitoreListaAnnunci.innerHTML = ""; ///RESET IL CONTENETORE CARD 
     listaAnnunci.forEach((annuncio) => {
         stampaCardAnnunci(annuncio);
 
@@ -61,6 +64,8 @@ function stampaListaAnnunci(listaAnnunci = []) {
 
     })
 }
+
+//============================== LA FUNCTION CARICA ANNUNCI ==================================
 
 //function per caricare le annunci dalle Api*********************
 
@@ -77,21 +82,26 @@ function caricaAnnunci() {
         });
 
 }
-caricaAnnunci();
+caricaAnnunci();////// chiamare la function caricaAnnunci 
+
+//================================ LA FUNCTION CERCA PER NOME================================
 
 ///functio cerca nelle lista annunci per nome 
-function cercaPerNome(query, datilista) {
+function cercaPerNome(query, listaAnnunci) {
     console.log("fn cerca per nome  query:", query);
-    console.log("fn cerca per nome  datalista:", datilista);
+    console.log("fn cerca per nome  datalista:", listaAnnunci);
 
-    let listaFiltrata = datilista.filter(annuncio => {
+    let listaFiltrata = listaAnnunci.filter((annuncio) => {
         let nomeTm = annuncio.name.toLowerCase();
-        let queryTm = annuncio.name.toLowerCase();
-        return annuncio.name.includes(queryTm);
+        let queryTm = query.toLowerCase();;
+        return nomeTm.includes(queryTm);
     })
-    console.log("lista filtrata", listaFiltrata);
+    console.log(" fn cercaPerNome lista filtrata", listaFiltrata);
+
+    stampaListaAnnunci(listaFiltrata);// chiamare la function stamLstaAnnunci
 }
 
+//================================== LA FUNCTION PER INIZIALIZARE I FILTRI==============================
 
 
 /// function per prendere il valore del input 
@@ -100,7 +110,7 @@ function inizializzaFiltri() {
     buttoneCerca.addEventListener("click", function (event) {
         console.log("buttone cliccato");
         console.log("il valore cerca per nome :", inputText.value);
-        cercaPerNome(inputText.value, listAnnunciGlobale);
+        cercaPerNome(inputText.value, listAnnunciGlobale);//// chiamare la function cercaPerNome
     })
 
 }
