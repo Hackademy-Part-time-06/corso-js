@@ -1,12 +1,30 @@
-'use sctrict'
-
-console.log("ciao")
+'use strict'
 
 let contenitoreListaAnnunci = document.getElementById('contenitore-lista-annunci')
 let btnCerca = document.getElementById('btn-cerca');
 let inputCercaPerNome = document.getElementById('cerca-per-nome');
+let selectCercaPerCategoria = document.getElementById('cerca-per-categoria');
+let inputPrezzoMinimo = document.getElementById('cerca-per-prezzo-minimo');
 
 let listaAnnunciGlobale = [];
+
+function popolaSelectCategoria() {
+    fetch('./api-mocked-data/categorie.json')
+    .then(Response => Response.json())
+    .then(listaCategorie => {
+
+        console.log('popolaSelectCategoria- lista categorie', listaCategorie);
+
+        listaCategorie.forEach((categoria) => {
+            let optionEl = document.createElement('option');
+            optionEl.innerText = categoria.name;
+            selectCercaPerCategoria.append(optionEl);
+        })
+    })
+    .catch((errore) => {
+        console.error('errore nella chiamata dell api catogorie', errore)
+    })
+}
 
 function stampaCardAnnuncio(annuncio) {
 
@@ -44,12 +62,13 @@ function stampaCardAnnuncio(annuncio) {
     contenitoreListaAnnunci.append(contenitoreSingolaCard)
 }
 
-function stampaListaAnnunci(listaAnnunci) {
+function stampaListaAnnunci(listaAnnunciDaStampare = []) {
 
     contenitoreListaAnnunci.innerHTML = "";
-    listaAnnunci.forEach((annuncio) => {
-        stampaCardAnnuncio(annuncio)
-    })
+    listaAnnunciDaStampare.forEach((annuncio) => {
+       stampaCardAnnuncio(annuncio);
+});
+
 }
 
 function caricaAnnunci() {
@@ -78,28 +97,61 @@ function cercaPerNome(query, listaAnnunci) {
     let listaFiltrata = listaAnnunci.filter((annuncio) => {
         let nomeTM = annuncio.name.toLowerCase();
         let queryTM = query.toLowerCase();
-        return nomeTM.includes(queryTM);
+        if (nomeTM.includes(queryTM)) {
+            return true;
+        }
+        else {
+            return false;
+        }
 
     })
 
     console.log('fn cerca per nome - lista filtrata', listaFiltrata)
 
-    stampaListaAnnunci(listaFiltrata);
+    return listaFiltrata;
 }
 
-function inizializzaFiltri() {
-    btnCerca.addEventListener('click', function (event) {
-            console.log('bottone cliccato');
-            console.log('valore cerca per nome', inputCercaPerNome.value);
+function cercaPerCategoria(categoria, listaAnnunci) {
+    console.log('cercaPerCategoria', categoria);
+    console.log('cercaPerCategoria - lista-annunci', listaAnnunci);
 
-            cercaPerNome(inputCercaPerNome.value, listaAnnunciGlobale);
+    let listaFiltrata = [];
 
+    if (categoria === 'Tutte le categorie') {
+        listaFiltrata = listaAnnunci;
+    }
+    else {
+        listaFiltrata = listaAnnunci.filter((annuncio) => {
+            return annuncio.category === categoria;
+        })
+    }  
+
+    return listaFiltrata;
+}
+
+function cercaPerPrezzoMin (prezzoMin, listaAnnunci) {
+   
+    return listaAnnunci
+}
+
+
+function listenerRicerca() {
+    btnCerca.addEventListener('click', function(event) {
+            console.log('bottone-cerca-cliccato');
+           
+
+            let listaFiltrataPerNome = cercaPerNome(inputCercaPerNome.value, listaAnnunciGlobale);
+            let listaFiltrataPerCategoria = cercaPerCategoria(selectCercaPerCategoria.value, listaFiltrataPerNome);
+
+           // listaFiltrata = cercaPerPrezzoMin(inputCercaPerNome.value, listaFiltrata)
+            stampaListaAnnunci(listaFiltrataPerCategoria)
         })
 }
 
 
-inizializzaFiltri();
+listenerRicerca();
 
 caricaAnnunci();
 
+popolaSelectCategoria();
 
