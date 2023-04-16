@@ -9,7 +9,7 @@
 body {
   background-color: #a0b9b3 !important;
 }
-
+/*  quando trova il elemnto la colora e dandoli un colore spicifico*/
 .nav-link.active {
   font-weight: 800;
   color: #00b98e !important;

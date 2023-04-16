@@ -3,7 +3,7 @@
 console.log(">=========LISTA ANNUNCI===========<");
 //============================= VARIABILI PER CHIAMARE LE ELEMENTI===================================
 
-/// prendo il elemento contenitore dalla pagina (annunci.html)
+/// prendo il elemento  dalla pagina (annunci.html)
 let contenitoreListaAnnunci = document.getElementById("contenitore-lista-annunci");
 let buttoneCerca = document.getElementById("btn");
 let inputText = document.getElementById("cerca-per-nome");
@@ -16,6 +16,8 @@ let listAnnunciGlobale = [];
 ///function per generare le la singola card ********************************<<<<<
 function stampaCardAnnunci(annuncio) {
     console.log("<<<<<<<<< le card >>>>>>>> ", annuncio);
+
+
     // creare il badge della card e dagli una condition
     let badgeEl;
     if (annuncio.type === "sell") {
@@ -29,20 +31,20 @@ function stampaCardAnnunci(annuncio) {
     contenitoreSingoloCard.className = ("col-12", "col-sm-4")
 
     contenitoreSingoloCard.innerHTML = `
-    <div class="card">
-  <img src="../media/kv-galaxy-s23_s.jpg" class="card-img-top" alt="...">
-    ${badgeEl}
-    <div class="card-body">
+    <div class="card ">
+          <img src="../media/kv-galaxy-s23_s.jpg" class="card-img-top" alt="...">
+        ${badgeEl}
+         <div class="card-body ">
              
-       <h5 class="card-title price">${annuncio.price}$</h5>
-        <h5 class="card-title">${annuncio.name}</h5>
-        <p class="card-text">the discription of the product</p>      
+         <h5 class="card-title price">${annuncio.price}$</h5>
+         <h5 class="card-title">${annuncio.name}</h5>
+         <p class="card-text">the discription of the product</p>      
    </div>
-    <div class="d-flex justify-content-evenly conteainer-info-annuncio">
-         <div class= "col text-center cont-categori py-2">${annuncio.category}</div>
-        <div class= "col text-center py-2">${annuncio.created_date}</div>
+        <div class="d-flex justify-content-evenly conteainer-info-annuncio">
+            <div class= "col text-center cont-categori py-2">${annuncio.category}</div>
+            <div class= "col text-center py-2">${annuncio.created_date}</div>
         </div>
-</div>`;
+   </div>`;
     // appendere ila card al contenitore
     contenitoreListaAnnunci.append(contenitoreSingoloCard);
 
@@ -56,7 +58,7 @@ function stampaCardAnnunci(annuncio) {
 
 function stampaListaAnnunci(listaAnnunci = []) {
     console.log("============fn list annunci============", listaAnnunci);
-    contenitoreListaAnnunci.innerHTML = ""; ///RESET IL CONTENETORE CARD 
+    contenitoreListaAnnunci.innerHTML = ""; ///RESETTARE IL CONTENETORE CARD 
     listaAnnunci.forEach((annuncio) => {
         stampaCardAnnunci(annuncio);
 
