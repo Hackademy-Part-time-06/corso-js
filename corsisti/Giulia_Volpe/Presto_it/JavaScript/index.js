@@ -8,6 +8,9 @@ let selectPerCategoria = document.getElementById("select-categoria")
 let prezzoMin = document.getElementById("cerca-prezzo-min")
 let prezzoMax = document.getElementById("cerca-prezzo-max")
 
+//FILTRI
+
+//FUNZIONE -- Cerco per nome dalla HomePage
 
 function cercaPerNome() {
     let queryInput = input.value;
@@ -25,5 +28,7 @@ function listenSearch() {
         cercaPerNome()
     })
 }
+
+//FUNZIONI -- richiamo e eseguo
 
 listenSearch()

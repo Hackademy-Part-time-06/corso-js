@@ -1,7 +1,10 @@
 "use strict"
 
 //VARIABILI GLOBALI
+
 let menuSelect = document.getElementById("select-categoria")
+
+//FUNZIONE -- attivo classe active della navbar
 
 function currentPage() {
     let menuEl
@@ -17,6 +20,8 @@ function currentPage() {
         menuEl.classList.add("active")
     }
 }
+
+//FUNZIONE -- popolo menù categoria nella navbar
 
 function dropCategorie() {
     fetch("Mockup_Api/categorie.json")
@@ -37,6 +42,8 @@ function dropCategorie() {
         })
 }
 
+//FUNZIONE -- popolo menù categoria nella barra di ricerca
+
 function selectCategoria() {
     if (menuSelect) {
         fetch("Mockup_Api/categorie.json")
@@ -52,6 +59,7 @@ function selectCategoria() {
     }
 }
 
+//FUNZIONI -- richiamo e eseguo
 
 currentPage()
 dropCategorie()

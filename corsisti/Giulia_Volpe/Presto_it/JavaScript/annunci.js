@@ -8,13 +8,13 @@ let input = document.getElementById("inputSearch");
 let selectPerCategoria = document.getElementById("select-categoria")
 let listaAnnunciGlobale = []
 
-// CREO E STAMPO LE CARD PER GLI ANNUNCI
+//FUNZIONE -- CREO E STAMPO LE CARD PER GLI ANNUNCI
 
 function creaCard(annuncio) {
     let singleCard = document.createElement("div");
     singleCard.classList.add("col-12", "col-sm-4", "mb-4");
 
-    let badgeCard
+    let badgeCard  //metto i badge sulle immagini delle card con condizione discriminante
     if (annuncio.type === "sell") {
         badgeCard = `<span class="badge bg-danger annuncio-type-badge">Vendo</span>`
     }
@@ -46,7 +46,7 @@ function stampaCard(listaAnnunci = []) {
     })
 }
 
-//FETCH
+//FUNZIONE -- FETCH
 
 function loadAnnunci() {
     fetch("Mockup_Api/annunci.json")
@@ -78,6 +78,8 @@ function loadAnnunci() {
 
 //FILTRI
 
+//FUNZIONE -- filtro per nome
+
 function filtraNome(query, listaAnnunci) {
     let listaFiltrata = listaAnnunci.filter((annuncio) => {
         let nomeToLower = annuncio.name.toLowerCase();
@@ -90,7 +92,7 @@ function filtraNome(query, listaAnnunci) {
 
 }
 
-
+//FUNZIONE -- filtro per categoria
 
 function cercaCateg(categoria, listaAnnunci){
     console.log("cerca per categ-- ", categoria)
@@ -120,7 +122,7 @@ function faiPartireFiltri() {
     })
 }
 
-
+//FUNZIONI -- richiamo e eseguo
 faiPartireFiltri()
 loadAnnunci()
 
