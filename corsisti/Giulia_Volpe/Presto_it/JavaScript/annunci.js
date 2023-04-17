@@ -49,7 +49,7 @@ function stampaCard(listaAnnunci = []) {
 //FETCH
 
 function loadAnnunci() {
-    fetch("/MockApi/annunci.json")
+    fetch("Mockup_Api/annunci.json")
         .then(response => response.json())
         .then(function (annunci) {
             listaAnnunciGlobale = annunci

@@ -19,7 +19,7 @@ function currentPage() {
 }
 
 function dropCategorie() {
-    fetch("/MockApi/categorie.json")
+    fetch("Mockup_Api/categorie.json")
         .then(response => response.json())
         .then(categorie => {
             console.log(categorie)
@@ -39,7 +39,7 @@ function dropCategorie() {
 
 function selectCategoria() {
     if (menuSelect) {
-        fetch("/MockApi/categorie.json")
+        fetch("Mockup_Api/categorie.json")
         .then(response => response.json())
         .then(listaCategorie => {
             console.log("lista categorie:", listaCategorie)
