@@ -43,11 +43,43 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Profilo</a>
                         </li>
-                        <button class="btn bg-custom" type="submit">Crea annuncio</button>
+                <button class="btn bg-custom" type="submit">Crea annuncio</button>
             </div>
         </div>
     </nav>
 
+
+
+    <div class="container py-5">
+        <div class="row" id="contenitore-filtri">
+          <div class="col-12 col-sm-8">
+            <div class="row">
+              <div class="col-12 col-sm-4">
+                <input
+                  type="text"
+                  id="cerca-per-nome"
+                  class="form-control"
+                  placeholder="Ricerca libera"
+                />
+              </div>
+              <div class="col-12 col-sm-4">
+                <select class="form-select" id="cerca-per-categoria">
+                  <option selected>Tutte le categorie</option>
+                </select>
+              </div>
+              <div class="col-12 col-sm-2">
+                <input type="number" class="form-control" id="cerca-per-prezzo-min" placeholder="Min" />
+              </div>
+              <div class="col-12 col-sm-2">
+                <input type="number" class="form-control" id="cerca-per-prezzo-max" placeholder="Max" />
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-4">
+            <button id="btn-cerca" class="btn btn-primary">Cerca</button>
+          </div>
+        </div>
+      </div>
     <!--- Navbar -->
 
     <script src="/corsisti/Greta_Tunesi/JS_pronto.it/index.js"> </script>
