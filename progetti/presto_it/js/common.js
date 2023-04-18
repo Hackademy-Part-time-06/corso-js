@@ -7,7 +7,22 @@ console.log("common.js caricato")
  */
 
 // elemento html - mi servirà sia in fase di popolamento che in fase di filtraggio -> quindi globale
-let selectCercaPerCategoria = document.getElementById("cerca-per-categoria")
+let selectCercaPerCategoria = document.getElementById("cerca-per-categoria");
+let menuUserAccessItem = document.getElementById("menu-user-access");
+
+/**
+ * mostro/nascondo gli item relativi all'utente nel menù
+ * la informazione la reperisco dal localStorage
+ */
+function userStatusNelMenu() {
+    let userStatus = localStorage.getItem("userStatus")
+    console.log("userStatus:", userStatus);
+
+    if (userStatus === "logged") {
+        menuUserAccessItem.innerText = "Logout";
+        menuUserAccessItem.setAttribute("href", "/progetti/presto_it/logout.html");
+    }
+}
 
 
 // gestisco la classe active del menu
@@ -28,10 +43,34 @@ function paginaCorrente() {
     }
 }
 
+/**
+ * POTEVO FARLO PIU' SEMPLICE MA ERA LA SCUSA PER USARE UN PO' DI CONCETTI AVANZATI:
+ * 
+ * - IFEE 
+ * - CLOSURE
+ * - PROMISE
+ * 
+ */
+let getCategorie = (function() {
+    let promessaCategorie = new Promise((resolve, reject) => {
+        fetch("/progetti/presto_it/fake-server/api/categorie.json")
+        .then(response => response.json())
+        .then((listaCategorie) => {
+            resolve(listaCategorie)
+        })
+        .catch((error) => {
+            console.error("getCategorie:", error)
+            reject(error)
+        })
+    }) 
+    return function() {
+        return promessaCategorie
+    }
+})()
+
 
 function popoloMenuCategorie() {
-    fetch("/progetti/presto_it/fake-server/api/categorie.json")
-    .then(response => response.json())
+    getCategorie()
     .then((listaCategorie) => {
         console.log("Lista Categorie:", listaCategorie)
 
@@ -57,8 +96,7 @@ function popoloMenuCategorie() {
 
 function popolaSelectCategorie() {
     if (selectCercaPerCategoria) {
-        fetch("/progetti/presto_it/fake-server/api/categorie.json")
-        .then(response => response.json())
+        getCategorie()
         .then((listaCategorie) => {
             console.log("popolaSelectCategorie - Lista Categorie:", listaCategorie)
     
@@ -74,6 +112,8 @@ function popolaSelectCategorie() {
     }
 }
 
+
+userStatusNelMenu();
 paginaCorrente();
 popoloMenuCategorie();
 popolaSelectCategorie();

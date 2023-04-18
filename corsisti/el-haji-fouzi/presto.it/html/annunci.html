@@ -70,10 +70,19 @@
         <header class="header-annunci">
             <h1 class="text-center">Cerca tra i nostri annunci</h1>
         </header>
-        <div class="container py-5 bg-dark">
-            <div class="row " id="contenitore-lista-annunci">
-
+        <!--creare il container forms header-->
+        <div class="container py-5">
+            <div class="row " id=" contenitore-filtri">
+                <div class="col-12 col-sm-8">
+                   <input type="text" id="cerca-per-nome" class="form-control"> 
+                </div>
+                <div class="col-12 col-sm-4">
+                   <button class="btn-cerca btn btn-primary" id="btn">cerca</button>
+                </div> 
             </div>
+        </div>
+        <div class="container py-5 ">
+            <div class="row " id="contenitore-lista-annunci"></div>
         </div>
         <!-- Optional JavaScript; choose one of the two! -->
         <!-- Option 1: Bootstrap Bundle with Popper -->

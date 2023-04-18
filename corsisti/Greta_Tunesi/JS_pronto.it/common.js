@@ -24,7 +24,7 @@ function menuCategorie() {
     fetch("/corsisti/Greta_Tunesi/JS_pronto.it/fake-server/categorie.json")
     .then(response => response.json())
     .then((listaCategorie) => {
-    console.log(listaCategorie)
+    console.log("lista categoria", listaCategorie)
 
     let dropdownEl = document.getElementById("dropdown")
     listaCategorie.forEach(categoria => {

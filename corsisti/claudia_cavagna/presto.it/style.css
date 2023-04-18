@@ -1,0 +1,141 @@
+:root {
+    --main : #00b98e;
+    --main-dark : #02ab83;
+    --main-light : #26c49f;
+    --white : #EFFDF5;
+    --dark : #0e2e50;
+    --neutral : #666565;
+}
+
+.color-bg {
+    background-color: #e3faf5;
+}
+
+.navbar {
+    background-color: #EFFDF5;
+    box-shadow: 4px 4px 4px #939292;
+    margin-top: 30px;
+    margin-left: 200px;
+}
+
+.icona {
+    margin-left: 50px;
+}
+
+.navbar-brand {
+    color: #02ab83;
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.nav-item {
+    font-weight: 600;
+}
+
+.nav-link {
+    color: #0e2e50;
+    font-weight: 600;
+}
+
+.btn-crea {
+    background-color: #02ab83;
+    color: #EFFDF5;
+    font-weight: 600;
+    margin-right: 50px;
+}
+
+.container-piccolo {
+    display: flex;
+    margin-top: 40px;
+    max-width: 70%;
+}
+
+.carousel {
+    align-items: center;
+
+}
+
+.parole-colorate {
+    color:#02ab83;
+}
+
+.btn-carousel {
+    background-color: #02ab83;
+    color: #EFFDF5;
+    font-weight: 600;
+}
+
+.btn-form {
+    background-color: #0e2e50;
+    color: #EFFDF5;
+    font-weight: 600;
+}
+
+.container-bg {
+    background-color: #02ab83;
+    padding: 20px;
+}
+
+.container-piccolo2 {
+    background-color: white;
+    max-width: 70%;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.bordo-tratteggiato {
+    border: dashed 1px;
+    border-color: #00b98e;
+
+}
+
+.color-text {
+    color: #02ab83;
+}
+
+.bordo-icona {
+    border: dashed 2px;
+    border-color: #00b98e;
+    border-radius: 50%;
+    padding: 10px;
+    
+}
+
+.img-open {
+    position: absolute;
+    top: -250px;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.scritta-h1 {
+    margin-top: 150px;
+}
+
+.cerca-annunci {
+    margin-top: 400px;
+    padding: 40px;
+    border-radius: 6px;
+}
+
+.bordo_tratteggiato_sotto{
+    border-style: dashed;
+    border-color: #26c49f;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+}
+
+.bordo_tratteggiato_destra{
+    border-style: dashed;
+    border-color: #26c49f;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+}
+
+.posizione-badge {
+    position: absolute;
+    top: 30px;
+}

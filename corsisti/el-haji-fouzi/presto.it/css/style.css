@@ -6,7 +6,10 @@
   --dark: #0e2e50;
   --neutral: #666565;
 }
-
+body {
+  background-color: #a0b9b3 !important;
+}
+/*  quando trova il elemnto la colora e dandoli un colore spicifico*/
 .nav-link.active {
   font-weight: 800;
   color: #00b98e !important;
@@ -28,13 +31,20 @@
 .card-title.price {
   color: var(--main);
 }
-.conteainer-info-annuncio{
+.conteainer-info-annuncio {
   border-top: 1px dashed var(--main) !important;
- 
 }
-.cont-categori{
-  border-right: 1px dashed var(--main) !important;;
+.cont-categori {
+  border-right: 1px dashed var(--main) !important;
 }
-.bg-custom{
+.bg-custom {
   background-color: var(--main) !important;
+}
+
+#card-radius {
+  border-radius: 8px !important;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
