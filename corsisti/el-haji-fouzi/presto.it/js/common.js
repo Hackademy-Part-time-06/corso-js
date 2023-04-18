@@ -1,5 +1,6 @@
 
 //evidenziare elementi nella navBar
+//=============================LA FUNCTION INZIALIZA PAGINA ===================================
 
 function pagginaCorrente() {
     let elementoMenu;
@@ -18,6 +19,7 @@ function pagginaCorrente() {
 }
 
 // chiamare le elementi dal api
+//==============LA FUNCTION  PER CHIAMARE LA GATEGORIA PRODOTTO E METTERLA SUL MENU DROPDOWN===================
 
 function popoloListaCategoria() {
     fetch("../server/categorie.json")
@@ -29,7 +31,7 @@ function popoloListaCategoria() {
             let dropdown = document.getElementById("dropdown-menu-categorie");
             listaCategoria.forEach((categoria) => {
 
-                console.log("creo il sigolo elemento per il drop down")
+                console.log("creo la singola categoria per il drop down")
 
 
                 let liCategoria = document.createElement("li");
@@ -42,10 +44,12 @@ function popoloListaCategoria() {
 
 
         })
+        // function catch per il ERROR in caso non di arrata risposta  
         .catch((error) => {
             console.error("Failed to fetch categoria")
         });
 
+
 }
-popoloListaCategoria();
-pagginaCorrente();
+popoloListaCategoria();// chiamata della function popoloListaCategoria
+pagginaCorrente();// chiamata della function pagginaCorrente

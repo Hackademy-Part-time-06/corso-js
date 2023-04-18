@@ -1,0 +1,47 @@
+:root {
+    --main : #00b98e;
+    --main-dark : #02ab83;
+    --main-light : #26c49f;
+    --white : #EFFDF5;
+    --dark : #0e2e50;
+    --neutral : #666565;
+}
+
+
+
+.navbar-nav .nav-link.active {
+    color:#00b98e;
+    font-weight: bold;
+}
+.headerAnnunci {
+    height: 50vh;
+    background-color: var(--main-light);
+}
+
+header #coloreTitoloAnnunci {
+    color: var(--main);
+}
+
+#immagineAnnuncio {
+    width: 100%;
+}
+
+.badgeAnnuncio {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 10px;
+}
+
+.prezzoAnnuncio {
+    color: var(--main);
+}
+
+.infoAnnuncio {
+    border-top: 1px dashed var(--main);
+}
+
+.side {
+    width: 50%;
+    border-right: 1px dashed var(--main);
+}

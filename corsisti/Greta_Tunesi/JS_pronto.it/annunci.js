@@ -2,9 +2,17 @@
 
 console.log("file JS annunci caricato")
 
+////////////////////
+///// variabili/////
+////////////////////
+
 let contenitoreListaAnnunci = document.getElementById("contenitore-lista-annunci")
+let btnCerca = document.getElementById("btn-cerca")
+let inputCercaXNome = document.getElementById("cerca-per-nome")
 
 let listaAnnunciGlobale = []
+
+///////////////////
 
 function caricaAnnunci() {
     fetch("/corsisti/Greta_Tunesi/JS_pronto.it/fake-server/annunci.json")
@@ -17,8 +25,12 @@ function caricaAnnunci() {
         //perchè no il return dici? perchè non si usa con le robe asincrone
     console.log("lista annunci", listaAnnunci)
 
-    stampaListaAnnunci(listaAnnunci)
+    let listaFiltrata = listaAnnunciGlobale
+
+    stampaListaAnnunci(listaFiltrata)
         })
+
+
     .catch((error) => {
         console.error("Errore nella chiamata all'api degli annunci:", error)
     })
@@ -41,7 +53,7 @@ function stampaCardAnnunci(annuncio) {
 
     contenitoreSingolaCard.innerHTML =
         `<div class="card">
-    <img src="https://placehold.co/600x400?text=image+not+present" class="card-img-top">
+    <img src="/corsisti/Greta_Tunesi/JS_pronto.it/img/images/oca.jpg" class="card-img-top">
     ${badgeEl}
     <div class="card-body">
         <h5 class="card-title price">${annuncio.price}</h5>
@@ -59,7 +71,7 @@ function stampaCardAnnunci(annuncio) {
 }
 
 
-function stampaListaAnnunci(listaAnnunci=[]) {
+function stampaListaAnnunci(listaAnnunci = []) {
     console.log("fn stampaListaAnnunci:", listaAnnunci)
 
     // RESET CONTENUTO CONTENITORE
@@ -69,3 +81,43 @@ function stampaListaAnnunci(listaAnnunci=[]) {
         stampaCardAnnunci(annuncio)
     })
 }
+
+///////////////////
+///// filtri //////
+//////////////////
+
+function cercaXNome (query, listaAnnunci){
+    console.log("cercaxNome - query:", query)
+    console.log("cercaxNome - listaAnnunci:", listaAnnunci)
+
+    let listaFiltrata = listaAnnunci.filter((annuncio) => {
+        let nomeMinuscolo = annuncio.name.toLowerCase()
+        let queryMinuscolo = query.toLowerCase()
+        //qui sto dicendo di metterli tutti in minuscolo
+
+        if (nomeMinuscolo.includes(queryMinuscolo)) {
+            return true
+        } else {
+            return false
+        }
+    })
+    console.log("listaFiltrata", listaFiltrata)
+    return listaFiltrata
+}
+
+
+////// listener //////
+
+function listenerRicerca () {
+    btnCerca.addEventListener("click", function(event){
+        console.log("bottone 'cerca' cliccato")
+    
+      let  listaFiltrata = listaAnnunciGlobale
+
+      listaFiltrata = cercaXNome(inputCercaXNome.value, listaFiltrata);
+
+        stampaListaAnnunci(listaFiltrata)
+    })
+}
+
+listenerRicerca()

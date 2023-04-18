@@ -73,13 +73,14 @@ function stampaCardSingoloAnnuncio(annuncio) {
  * Funzione che stampa tutta la lista degli annunci -> tutte le card -> richiama la funzione
  * "stampaCardAnnuncio" per ogni annuncio presente nella lista che gli passo in input
  */
-function stampaListaAnnunci(listaAnnunci = []) {
-  console.log("fn stampaListaAnnunci:", listaAnnunci);
+function stampaListaAnnunci(listaAnnunciDaStampare = []) {
+  console.log("fn stampaListaAnnunci:", listaAnnunciDaStampare);
 
   // RESET CONTENUTO CONTENITORE
   contenitoreListaAnnunci.innerHTML = "";
 
-  listaAnnunci.forEach((annuncio) => {
+  // itero sulla lista degli annunci che mi è stata passata in input
+  listaAnnunciDaStampare.forEach((annuncio) => {
     stampaCardSingoloAnnuncio(annuncio);
   });
 }
@@ -112,6 +113,16 @@ function caricaAnnunci() {
 
         // filtro gli annunci per nome
         listaFiltrata = cercaPerNome(inputCercaPerNome.value, listaFiltrata);
+      }
+
+
+      let queryCategoria = url.searchParams.get("categoria");
+      console.log("queryCategoria:", queryCategoria)
+
+      if (queryCategoria) {
+        selectCercaPerCategoria.value = queryCategoria;
+
+        listaFiltrata = cercaPerCategoria(selectCercaPerCategoria.value, listaFiltrata);
       }
 
       stampaListaAnnunci(listaFiltrata);
@@ -227,7 +238,7 @@ function cercaPerPrezzoMassimo(prezzoMax, listaAnnunci) {
 function sorting(ordinaPer, listaAnnunci) {
   console.log("sorting - ordinaPer:", ordinaPer);
   console.log("sorting - listaAnnunci:", listaAnnunci);
-  
+
   let listaOrdinata = listaAnnunci;
 
   switch (ordinaPer) {
@@ -246,19 +257,19 @@ function sorting(ordinaPer, listaAnnunci) {
       });
       break;
     case "Z-A":
-        listaOrdinata = listaAnnunci.sort((a, b) => {
-            const nameA = a.name.toUpperCase(); // ignore upper and lowercase
-            const nameB = b.name.toUpperCase(); // ignore upper and lowercase
-            if (nameA > nameB) {
-              return -1;
-            }
-            if (nameA < nameB) {
-              return 1;
-            }
-    
-            return 0;
-          });
-        break;
+      listaOrdinata = listaAnnunci.sort((a, b) => {
+        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+        if (nameA > nameB) {
+          return -1;
+        }
+        if (nameA < nameB) {
+          return 1;
+        }
+
+        return 0;
+      });
+      break;
   }
 
   return listaOrdinata;
@@ -279,7 +290,11 @@ function listenerRicerca() {
 
     let listaFiltrata = listaAnnunciGlobale;
 
-    listaFiltrata = cercaPerNome(inputCercaPerNome.value, listaFiltrata);
+    // START filtro la lista degli annunci
+
+    // prendo il valore inserito nell'input
+    let queryDiRicercaLibera = inputCercaPerNome.value;
+    listaFiltrata = cercaPerNome(queryDiRicercaLibera, listaFiltrata);
 
     listaFiltrata = cercaPerCategoria(
       selectCercaPerCategoria.value,
@@ -296,8 +311,15 @@ function listenerRicerca() {
       listaFiltrata
     );
 
-    listaFiltrata = sorting(selectSorting.value, listaFiltrata);
+    // END filtro la lista degli annunci
 
+
+    // START ordino la lista degli annunci dopo averle filtrate
+    listaFiltrata = sorting(selectSorting.value, listaFiltrata);
+    // END ordino la lista degli annunci dopo averle filtrate
+    
+    
+    // STAMPO gli annunci in pagina
     stampaListaAnnunci(listaFiltrata);
   });
 }

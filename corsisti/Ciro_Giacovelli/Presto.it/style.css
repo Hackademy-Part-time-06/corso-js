@@ -1,0 +1,41 @@
+:root {
+    --main: #00b98e;
+    --main-dark: #02ab83;
+    --main-light: #26c49f;
+    --white: #EFFDF5;
+    --dark: #0e2e50;
+    --neutral: #666565;
+}
+
+.annunciostyle{
+    position:absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 10px;
+}
+
+.logo {
+    color: var(--main);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.button {
+    background-color: #00b98e;
+    color: var(--white);
+    border-radius: 10px;
+}
+
+.card-title.prezzo {
+    color: var(--main);
+}
+
+.container-annuncio{
+    border-top: 1px dashed;
+    border-color: var(--main);
+}
+
+.altrobordo{
+    border-right: 1px dashed;
+    border-color: var(--main);
+}

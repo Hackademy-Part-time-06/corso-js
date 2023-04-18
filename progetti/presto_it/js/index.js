@@ -30,22 +30,36 @@ let inputCercaPerPrezzoMax = document.getElementById("cerca-per-prezzo-max")
  * ////////////////////////////////////////
  */
 
-function cercaPerNome() {
-    // prendo il valore dell'inpt
+function cercaPerNome(urlDaCostruire) {
+    
+    // prendo il valore dell'input
     let queryDiRicerca = inputCercaPerNome.value;
     console.log("queryDiRicerca:", queryDiRicerca)
 
-    // creo la nuova url
-    let url = new URL(window.location.origin + "/progetti/presto_it/annunci.html");
+    if (queryDiRicerca === "") {
+        return urlDaCostruire; // non eseguo il codice successivo
+    }
 
     // appendo il parametro alla nuova url
-    url.searchParams.set("query", queryDiRicerca);
+    urlDaCostruire.searchParams.set("query", queryDiRicerca);
+
+    console.log("cercaPerNome - URL:", urlDaCostruire.hrefr)
+
+    return urlDaCostruire
+}
 
 
-    console.log("URL:", url)
+function cercaPerCategoria(urlDaCostruire) {
+    let categoria = selectCercaPerCategoria.value;
 
-    // faccio il redirect
-    window.location = url.href;
+    if (categoria === "Tutte le categorie") {
+        return urlDaCostruire;
+    }
+
+    // qui aggiungerò la nuova query string
+    urlDaCostruire.searchParams.set("categoria", categoria)
+
+    return urlDaCostruire
 }
 
 
@@ -63,8 +77,17 @@ function cercaPerNome() {
 function listenerRicerca() {
     bntCerca.addEventListener("click", function(event) {
         console.log("Bottone di ricerca cliccato");
+        
+        // creo la nuova url
+        let url = new URL(window.location.origin + "/progetti/presto_it/annunci.html");
+        
+        url = cercaPerNome(url);
 
-        cercaPerNome();
+        url = cercaPerCategoria(url);
+
+
+        // faccio il redirect
+        window.location = url.href;
     })
 }
 listenerRicerca()

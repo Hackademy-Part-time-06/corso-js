@@ -1,0 +1,70 @@
+:root {
+    --main: #00b98e;
+    --main-dark: #02ab83;
+    --main-light: #26c49f;
+    --white: #EFFDF5;
+    --dark: #0e2e50;
+    --neutral: #666565;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+.navbar-nav .nav-link.active {
+    font-weight: 800;
+    color: #00b98e;
+}
+
+.bg-custom {
+    background-color: var(--main);
+}
+
+.card-price {
+    color: var(--main-light);
+}
+
+.info-extra {
+    border-top: 1px dashed var(--main-light);
+}
+
+.categ-extra{
+    border-right: 1px dashed var(--main-light) ;
+}
+
+#img-head {
+
+    opacity: 0.5;
+}
+
+.annuncio-type-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 10px;
+}
+
+#cardAnnunci {
+    width: 22rem;
+}
+
+.color-custom{
+    color: var(--main-dark);
+}
+
+.btn-custom{
+    background-color: var(--main-light);
+    color: white;
+    font-weight: bold;
+}
+
+#btn-cerca{
+    background-color: #0e2e50;
+    color: white;
+    font-weight: bold;
+    float: right;
+}
+
+nav{
+    position: sticky;
+    top: 50px;
+}

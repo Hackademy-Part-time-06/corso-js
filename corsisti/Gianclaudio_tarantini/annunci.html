@@ -57,7 +57,20 @@
     <div class="container py-5">
         <div class="row" id="contenitore-filtri">
             <div class="col-12 col-sm-8">
-                <input type="text" id="cerca-per-nome" class="form-control">
+                <div class="row">
+                    <div class="col-12 col-sm-4">
+                        <input type="text" id="cerca-per-nome" class="form-control" placeholder="Ricerca libera">
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <select class="form-select" aria-label="Default select example" id="cerca-per-categoria">
+                            <option selected>Tutte le categorie</option>
+                         </select>
+                    </div>
+                    <input type="number" class="form-control" id="cerca-per-prezzo-minimo">
+                 </div>
+                </div>
+                
+                               
             </div>
             <div class="col-12 col-sm-8">
                 <button id="btn-cerca" class="btn btn-primary">
